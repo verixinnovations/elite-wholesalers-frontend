@@ -1,0 +1,15 @@
+.vue-tel-input {
+  &:focus-within {
+    box-shadow: none !important;
+    border-color: var(--color-primary-500) !important;
+  }
+  .vti__dropdown.open {
+    background-color: transparent !important;
+  }
+
+  .vti__dropdown {
+    &:hover {
+      background-color: transparent !important;
+    }
+  }
+}

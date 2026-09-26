@@ -1,0 +1,9 @@
+html {
+  background-color: #f8f9fa;
+  color: black;
+  font-family: var(--font-sans);
+}
+
+.debug {
+  background-color: red !important;
+}

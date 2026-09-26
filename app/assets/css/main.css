@@ -1,0 +1,61 @@
+@import './app.css';
+@import 'tailwindcss';
+@import '@nuxt/ui';
+@import 'vue-flux/style.css';
+@import './slider.scss';
+@import './tel-input.scss';
+
+@import 'vue-tel-input/vue-tel-input.css';
+
+@theme static {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-oswald: 'Oswald', sans-serif;
+  --color-primary: #024b8f;
+  --color-primary-50: #e3ebff;
+  --color-primary-100: #c7d7ff;
+  --color-primary-200: #8db3ff;
+  --color-primary-300: #2a8efe;
+  --color-primary-400: #046bc7;
+  --color-primary-500: #024b8f;
+  --color-primary-600: #013b73;
+  --color-primary-700: #012e5c;
+  --color-primary-800: #002246;
+  --color-primary-900: #00132d;
+  --color-primary-950: #000b1e;
+
+  --color-secondary: #eaea03;
+  --color-secondary-50: #ffffd2;
+  --color-secondary-100: #ffff94;
+  --color-secondary-200: #fcfc04;
+  --color-secondary-300: #f6f603;
+  --color-secondary-400: #f0f003;
+  --color-secondary-500: #eaea03;
+  --color-secondary-600: #b6b602;
+  --color-secondary-700: #868601;
+  --color-secondary-800: #585800;
+  --color-secondary-900: #2e2e00;
+  --color-secondary-950: #1b1b00;
+
+  --color-green-50: #effdf5;
+  --color-green-100: #d9fbe8;
+  --color-green-200: #b3f5d1;
+  --color-green-300: #75edae;
+  --color-green-400: #00dc82;
+  --color-green-500: #00c16a;
+  --color-green-600: #00a155;
+  --color-green-700: #007f45;
+  --color-green-800: #016538;
+  --color-green-900: #0a5331;
+  --color-green-950: #052e16;
+
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f0f3ff;
+  --color-surface-container: #e7eeff;
+  --color-surface-container-high: #dee8ff;
+}
+
+@base {
+  .icon {
+    color: #4f46e5;
+  }
+}

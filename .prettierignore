@@ -1,0 +1,7 @@
+node_modules
+.nuxt
+.output
+.agents
+.claude
+public
+pnpm-lock.yaml

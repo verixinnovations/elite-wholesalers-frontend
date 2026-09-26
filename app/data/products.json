@@ -1,0 +1,3789 @@
+{
+  "products": [
+    {
+      "id": "prod_1",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_10",
+      "title": "Mock Product 1",
+      "description": "This is a detailed description for mock product 1. It covers all the essential features.",
+      "tags": ["wireless", "eco-friendly"],
+      "price": 12.84,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 12.84,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 12.84,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 6.42,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1466,
+      "featured": true,
+      "show": true,
+      "number_sold": 782,
+      "in_stock": true,
+      "quantity": 16,
+      "archived_at": null,
+      "created_at": "2026-05-16T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-1",
+      "picture": "https://picsum.photos/seed/prod_1/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_1_0/600/600"]
+    },
+    {
+      "id": "prod_2",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_7",
+      "title": "Mock Product 2",
+      "description": "This is a detailed description for mock product 2. It covers all the essential features.",
+      "tags": ["new", "eco-friendly"],
+      "price": 218.17,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 218.17,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 218.17,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 109.08,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 3435,
+      "featured": false,
+      "show": true,
+      "number_sold": 759,
+      "in_stock": true,
+      "quantity": 195,
+      "archived_at": null,
+      "created_at": "2026-07-21T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-2",
+      "picture": "https://picsum.photos/seed/prod_2/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_2_0/600/600"]
+    },
+    {
+      "id": "prod_3",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_20",
+      "title": "Mock Product 3",
+      "description": "This is a detailed description for mock product 3. It covers all the essential features.",
+      "tags": ["wireless", "essential", "sale", "bestseller"],
+      "price": 240.51,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 240.51,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 240.51,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 120.25,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4922,
+      "featured": false,
+      "show": true,
+      "number_sold": 650,
+      "in_stock": true,
+      "quantity": 124,
+      "archived_at": null,
+      "created_at": "2025-10-21T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-3",
+      "picture": "https://picsum.photos/seed/prod_3/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_3_0/600/600",
+        "https://picsum.photos/seed/prod_3_1/600/600",
+        "https://picsum.photos/seed/prod_3_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_4",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_16",
+      "title": "Mock Product 4",
+      "description": "This is a detailed description for mock product 4. It covers all the essential features.",
+      "tags": ["new", "essential", "wireless", "sale"],
+      "price": 10.06,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 10.06,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 10.06,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 5.03,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 2683,
+      "featured": false,
+      "show": true,
+      "number_sold": 553,
+      "in_stock": true,
+      "quantity": 142,
+      "archived_at": null,
+      "created_at": "2026-02-06T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-4",
+      "picture": "https://picsum.photos/seed/prod_4/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_4_0/600/600",
+        "https://picsum.photos/seed/prod_4_1/600/600",
+        "https://picsum.photos/seed/prod_4_2/600/600",
+        "https://picsum.photos/seed/prod_4_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_5",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_5",
+      "title": "Mock Product 5",
+      "description": "This is a detailed description for mock product 5. It covers all the essential features.",
+      "tags": ["premium", "bestseller"],
+      "price": 355.31,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 355.31,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 355.31,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 177.66,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4055,
+      "featured": false,
+      "show": true,
+      "number_sold": 492,
+      "in_stock": true,
+      "quantity": 136,
+      "archived_at": null,
+      "created_at": "2026-03-05T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-5",
+      "picture": "https://picsum.photos/seed/prod_5/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_5_0/600/600",
+        "https://picsum.photos/seed/prod_5_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_6",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_16",
+      "title": "Mock Product 6",
+      "description": "This is a detailed description for mock product 6. It covers all the essential features.",
+      "tags": ["bestseller", "wireless"],
+      "price": 87.8,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 87.8,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 87.8,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 43.9,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 330,
+      "featured": false,
+      "show": true,
+      "number_sold": 594,
+      "in_stock": true,
+      "quantity": 22,
+      "archived_at": null,
+      "created_at": "2026-03-03T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-6",
+      "picture": "https://picsum.photos/seed/prod_6/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_6_0/600/600",
+        "https://picsum.photos/seed/prod_6_1/600/600",
+        "https://picsum.photos/seed/prod_6_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_7",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_4",
+      "title": "Mock Product 7",
+      "description": "This is a detailed description for mock product 7. It covers all the essential features.",
+      "tags": ["smart", "bestseller", "essential"],
+      "price": 78.91,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 78.91,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 78.91,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 39.45,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 2874,
+      "featured": true,
+      "show": true,
+      "number_sold": 383,
+      "in_stock": true,
+      "quantity": 112,
+      "archived_at": null,
+      "created_at": "2026-07-01T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-7",
+      "picture": "https://picsum.photos/seed/prod_7/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_7_0/600/600",
+        "https://picsum.photos/seed/prod_7_1/600/600",
+        "https://picsum.photos/seed/prod_7_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_8",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_11",
+      "title": "Mock Product 8",
+      "description": "This is a detailed description for mock product 8. It covers all the essential features.",
+      "tags": ["smart", "sale", "wireless", "eco-friendly"],
+      "price": 242.28,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 193.82,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 242.28,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 121.14,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4392,
+      "featured": false,
+      "show": true,
+      "number_sold": 781,
+      "in_stock": true,
+      "quantity": 94,
+      "archived_at": null,
+      "created_at": "2026-04-06T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-8",
+      "picture": "https://picsum.photos/seed/prod_8/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_8_0/600/600",
+        "https://picsum.photos/seed/prod_8_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_9",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_1",
+      "title": "Mock Product 9",
+      "description": "This is a detailed description for mock product 9. It covers all the essential features.",
+      "tags": ["new", "bestseller"],
+      "price": 216.06,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 216.06,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 216.06,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 108.03,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 4866,
+      "featured": true,
+      "show": true,
+      "number_sold": 554,
+      "in_stock": true,
+      "quantity": 176,
+      "archived_at": null,
+      "created_at": "2025-09-10T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-9",
+      "picture": "https://picsum.photos/seed/prod_9/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_9_0/600/600"]
+    },
+    {
+      "id": "prod_10",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_4",
+      "title": "Mock Product 10",
+      "description": "This is a detailed description for mock product 10. It covers all the essential features.",
+      "tags": ["new", "eco-friendly", "bestseller"],
+      "price": 313.95,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 313.95,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 313.95,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 156.97,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 47,
+      "featured": true,
+      "show": true,
+      "number_sold": 997,
+      "in_stock": true,
+      "quantity": 36,
+      "archived_at": null,
+      "created_at": "2026-06-12T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-10",
+      "picture": "https://picsum.photos/seed/prod_10/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_10_0/600/600"]
+    },
+    {
+      "id": "prod_11",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_10",
+      "title": "Mock Product 11",
+      "description": "This is a detailed description for mock product 11. It covers all the essential features.",
+      "tags": ["new", "sale", "wireless"],
+      "price": 229.3,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 183.44,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 229.3,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 114.65,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 293,
+      "featured": false,
+      "show": true,
+      "number_sold": 257,
+      "in_stock": true,
+      "quantity": 53,
+      "archived_at": null,
+      "created_at": "2025-09-24T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-11",
+      "picture": "https://picsum.photos/seed/prod_11/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_11_0/600/600",
+        "https://picsum.photos/seed/prod_11_1/600/600",
+        "https://picsum.photos/seed/prod_11_2/600/600",
+        "https://picsum.photos/seed/prod_11_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_12",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_19",
+      "title": "Mock Product 12",
+      "description": "This is a detailed description for mock product 12. It covers all the essential features.",
+      "tags": ["bestseller", "sale", "wireless"],
+      "price": 206.55,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 206.55,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 206.55,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 103.28,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1096,
+      "featured": false,
+      "show": true,
+      "number_sold": 985,
+      "in_stock": true,
+      "quantity": 28,
+      "archived_at": null,
+      "created_at": "2026-06-21T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-12",
+      "picture": "https://picsum.photos/seed/prod_12/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_12_0/600/600",
+        "https://picsum.photos/seed/prod_12_1/600/600",
+        "https://picsum.photos/seed/prod_12_2/600/600",
+        "https://picsum.photos/seed/prod_12_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_13",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_11",
+      "title": "Mock Product 13",
+      "description": "This is a detailed description for mock product 13. It covers all the essential features.",
+      "tags": ["smart", "eco-friendly", "premium", "sale"],
+      "price": 456.96,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 456.96,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 456.96,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 228.48,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 389,
+      "featured": false,
+      "show": true,
+      "number_sold": 367,
+      "in_stock": true,
+      "quantity": 18,
+      "archived_at": null,
+      "created_at": "2026-05-30T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-13",
+      "picture": "https://picsum.photos/seed/prod_13/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_13_0/600/600",
+        "https://picsum.photos/seed/prod_13_1/600/600",
+        "https://picsum.photos/seed/prod_13_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_14",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_5",
+      "title": "Mock Product 14",
+      "description": "This is a detailed description for mock product 14. It covers all the essential features.",
+      "tags": ["sale", "premium"],
+      "price": 260.89,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 208.71,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 260.89,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 130.44,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 415,
+      "featured": false,
+      "show": true,
+      "number_sold": 704,
+      "in_stock": true,
+      "quantity": 71,
+      "archived_at": null,
+      "created_at": "2026-07-04T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-14",
+      "picture": "https://picsum.photos/seed/prod_14/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_14_0/600/600",
+        "https://picsum.photos/seed/prod_14_1/600/600",
+        "https://picsum.photos/seed/prod_14_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_15",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_9",
+      "title": "Mock Product 15",
+      "description": "This is a detailed description for mock product 15. It covers all the essential features.",
+      "tags": ["sale", "premium"],
+      "price": 195.61,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 195.61,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 195.61,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 97.81,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4602,
+      "featured": false,
+      "show": true,
+      "number_sold": 633,
+      "in_stock": true,
+      "quantity": 57,
+      "archived_at": null,
+      "created_at": "2026-08-13T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-15",
+      "picture": "https://picsum.photos/seed/prod_15/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_15_0/600/600"]
+    },
+    {
+      "id": "prod_16",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_18",
+      "title": "Mock Product 16",
+      "description": "This is a detailed description for mock product 16. It covers all the essential features.",
+      "tags": ["sale", "eco-friendly", "essential", "wireless"],
+      "price": 437.15,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 437.15,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 437.15,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 218.57,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1435,
+      "featured": true,
+      "show": true,
+      "number_sold": 791,
+      "in_stock": true,
+      "quantity": 16,
+      "archived_at": null,
+      "created_at": "2026-02-26T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-16",
+      "picture": "https://picsum.photos/seed/prod_16/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_16_0/600/600",
+        "https://picsum.photos/seed/prod_16_1/600/600",
+        "https://picsum.photos/seed/prod_16_2/600/600",
+        "https://picsum.photos/seed/prod_16_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_17",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_1",
+      "title": "Mock Product 17",
+      "description": "This is a detailed description for mock product 17. It covers all the essential features.",
+      "tags": ["sale", "essential"],
+      "price": 311.02,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 311.02,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 311.02,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 155.51,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 1880,
+      "featured": false,
+      "show": true,
+      "number_sold": 170,
+      "in_stock": true,
+      "quantity": 77,
+      "archived_at": null,
+      "created_at": "2026-08-21T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-17",
+      "picture": "https://picsum.photos/seed/prod_17/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_17_0/600/600"]
+    },
+    {
+      "id": "prod_18",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_19",
+      "title": "Mock Product 18",
+      "description": "This is a detailed description for mock product 18. It covers all the essential features.",
+      "tags": ["essential", "new"],
+      "price": 112.72,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 90.18,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 112.72,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 56.36,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4796,
+      "featured": false,
+      "show": true,
+      "number_sold": 966,
+      "in_stock": true,
+      "quantity": 98,
+      "archived_at": null,
+      "created_at": "2026-09-04T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-18",
+      "picture": "https://picsum.photos/seed/prod_18/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_18_0/600/600"]
+    },
+    {
+      "id": "prod_19",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_19",
+      "title": "Mock Product 19",
+      "description": "This is a detailed description for mock product 19. It covers all the essential features.",
+      "tags": ["sale", "premium"],
+      "price": 339.64,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 339.64,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 339.64,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 169.82,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 3907,
+      "featured": false,
+      "show": true,
+      "number_sold": 813,
+      "in_stock": true,
+      "quantity": 187,
+      "archived_at": null,
+      "created_at": "2025-12-14T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-19",
+      "picture": "https://picsum.photos/seed/prod_19/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_19_0/600/600"]
+    },
+    {
+      "id": "prod_20",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_19",
+      "title": "Mock Product 20",
+      "description": "This is a detailed description for mock product 20. It covers all the essential features.",
+      "tags": ["wireless", "essential", "bestseller"],
+      "price": 268.88,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 215.1,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 268.88,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 134.44,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 794,
+      "featured": false,
+      "show": true,
+      "number_sold": 539,
+      "in_stock": true,
+      "quantity": 193,
+      "archived_at": null,
+      "created_at": "2026-06-08T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-20",
+      "picture": "https://picsum.photos/seed/prod_20/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_20_0/600/600"]
+    },
+    {
+      "id": "prod_21",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_1",
+      "title": "Mock Product 21",
+      "description": "This is a detailed description for mock product 21. It covers all the essential features.",
+      "tags": ["sale", "new", "bestseller", "premium"],
+      "price": 123.12,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 123.12,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 123.12,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 61.56,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 2246,
+      "featured": false,
+      "show": true,
+      "number_sold": 57,
+      "in_stock": true,
+      "quantity": 170,
+      "archived_at": null,
+      "created_at": "2025-11-09T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-21",
+      "picture": "https://picsum.photos/seed/prod_21/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_21_0/600/600",
+        "https://picsum.photos/seed/prod_21_1/600/600",
+        "https://picsum.photos/seed/prod_21_2/600/600",
+        "https://picsum.photos/seed/prod_21_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_22",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_10",
+      "title": "Mock Product 22",
+      "description": "This is a detailed description for mock product 22. It covers all the essential features.",
+      "tags": ["smart", "new", "eco-friendly"],
+      "price": 317.88,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 317.88,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 317.88,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 158.94,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 1011,
+      "featured": false,
+      "show": true,
+      "number_sold": 577,
+      "in_stock": false,
+      "quantity": 27,
+      "archived_at": null,
+      "created_at": "2026-05-31T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-22",
+      "picture": "https://picsum.photos/seed/prod_22/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_22_0/600/600"]
+    },
+    {
+      "id": "prod_23",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_17",
+      "title": "Mock Product 23",
+      "description": "This is a detailed description for mock product 23. It covers all the essential features.",
+      "tags": ["bestseller", "new"],
+      "price": 453.33,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 453.33,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 453.33,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 226.66,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 864,
+      "featured": false,
+      "show": true,
+      "number_sold": 251,
+      "in_stock": true,
+      "quantity": 65,
+      "archived_at": null,
+      "created_at": "2026-03-09T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-23",
+      "picture": "https://picsum.photos/seed/prod_23/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_23_0/600/600"]
+    },
+    {
+      "id": "prod_24",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_6",
+      "title": "Mock Product 24",
+      "description": "This is a detailed description for mock product 24. It covers all the essential features.",
+      "tags": ["new", "bestseller"],
+      "price": 63.66,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 63.66,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 63.66,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 31.83,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1177,
+      "featured": false,
+      "show": true,
+      "number_sold": 478,
+      "in_stock": true,
+      "quantity": 77,
+      "archived_at": null,
+      "created_at": "2026-03-15T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-24",
+      "picture": "https://picsum.photos/seed/prod_24/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_24_0/600/600",
+        "https://picsum.photos/seed/prod_24_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_25",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_2",
+      "title": "Mock Product 25",
+      "description": "This is a detailed description for mock product 25. It covers all the essential features.",
+      "tags": ["essential", "wireless", "sale", "bestseller"],
+      "price": 435.69,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 435.69,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 435.69,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 217.84,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 420,
+      "featured": false,
+      "show": true,
+      "number_sold": 703,
+      "in_stock": true,
+      "quantity": 143,
+      "archived_at": null,
+      "created_at": "2025-11-12T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-25",
+      "picture": "https://picsum.photos/seed/prod_25/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_25_0/600/600"]
+    },
+    {
+      "id": "prod_26",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_12",
+      "title": "Mock Product 26",
+      "description": "This is a detailed description for mock product 26. It covers all the essential features.",
+      "tags": ["essential", "new"],
+      "price": 232.1,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 232.1,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 232.1,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 116.05,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 2793,
+      "featured": false,
+      "show": true,
+      "number_sold": 63,
+      "in_stock": true,
+      "quantity": 92,
+      "archived_at": null,
+      "created_at": "2025-10-23T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-26",
+      "picture": "https://picsum.photos/seed/prod_26/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_26_0/600/600",
+        "https://picsum.photos/seed/prod_26_1/600/600",
+        "https://picsum.photos/seed/prod_26_2/600/600",
+        "https://picsum.photos/seed/prod_26_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_27",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_11",
+      "title": "Mock Product 27",
+      "description": "This is a detailed description for mock product 27. It covers all the essential features.",
+      "tags": ["eco-friendly", "essential"],
+      "price": 358.98,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 358.98,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 358.98,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 179.49,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 851,
+      "featured": false,
+      "show": true,
+      "number_sold": 521,
+      "in_stock": true,
+      "quantity": 161,
+      "archived_at": null,
+      "created_at": "2026-01-09T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-27",
+      "picture": "https://picsum.photos/seed/prod_27/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_27_0/600/600",
+        "https://picsum.photos/seed/prod_27_1/600/600",
+        "https://picsum.photos/seed/prod_27_2/600/600",
+        "https://picsum.photos/seed/prod_27_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_28",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_17",
+      "title": "Mock Product 28",
+      "description": "This is a detailed description for mock product 28. It covers all the essential features.",
+      "tags": ["eco-friendly", "smart", "bestseller"],
+      "price": 490.17,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 490.17,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 490.17,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 245.09,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 2898,
+      "featured": false,
+      "show": true,
+      "number_sold": 348,
+      "in_stock": true,
+      "quantity": 153,
+      "archived_at": null,
+      "created_at": "2026-03-19T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-28",
+      "picture": "https://picsum.photos/seed/prod_28/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_28_0/600/600"]
+    },
+    {
+      "id": "prod_29",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_14",
+      "title": "Mock Product 29",
+      "description": "This is a detailed description for mock product 29. It covers all the essential features.",
+      "tags": ["eco-friendly", "premium", "wireless"],
+      "price": 57.74,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 57.74,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 57.74,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 28.87,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4675,
+      "featured": false,
+      "show": true,
+      "number_sold": 299,
+      "in_stock": true,
+      "quantity": 166,
+      "archived_at": null,
+      "created_at": "2026-02-07T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-29",
+      "picture": "https://picsum.photos/seed/prod_29/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_29_0/600/600",
+        "https://picsum.photos/seed/prod_29_1/600/600",
+        "https://picsum.photos/seed/prod_29_2/600/600",
+        "https://picsum.photos/seed/prod_29_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_30",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_19",
+      "title": "Mock Product 30",
+      "description": "This is a detailed description for mock product 30. It covers all the essential features.",
+      "tags": ["eco-friendly", "bestseller", "premium"],
+      "price": 192.49,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 192.49,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 192.49,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 96.25,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1265,
+      "featured": false,
+      "show": true,
+      "number_sold": 273,
+      "in_stock": true,
+      "quantity": 30,
+      "archived_at": null,
+      "created_at": "2026-06-29T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-30",
+      "picture": "https://picsum.photos/seed/prod_30/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_30_0/600/600",
+        "https://picsum.photos/seed/prod_30_1/600/600",
+        "https://picsum.photos/seed/prod_30_2/600/600",
+        "https://picsum.photos/seed/prod_30_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_31",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_18",
+      "title": "Mock Product 31",
+      "description": "This is a detailed description for mock product 31. It covers all the essential features.",
+      "tags": ["sale", "bestseller", "smart", "wireless"],
+      "price": 269.26,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 269.26,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 269.26,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 134.63,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 3746,
+      "featured": false,
+      "show": true,
+      "number_sold": 7,
+      "in_stock": false,
+      "quantity": 145,
+      "archived_at": null,
+      "created_at": "2025-12-07T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-31",
+      "picture": "https://picsum.photos/seed/prod_31/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_31_0/600/600",
+        "https://picsum.photos/seed/prod_31_1/600/600",
+        "https://picsum.photos/seed/prod_31_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_32",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_1",
+      "title": "Mock Product 32",
+      "description": "This is a detailed description for mock product 32. It covers all the essential features.",
+      "tags": ["sale", "smart"],
+      "price": 83.45,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 66.76,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 83.45,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 41.73,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1660,
+      "featured": false,
+      "show": true,
+      "number_sold": 41,
+      "in_stock": true,
+      "quantity": 123,
+      "archived_at": null,
+      "created_at": "2026-04-15T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-32",
+      "picture": "https://picsum.photos/seed/prod_32/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_32_0/600/600"]
+    },
+    {
+      "id": "prod_33",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_15",
+      "title": "Mock Product 33",
+      "description": "This is a detailed description for mock product 33. It covers all the essential features.",
+      "tags": ["wireless", "essential"],
+      "price": 198.35,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 198.35,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 198.35,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 99.17,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1423,
+      "featured": false,
+      "show": true,
+      "number_sold": 366,
+      "in_stock": true,
+      "quantity": 4,
+      "archived_at": null,
+      "created_at": "2026-03-15T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-33",
+      "picture": "https://picsum.photos/seed/prod_33/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_33_0/600/600",
+        "https://picsum.photos/seed/prod_33_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_34",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_19",
+      "title": "Mock Product 34",
+      "description": "This is a detailed description for mock product 34. It covers all the essential features.",
+      "tags": ["new", "wireless", "premium", "eco-friendly"],
+      "price": 404.66,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 404.66,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 404.66,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 202.33,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 3600,
+      "featured": true,
+      "show": true,
+      "number_sold": 833,
+      "in_stock": true,
+      "quantity": 157,
+      "archived_at": null,
+      "created_at": "2025-10-05T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-34",
+      "picture": "https://picsum.photos/seed/prod_34/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_34_0/600/600",
+        "https://picsum.photos/seed/prod_34_1/600/600",
+        "https://picsum.photos/seed/prod_34_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_35",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_4",
+      "title": "Mock Product 35",
+      "description": "This is a detailed description for mock product 35. It covers all the essential features.",
+      "tags": ["sale", "smart"],
+      "price": 309.75,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 309.75,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 309.75,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 154.88,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 2436,
+      "featured": false,
+      "show": true,
+      "number_sold": 321,
+      "in_stock": true,
+      "quantity": 101,
+      "archived_at": null,
+      "created_at": "2025-12-03T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-35",
+      "picture": "https://picsum.photos/seed/prod_35/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_35_0/600/600"]
+    },
+    {
+      "id": "prod_36",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_15",
+      "title": "Mock Product 36",
+      "description": "This is a detailed description for mock product 36. It covers all the essential features.",
+      "tags": ["smart", "essential", "new", "premium"],
+      "price": 334.05,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 267.24,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 334.05,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 167.03,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 124,
+      "featured": false,
+      "show": true,
+      "number_sold": 872,
+      "in_stock": true,
+      "quantity": 34,
+      "archived_at": null,
+      "created_at": "2025-12-17T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-36",
+      "picture": "https://picsum.photos/seed/prod_36/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_36_0/600/600",
+        "https://picsum.photos/seed/prod_36_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_37",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_3",
+      "title": "Mock Product 37",
+      "description": "This is a detailed description for mock product 37. It covers all the essential features.",
+      "tags": ["eco-friendly", "new", "premium", "wireless"],
+      "price": 381.3,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 381.3,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 381.3,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 190.65,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 584,
+      "featured": false,
+      "show": true,
+      "number_sold": 875,
+      "in_stock": true,
+      "quantity": 8,
+      "archived_at": null,
+      "created_at": "2026-04-14T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-37",
+      "picture": "https://picsum.photos/seed/prod_37/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_37_0/600/600",
+        "https://picsum.photos/seed/prod_37_1/600/600",
+        "https://picsum.photos/seed/prod_37_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_38",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_15",
+      "title": "Mock Product 38",
+      "description": "This is a detailed description for mock product 38. It covers all the essential features.",
+      "tags": ["sale", "wireless", "smart", "premium"],
+      "price": 414.38,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 414.38,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 414.38,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 207.19,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1086,
+      "featured": false,
+      "show": true,
+      "number_sold": 480,
+      "in_stock": true,
+      "quantity": 166,
+      "archived_at": null,
+      "created_at": "2026-01-26T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-38",
+      "picture": "https://picsum.photos/seed/prod_38/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_38_0/600/600",
+        "https://picsum.photos/seed/prod_38_1/600/600",
+        "https://picsum.photos/seed/prod_38_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_39",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_2",
+      "title": "Mock Product 39",
+      "description": "This is a detailed description for mock product 39. It covers all the essential features.",
+      "tags": ["bestseller", "sale", "essential"],
+      "price": 24.73,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 24.73,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 24.73,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 12.37,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 858,
+      "featured": true,
+      "show": true,
+      "number_sold": 211,
+      "in_stock": true,
+      "quantity": 181,
+      "archived_at": null,
+      "created_at": "2025-09-09T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-39",
+      "picture": "https://picsum.photos/seed/prod_39/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_39_0/600/600",
+        "https://picsum.photos/seed/prod_39_1/600/600",
+        "https://picsum.photos/seed/prod_39_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_40",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_16",
+      "title": "Mock Product 40",
+      "description": "This is a detailed description for mock product 40. It covers all the essential features.",
+      "tags": ["smart", "premium", "sale", "new"],
+      "price": 53.53,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 53.53,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 53.53,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 26.77,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 2959,
+      "featured": false,
+      "show": true,
+      "number_sold": 212,
+      "in_stock": true,
+      "quantity": 86,
+      "archived_at": null,
+      "created_at": "2026-02-12T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-40",
+      "picture": "https://picsum.photos/seed/prod_40/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_40_0/600/600",
+        "https://picsum.photos/seed/prod_40_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_41",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_12",
+      "title": "Mock Product 41",
+      "description": "This is a detailed description for mock product 41. It covers all the essential features.",
+      "tags": ["wireless", "eco-friendly", "bestseller", "premium"],
+      "price": 21.93,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 21.93,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 21.93,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 10.96,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 4808,
+      "featured": false,
+      "show": true,
+      "number_sold": 769,
+      "in_stock": true,
+      "quantity": 75,
+      "archived_at": null,
+      "created_at": "2026-06-09T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-41",
+      "picture": "https://picsum.photos/seed/prod_41/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_41_0/600/600",
+        "https://picsum.photos/seed/prod_41_1/600/600",
+        "https://picsum.photos/seed/prod_41_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_42",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_17",
+      "title": "Mock Product 42",
+      "description": "This is a detailed description for mock product 42. It covers all the essential features.",
+      "tags": ["essential", "new", "smart", "sale"],
+      "price": 244.06,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 244.06,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 244.06,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 122.03,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 3085,
+      "featured": true,
+      "show": true,
+      "number_sold": 250,
+      "in_stock": true,
+      "quantity": 142,
+      "archived_at": null,
+      "created_at": "2026-05-18T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-42",
+      "picture": "https://picsum.photos/seed/prod_42/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_42_0/600/600"]
+    },
+    {
+      "id": "prod_43",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_9",
+      "title": "Mock Product 43",
+      "description": "This is a detailed description for mock product 43. It covers all the essential features.",
+      "tags": ["essential", "smart", "premium", "wireless"],
+      "price": 382.28,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 382.28,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 382.28,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 191.14,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 2465,
+      "featured": false,
+      "show": true,
+      "number_sold": 491,
+      "in_stock": false,
+      "quantity": 128,
+      "archived_at": null,
+      "created_at": "2026-09-01T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-43",
+      "picture": "https://picsum.photos/seed/prod_43/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_43_0/600/600",
+        "https://picsum.photos/seed/prod_43_1/600/600",
+        "https://picsum.photos/seed/prod_43_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_44",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_13",
+      "title": "Mock Product 44",
+      "description": "This is a detailed description for mock product 44. It covers all the essential features.",
+      "tags": ["sale", "premium", "bestseller"],
+      "price": 321.28,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 321.28,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 321.28,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 160.64,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1513,
+      "featured": true,
+      "show": true,
+      "number_sold": 640,
+      "in_stock": true,
+      "quantity": 45,
+      "archived_at": null,
+      "created_at": "2026-02-25T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-44",
+      "picture": "https://picsum.photos/seed/prod_44/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_44_0/600/600",
+        "https://picsum.photos/seed/prod_44_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_45",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_12",
+      "title": "Mock Product 45",
+      "description": "This is a detailed description for mock product 45. It covers all the essential features.",
+      "tags": ["eco-friendly", "essential", "bestseller"],
+      "price": 292.18,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 292.18,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 292.18,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 146.09,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 14,
+      "featured": false,
+      "show": true,
+      "number_sold": 790,
+      "in_stock": true,
+      "quantity": 32,
+      "archived_at": null,
+      "created_at": "2026-08-20T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-45",
+      "picture": "https://picsum.photos/seed/prod_45/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_45_0/600/600",
+        "https://picsum.photos/seed/prod_45_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_46",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_6",
+      "title": "Mock Product 46",
+      "description": "This is a detailed description for mock product 46. It covers all the essential features.",
+      "tags": ["eco-friendly", "sale", "premium"],
+      "price": 138.0,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 110.4,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 138.0,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 69.0,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 2530,
+      "featured": false,
+      "show": true,
+      "number_sold": 593,
+      "in_stock": true,
+      "quantity": 97,
+      "archived_at": null,
+      "created_at": "2025-11-03T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-46",
+      "picture": "https://picsum.photos/seed/prod_46/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_46_0/600/600",
+        "https://picsum.photos/seed/prod_46_1/600/600",
+        "https://picsum.photos/seed/prod_46_2/600/600",
+        "https://picsum.photos/seed/prod_46_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_47",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_5",
+      "title": "Mock Product 47",
+      "description": "This is a detailed description for mock product 47. It covers all the essential features.",
+      "tags": ["new", "smart"],
+      "price": 91.9,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 73.52,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 91.9,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 45.95,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 564,
+      "featured": false,
+      "show": true,
+      "number_sold": 754,
+      "in_stock": true,
+      "quantity": 55,
+      "archived_at": null,
+      "created_at": "2026-03-16T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-47",
+      "picture": "https://picsum.photos/seed/prod_47/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_47_0/600/600",
+        "https://picsum.photos/seed/prod_47_1/600/600",
+        "https://picsum.photos/seed/prod_47_2/600/600",
+        "https://picsum.photos/seed/prod_47_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_48",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_12",
+      "title": "Mock Product 48",
+      "description": "This is a detailed description for mock product 48. It covers all the essential features.",
+      "tags": ["wireless", "essential", "eco-friendly"],
+      "price": 64.59,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 64.59,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 64.59,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 32.3,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 242,
+      "featured": false,
+      "show": true,
+      "number_sold": 766,
+      "in_stock": true,
+      "quantity": 143,
+      "archived_at": null,
+      "created_at": "2026-07-22T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-48",
+      "picture": "https://picsum.photos/seed/prod_48/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_48_0/600/600"]
+    },
+    {
+      "id": "prod_49",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_17",
+      "title": "Mock Product 49",
+      "description": "This is a detailed description for mock product 49. It covers all the essential features.",
+      "tags": ["smart", "sale", "premium"],
+      "price": 471.2,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 471.2,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 471.2,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 235.6,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 261,
+      "featured": true,
+      "show": true,
+      "number_sold": 463,
+      "in_stock": true,
+      "quantity": 157,
+      "archived_at": null,
+      "created_at": "2026-05-23T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-49",
+      "picture": "https://picsum.photos/seed/prod_49/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_49_0/600/600",
+        "https://picsum.photos/seed/prod_49_1/600/600",
+        "https://picsum.photos/seed/prod_49_2/600/600",
+        "https://picsum.photos/seed/prod_49_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_50",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_7",
+      "title": "Mock Product 50",
+      "description": "This is a detailed description for mock product 50. It covers all the essential features.",
+      "tags": ["premium", "wireless", "smart"],
+      "price": 259.16,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 207.33,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 259.16,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 129.58,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 1696,
+      "featured": false,
+      "show": true,
+      "number_sold": 382,
+      "in_stock": true,
+      "quantity": 103,
+      "archived_at": null,
+      "created_at": "2026-08-07T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-50",
+      "picture": "https://picsum.photos/seed/prod_50/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_50_0/600/600"]
+    },
+    {
+      "id": "prod_51",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_17",
+      "title": "Mock Product 51",
+      "description": "This is a detailed description for mock product 51. It covers all the essential features.",
+      "tags": ["new", "premium", "essential"],
+      "price": 21.95,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 17.56,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 21.95,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 10.97,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 3794,
+      "featured": false,
+      "show": true,
+      "number_sold": 491,
+      "in_stock": true,
+      "quantity": 74,
+      "archived_at": null,
+      "created_at": "2026-01-26T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-51",
+      "picture": "https://picsum.photos/seed/prod_51/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_51_0/600/600"]
+    },
+    {
+      "id": "prod_52",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_7",
+      "title": "Mock Product 52",
+      "description": "This is a detailed description for mock product 52. It covers all the essential features.",
+      "tags": ["new", "smart"],
+      "price": 228.36,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 182.69,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 228.36,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 114.18,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 2920,
+      "featured": false,
+      "show": true,
+      "number_sold": 790,
+      "in_stock": true,
+      "quantity": 44,
+      "archived_at": null,
+      "created_at": "2026-05-29T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-52",
+      "picture": "https://picsum.photos/seed/prod_52/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_52_0/600/600"]
+    },
+    {
+      "id": "prod_53",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_5",
+      "title": "Mock Product 53",
+      "description": "This is a detailed description for mock product 53. It covers all the essential features.",
+      "tags": ["premium", "new"],
+      "price": 358.3,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 358.3,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 358.3,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 179.15,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4097,
+      "featured": false,
+      "show": true,
+      "number_sold": 84,
+      "in_stock": true,
+      "quantity": 87,
+      "archived_at": null,
+      "created_at": "2025-10-14T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-53",
+      "picture": "https://picsum.photos/seed/prod_53/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_53_0/600/600",
+        "https://picsum.photos/seed/prod_53_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_54",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_11",
+      "title": "Mock Product 54",
+      "description": "This is a detailed description for mock product 54. It covers all the essential features.",
+      "tags": ["bestseller", "essential"],
+      "price": 347.48,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 347.48,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 347.48,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 173.74,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 1321,
+      "featured": false,
+      "show": true,
+      "number_sold": 128,
+      "in_stock": true,
+      "quantity": 2,
+      "archived_at": null,
+      "created_at": "2025-09-14T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-54",
+      "picture": "https://picsum.photos/seed/prod_54/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_54_0/600/600",
+        "https://picsum.photos/seed/prod_54_1/600/600",
+        "https://picsum.photos/seed/prod_54_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_55",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_2",
+      "title": "Mock Product 55",
+      "description": "This is a detailed description for mock product 55. It covers all the essential features.",
+      "tags": ["eco-friendly", "essential", "smart"],
+      "price": 467.13,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 373.7,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 467.13,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 233.56,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 644,
+      "featured": true,
+      "show": true,
+      "number_sold": 538,
+      "in_stock": true,
+      "quantity": 58,
+      "archived_at": null,
+      "created_at": "2025-11-18T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-55",
+      "picture": "https://picsum.photos/seed/prod_55/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_55_0/600/600",
+        "https://picsum.photos/seed/prod_55_1/600/600",
+        "https://picsum.photos/seed/prod_55_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_56",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_4",
+      "title": "Mock Product 56",
+      "description": "This is a detailed description for mock product 56. It covers all the essential features.",
+      "tags": ["wireless", "premium", "smart", "bestseller"],
+      "price": 305.99,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 244.79,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 305.99,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 153.0,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1754,
+      "featured": false,
+      "show": true,
+      "number_sold": 10,
+      "in_stock": true,
+      "quantity": 182,
+      "archived_at": null,
+      "created_at": "2025-10-29T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-56",
+      "picture": "https://picsum.photos/seed/prod_56/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_56_0/600/600",
+        "https://picsum.photos/seed/prod_56_1/600/600",
+        "https://picsum.photos/seed/prod_56_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_57",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_7",
+      "title": "Mock Product 57",
+      "description": "This is a detailed description for mock product 57. It covers all the essential features.",
+      "tags": ["new", "eco-friendly", "essential", "bestseller"],
+      "price": 428.14,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 342.51,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 428.14,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 214.07,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1936,
+      "featured": true,
+      "show": true,
+      "number_sold": 181,
+      "in_stock": false,
+      "quantity": 180,
+      "archived_at": null,
+      "created_at": "2026-08-09T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-57",
+      "picture": "https://picsum.photos/seed/prod_57/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_57_0/600/600"]
+    },
+    {
+      "id": "prod_58",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_17",
+      "title": "Mock Product 58",
+      "description": "This is a detailed description for mock product 58. It covers all the essential features.",
+      "tags": ["eco-friendly", "essential", "smart"],
+      "price": 30.57,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 30.57,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 30.57,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 15.29,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4362,
+      "featured": false,
+      "show": true,
+      "number_sold": 448,
+      "in_stock": true,
+      "quantity": 97,
+      "archived_at": null,
+      "created_at": "2026-01-14T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-58",
+      "picture": "https://picsum.photos/seed/prod_58/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_58_0/600/600",
+        "https://picsum.photos/seed/prod_58_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_59",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_12",
+      "title": "Mock Product 59",
+      "description": "This is a detailed description for mock product 59. It covers all the essential features.",
+      "tags": ["wireless", "new"],
+      "price": 208.89,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 208.89,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 208.89,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 104.44,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 4852,
+      "featured": true,
+      "show": true,
+      "number_sold": 39,
+      "in_stock": true,
+      "quantity": 18,
+      "archived_at": null,
+      "created_at": "2026-08-27T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-59",
+      "picture": "https://picsum.photos/seed/prod_59/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_59_0/600/600"]
+    },
+    {
+      "id": "prod_60",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_2",
+      "title": "Mock Product 60",
+      "description": "This is a detailed description for mock product 60. It covers all the essential features.",
+      "tags": ["eco-friendly", "bestseller", "new", "premium"],
+      "price": 132.83,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 132.83,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 132.83,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 66.42,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4663,
+      "featured": false,
+      "show": true,
+      "number_sold": 223,
+      "in_stock": true,
+      "quantity": 43,
+      "archived_at": null,
+      "created_at": "2025-09-25T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-60",
+      "picture": "https://picsum.photos/seed/prod_60/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_60_0/600/600",
+        "https://picsum.photos/seed/prod_60_1/600/600",
+        "https://picsum.photos/seed/prod_60_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_61",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_12",
+      "title": "Mock Product 61",
+      "description": "This is a detailed description for mock product 61. It covers all the essential features.",
+      "tags": ["new", "sale", "smart"],
+      "price": 441.11,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 441.11,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 441.11,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 220.56,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 451,
+      "featured": false,
+      "show": true,
+      "number_sold": 336,
+      "in_stock": true,
+      "quantity": 19,
+      "archived_at": null,
+      "created_at": "2025-12-24T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-61",
+      "picture": "https://picsum.photos/seed/prod_61/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_61_0/600/600",
+        "https://picsum.photos/seed/prod_61_1/600/600",
+        "https://picsum.photos/seed/prod_61_2/600/600",
+        "https://picsum.photos/seed/prod_61_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_62",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_20",
+      "title": "Mock Product 62",
+      "description": "This is a detailed description for mock product 62. It covers all the essential features.",
+      "tags": ["premium", "wireless", "sale"],
+      "price": 395.11,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 395.11,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 395.11,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 197.56,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4256,
+      "featured": false,
+      "show": true,
+      "number_sold": 78,
+      "in_stock": true,
+      "quantity": 92,
+      "archived_at": null,
+      "created_at": "2025-09-14T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-62",
+      "picture": "https://picsum.photos/seed/prod_62/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_62_0/600/600",
+        "https://picsum.photos/seed/prod_62_1/600/600",
+        "https://picsum.photos/seed/prod_62_2/600/600",
+        "https://picsum.photos/seed/prod_62_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_63",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_20",
+      "title": "Mock Product 63",
+      "description": "This is a detailed description for mock product 63. It covers all the essential features.",
+      "tags": ["smart", "bestseller", "eco-friendly"],
+      "price": 249.62,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 249.62,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 249.62,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 124.81,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 2806,
+      "featured": false,
+      "show": true,
+      "number_sold": 181,
+      "in_stock": true,
+      "quantity": 129,
+      "archived_at": null,
+      "created_at": "2025-12-13T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-63",
+      "picture": "https://picsum.photos/seed/prod_63/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_63_0/600/600"]
+    },
+    {
+      "id": "prod_64",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_15",
+      "title": "Mock Product 64",
+      "description": "This is a detailed description for mock product 64. It covers all the essential features.",
+      "tags": ["premium", "sale"],
+      "price": 151.94,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 151.94,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 151.94,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 75.97,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4774,
+      "featured": false,
+      "show": true,
+      "number_sold": 328,
+      "in_stock": true,
+      "quantity": 83,
+      "archived_at": null,
+      "created_at": "2026-05-18T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-64",
+      "picture": "https://picsum.photos/seed/prod_64/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_64_0/600/600"]
+    },
+    {
+      "id": "prod_65",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_14",
+      "title": "Mock Product 65",
+      "description": "This is a detailed description for mock product 65. It covers all the essential features.",
+      "tags": ["eco-friendly", "wireless"],
+      "price": 360.07,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 288.06,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 360.07,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 180.03,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 985,
+      "featured": false,
+      "show": true,
+      "number_sold": 852,
+      "in_stock": true,
+      "quantity": 187,
+      "archived_at": null,
+      "created_at": "2026-03-29T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-65",
+      "picture": "https://picsum.photos/seed/prod_65/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_65_0/600/600",
+        "https://picsum.photos/seed/prod_65_1/600/600",
+        "https://picsum.photos/seed/prod_65_2/600/600",
+        "https://picsum.photos/seed/prod_65_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_66",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_5",
+      "title": "Mock Product 66",
+      "description": "This is a detailed description for mock product 66. It covers all the essential features.",
+      "tags": ["premium", "essential", "sale", "new"],
+      "price": 362.6,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 362.6,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 362.6,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 181.3,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4553,
+      "featured": false,
+      "show": true,
+      "number_sold": 635,
+      "in_stock": true,
+      "quantity": 85,
+      "archived_at": null,
+      "created_at": "2026-02-26T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-66",
+      "picture": "https://picsum.photos/seed/prod_66/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_66_0/600/600",
+        "https://picsum.photos/seed/prod_66_1/600/600",
+        "https://picsum.photos/seed/prod_66_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_67",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_11",
+      "title": "Mock Product 67",
+      "description": "This is a detailed description for mock product 67. It covers all the essential features.",
+      "tags": ["new", "eco-friendly"],
+      "price": 365.81,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 365.81,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 365.81,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 182.91,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4522,
+      "featured": false,
+      "show": true,
+      "number_sold": 377,
+      "in_stock": true,
+      "quantity": 35,
+      "archived_at": null,
+      "created_at": "2026-02-28T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-67",
+      "picture": "https://picsum.photos/seed/prod_67/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_67_0/600/600"]
+    },
+    {
+      "id": "prod_68",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_4",
+      "title": "Mock Product 68",
+      "description": "This is a detailed description for mock product 68. It covers all the essential features.",
+      "tags": ["new", "premium"],
+      "price": 426.35,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 341.08,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 426.35,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 213.18,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 1883,
+      "featured": false,
+      "show": true,
+      "number_sold": 311,
+      "in_stock": true,
+      "quantity": 27,
+      "archived_at": null,
+      "created_at": "2026-09-05T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-68",
+      "picture": "https://picsum.photos/seed/prod_68/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_68_0/600/600",
+        "https://picsum.photos/seed/prod_68_1/600/600",
+        "https://picsum.photos/seed/prod_68_2/600/600",
+        "https://picsum.photos/seed/prod_68_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_69",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_19",
+      "title": "Mock Product 69",
+      "description": "This is a detailed description for mock product 69. It covers all the essential features.",
+      "tags": ["eco-friendly", "smart"],
+      "price": 480.41,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 480.41,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 480.41,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 240.21,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 1378,
+      "featured": true,
+      "show": true,
+      "number_sold": 649,
+      "in_stock": false,
+      "quantity": 101,
+      "archived_at": null,
+      "created_at": "2026-03-27T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-69",
+      "picture": "https://picsum.photos/seed/prod_69/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_69_0/600/600"]
+    },
+    {
+      "id": "prod_70",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_10",
+      "title": "Mock Product 70",
+      "description": "This is a detailed description for mock product 70. It covers all the essential features.",
+      "tags": ["sale", "essential"],
+      "price": 31.0,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 31.0,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 31.0,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 15.5,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 920,
+      "featured": false,
+      "show": true,
+      "number_sold": 178,
+      "in_stock": true,
+      "quantity": 12,
+      "archived_at": null,
+      "created_at": "2025-10-30T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-70",
+      "picture": "https://picsum.photos/seed/prod_70/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_70_0/600/600",
+        "https://picsum.photos/seed/prod_70_1/600/600",
+        "https://picsum.photos/seed/prod_70_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_71",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_8",
+      "title": "Mock Product 71",
+      "description": "This is a detailed description for mock product 71. It covers all the essential features.",
+      "tags": ["smart", "sale", "bestseller"],
+      "price": 298.04,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 298.04,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 298.04,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 149.02,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4190,
+      "featured": false,
+      "show": true,
+      "number_sold": 170,
+      "in_stock": true,
+      "quantity": 95,
+      "archived_at": null,
+      "created_at": "2026-07-08T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-71",
+      "picture": "https://picsum.photos/seed/prod_71/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_71_0/600/600",
+        "https://picsum.photos/seed/prod_71_1/600/600",
+        "https://picsum.photos/seed/prod_71_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_72",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_19",
+      "title": "Mock Product 72",
+      "description": "This is a detailed description for mock product 72. It covers all the essential features.",
+      "tags": ["new", "wireless", "smart"],
+      "price": 390.65,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 312.52,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 390.65,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 195.32,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 1901,
+      "featured": false,
+      "show": true,
+      "number_sold": 306,
+      "in_stock": true,
+      "quantity": 4,
+      "archived_at": null,
+      "created_at": "2026-04-17T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-72",
+      "picture": "https://picsum.photos/seed/prod_72/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_72_0/600/600",
+        "https://picsum.photos/seed/prod_72_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_73",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_14",
+      "title": "Mock Product 73",
+      "description": "This is a detailed description for mock product 73. It covers all the essential features.",
+      "tags": ["wireless", "bestseller", "eco-friendly", "smart"],
+      "price": 69.25,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 69.25,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 69.25,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 34.62,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 2435,
+      "featured": false,
+      "show": true,
+      "number_sold": 288,
+      "in_stock": true,
+      "quantity": 184,
+      "archived_at": null,
+      "created_at": "2025-09-15T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-73",
+      "picture": "https://picsum.photos/seed/prod_73/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_73_0/600/600",
+        "https://picsum.photos/seed/prod_73_1/600/600",
+        "https://picsum.photos/seed/prod_73_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_74",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_2",
+      "title": "Mock Product 74",
+      "description": "This is a detailed description for mock product 74. It covers all the essential features.",
+      "tags": ["premium", "wireless"],
+      "price": 143.38,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 114.7,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 143.38,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 71.69,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 3551,
+      "featured": false,
+      "show": true,
+      "number_sold": 538,
+      "in_stock": true,
+      "quantity": 176,
+      "archived_at": null,
+      "created_at": "2026-03-31T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-74",
+      "picture": "https://picsum.photos/seed/prod_74/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_74_0/600/600",
+        "https://picsum.photos/seed/prod_74_1/600/600",
+        "https://picsum.photos/seed/prod_74_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_75",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_3",
+      "title": "Mock Product 75",
+      "description": "This is a detailed description for mock product 75. It covers all the essential features.",
+      "tags": ["wireless", "premium", "sale", "smart"],
+      "price": 125.26,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 100.21,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 125.26,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 62.63,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 4069,
+      "featured": true,
+      "show": true,
+      "number_sold": 604,
+      "in_stock": true,
+      "quantity": 64,
+      "archived_at": null,
+      "created_at": "2025-12-05T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-75",
+      "picture": "https://picsum.photos/seed/prod_75/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_75_0/600/600",
+        "https://picsum.photos/seed/prod_75_1/600/600",
+        "https://picsum.photos/seed/prod_75_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_76",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_6",
+      "title": "Mock Product 76",
+      "description": "This is a detailed description for mock product 76. It covers all the essential features.",
+      "tags": ["essential", "wireless", "smart", "new"],
+      "price": 64.7,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 51.76,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 64.7,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 32.35,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4633,
+      "featured": false,
+      "show": true,
+      "number_sold": 422,
+      "in_stock": true,
+      "quantity": 88,
+      "archived_at": null,
+      "created_at": "2026-01-17T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-76",
+      "picture": "https://picsum.photos/seed/prod_76/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_76_0/600/600",
+        "https://picsum.photos/seed/prod_76_1/600/600",
+        "https://picsum.photos/seed/prod_76_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_77",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_10",
+      "title": "Mock Product 77",
+      "description": "This is a detailed description for mock product 77. It covers all the essential features.",
+      "tags": ["eco-friendly", "smart", "wireless"],
+      "price": 96.01,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 96.01,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 96.01,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 48.01,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 3091,
+      "featured": false,
+      "show": true,
+      "number_sold": 781,
+      "in_stock": true,
+      "quantity": 104,
+      "archived_at": null,
+      "created_at": "2026-07-15T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-77",
+      "picture": "https://picsum.photos/seed/prod_77/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_77_0/600/600",
+        "https://picsum.photos/seed/prod_77_1/600/600",
+        "https://picsum.photos/seed/prod_77_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_78",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_17",
+      "title": "Mock Product 78",
+      "description": "This is a detailed description for mock product 78. It covers all the essential features.",
+      "tags": ["essential", "smart", "wireless", "bestseller"],
+      "price": 409.67,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 409.67,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 409.67,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 204.84,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 419,
+      "featured": false,
+      "show": true,
+      "number_sold": 854,
+      "in_stock": true,
+      "quantity": 45,
+      "archived_at": null,
+      "created_at": "2026-02-19T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-78",
+      "picture": "https://picsum.photos/seed/prod_78/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_78_0/600/600",
+        "https://picsum.photos/seed/prod_78_1/600/600",
+        "https://picsum.photos/seed/prod_78_2/600/600",
+        "https://picsum.photos/seed/prod_78_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_79",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_11",
+      "title": "Mock Product 79",
+      "description": "This is a detailed description for mock product 79. It covers all the essential features.",
+      "tags": ["essential", "wireless", "eco-friendly"],
+      "price": 276.93,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 276.93,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 276.93,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 138.47,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 175,
+      "featured": false,
+      "show": true,
+      "number_sold": 685,
+      "in_stock": true,
+      "quantity": 65,
+      "archived_at": null,
+      "created_at": "2026-01-12T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-79",
+      "picture": "https://picsum.photos/seed/prod_79/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_79_0/600/600",
+        "https://picsum.photos/seed/prod_79_1/600/600",
+        "https://picsum.photos/seed/prod_79_2/600/600",
+        "https://picsum.photos/seed/prod_79_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_80",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_20",
+      "title": "Mock Product 80",
+      "description": "This is a detailed description for mock product 80. It covers all the essential features.",
+      "tags": ["wireless", "premium", "essential"],
+      "price": 100.01,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 100.01,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 100.01,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 50.01,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1986,
+      "featured": false,
+      "show": true,
+      "number_sold": 114,
+      "in_stock": true,
+      "quantity": 182,
+      "archived_at": null,
+      "created_at": "2026-01-05T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-80",
+      "picture": "https://picsum.photos/seed/prod_80/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_80_0/600/600",
+        "https://picsum.photos/seed/prod_80_1/600/600",
+        "https://picsum.photos/seed/prod_80_2/600/600",
+        "https://picsum.photos/seed/prod_80_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_81",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_14",
+      "title": "Mock Product 81",
+      "description": "This is a detailed description for mock product 81. It covers all the essential features.",
+      "tags": ["bestseller", "smart", "wireless", "premium"],
+      "price": 462.75,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 462.75,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 462.75,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 231.38,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 1520,
+      "featured": false,
+      "show": true,
+      "number_sold": 569,
+      "in_stock": true,
+      "quantity": 104,
+      "archived_at": null,
+      "created_at": "2026-09-05T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-81",
+      "picture": "https://picsum.photos/seed/prod_81/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_81_0/600/600",
+        "https://picsum.photos/seed/prod_81_1/600/600",
+        "https://picsum.photos/seed/prod_81_2/600/600",
+        "https://picsum.photos/seed/prod_81_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_82",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_6",
+      "title": "Mock Product 82",
+      "description": "This is a detailed description for mock product 82. It covers all the essential features.",
+      "tags": ["eco-friendly", "smart"],
+      "price": 126.82,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 101.46,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 126.82,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 63.41,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 1210,
+      "featured": false,
+      "show": true,
+      "number_sold": 876,
+      "in_stock": true,
+      "quantity": 122,
+      "archived_at": null,
+      "created_at": "2025-10-23T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-82",
+      "picture": "https://picsum.photos/seed/prod_82/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_82_0/600/600",
+        "https://picsum.photos/seed/prod_82_1/600/600",
+        "https://picsum.photos/seed/prod_82_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_83",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_1",
+      "title": "Mock Product 83",
+      "description": "This is a detailed description for mock product 83. It covers all the essential features.",
+      "tags": ["smart", "essential", "bestseller"],
+      "price": 224.4,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 179.52,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 224.4,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 112.2,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4126,
+      "featured": false,
+      "show": true,
+      "number_sold": 29,
+      "in_stock": true,
+      "quantity": 59,
+      "archived_at": null,
+      "created_at": "2026-03-06T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-83",
+      "picture": "https://picsum.photos/seed/prod_83/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_83_0/600/600"]
+    },
+    {
+      "id": "prod_84",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_12",
+      "title": "Mock Product 84",
+      "description": "This is a detailed description for mock product 84. It covers all the essential features.",
+      "tags": ["premium", "smart", "essential", "sale"],
+      "price": 295.48,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 236.38,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 295.48,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 147.74,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 4643,
+      "featured": false,
+      "show": true,
+      "number_sold": 981,
+      "in_stock": true,
+      "quantity": 191,
+      "archived_at": null,
+      "created_at": "2025-12-05T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-84",
+      "picture": "https://picsum.photos/seed/prod_84/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_84_0/600/600",
+        "https://picsum.photos/seed/prod_84_1/600/600",
+        "https://picsum.photos/seed/prod_84_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_85",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_1",
+      "title": "Mock Product 85",
+      "description": "This is a detailed description for mock product 85. It covers all the essential features.",
+      "tags": ["new", "premium", "wireless", "sale"],
+      "price": 25.51,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 25.51,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 25.51,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 12.76,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1947,
+      "featured": false,
+      "show": true,
+      "number_sold": 888,
+      "in_stock": true,
+      "quantity": 55,
+      "archived_at": null,
+      "created_at": "2025-12-05T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-85",
+      "picture": "https://picsum.photos/seed/prod_85/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_85_0/600/600",
+        "https://picsum.photos/seed/prod_85_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_86",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_2",
+      "title": "Mock Product 86",
+      "description": "This is a detailed description for mock product 86. It covers all the essential features.",
+      "tags": ["eco-friendly", "essential"],
+      "price": 478.87,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 478.87,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 478.87,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 239.44,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4234,
+      "featured": false,
+      "show": true,
+      "number_sold": 119,
+      "in_stock": true,
+      "quantity": 155,
+      "archived_at": null,
+      "created_at": "2025-09-19T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-86",
+      "picture": "https://picsum.photos/seed/prod_86/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_86_0/600/600"]
+    },
+    {
+      "id": "prod_87",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_13",
+      "title": "Mock Product 87",
+      "description": "This is a detailed description for mock product 87. It covers all the essential features.",
+      "tags": ["sale", "eco-friendly", "essential", "smart"],
+      "price": 345.48,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 345.48,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 345.48,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 172.74,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4607,
+      "featured": false,
+      "show": true,
+      "number_sold": 727,
+      "in_stock": true,
+      "quantity": 185,
+      "archived_at": null,
+      "created_at": "2026-01-23T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-87",
+      "picture": "https://picsum.photos/seed/prod_87/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_87_0/600/600",
+        "https://picsum.photos/seed/prod_87_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_88",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_13",
+      "title": "Mock Product 88",
+      "description": "This is a detailed description for mock product 88. It covers all the essential features.",
+      "tags": ["sale", "premium"],
+      "price": 270.49,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 270.49,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 270.49,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 135.25,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 2877,
+      "featured": false,
+      "show": true,
+      "number_sold": 666,
+      "in_stock": true,
+      "quantity": 118,
+      "archived_at": null,
+      "created_at": "2026-08-22T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-88",
+      "picture": "https://picsum.photos/seed/prod_88/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_88_0/600/600",
+        "https://picsum.photos/seed/prod_88_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_89",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_8",
+      "title": "Mock Product 89",
+      "description": "This is a detailed description for mock product 89. It covers all the essential features.",
+      "tags": ["sale", "new", "premium", "eco-friendly"],
+      "price": 286.5,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 286.5,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 286.5,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 143.25,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 1002,
+      "featured": false,
+      "show": true,
+      "number_sold": 281,
+      "in_stock": true,
+      "quantity": 111,
+      "archived_at": null,
+      "created_at": "2026-06-19T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-89",
+      "picture": "https://picsum.photos/seed/prod_89/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_89_0/600/600",
+        "https://picsum.photos/seed/prod_89_1/600/600",
+        "https://picsum.photos/seed/prod_89_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_90",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_6",
+      "title": "Mock Product 90",
+      "description": "This is a detailed description for mock product 90. It covers all the essential features.",
+      "tags": ["wireless", "new"],
+      "price": 248.51,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 198.81,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 248.51,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 124.25,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4234,
+      "featured": false,
+      "show": true,
+      "number_sold": 44,
+      "in_stock": true,
+      "quantity": 97,
+      "archived_at": null,
+      "created_at": "2025-12-11T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-90",
+      "picture": "https://picsum.photos/seed/prod_90/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_90_0/600/600",
+        "https://picsum.photos/seed/prod_90_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_91",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_17",
+      "title": "Mock Product 91",
+      "description": "This is a detailed description for mock product 91. It covers all the essential features.",
+      "tags": ["sale", "bestseller"],
+      "price": 63.22,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 63.22,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 63.22,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 31.61,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 3717,
+      "featured": false,
+      "show": true,
+      "number_sold": 852,
+      "in_stock": true,
+      "quantity": 184,
+      "archived_at": null,
+      "created_at": "2025-12-29T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-91",
+      "picture": "https://picsum.photos/seed/prod_91/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_91_0/600/600",
+        "https://picsum.photos/seed/prod_91_1/600/600",
+        "https://picsum.photos/seed/prod_91_2/600/600",
+        "https://picsum.photos/seed/prod_91_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_92",
+      "category_id": "cat_sports",
+      "subcategory_id": "sub_1",
+      "title": "Mock Product 92",
+      "description": "This is a detailed description for mock product 92. It covers all the essential features.",
+      "tags": ["eco-friendly", "bestseller"],
+      "price": 294.15,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 294.15,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 294.15,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 147.07,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 4865,
+      "featured": false,
+      "show": true,
+      "number_sold": 733,
+      "in_stock": true,
+      "quantity": 59,
+      "archived_at": null,
+      "created_at": "2026-05-08T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-92",
+      "picture": "https://picsum.photos/seed/prod_92/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_92_0/600/600",
+        "https://picsum.photos/seed/prod_92_1/600/600",
+        "https://picsum.photos/seed/prod_92_2/600/600",
+        "https://picsum.photos/seed/prod_92_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_93",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_15",
+      "title": "Mock Product 93",
+      "description": "This is a detailed description for mock product 93. It covers all the essential features.",
+      "tags": ["premium", "bestseller"],
+      "price": 486.7,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 486.7,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 486.7,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 243.35,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 2899,
+      "featured": true,
+      "show": true,
+      "number_sold": 132,
+      "in_stock": true,
+      "quantity": 117,
+      "archived_at": null,
+      "created_at": "2026-03-15T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-93",
+      "picture": "https://picsum.photos/seed/prod_93/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_93_0/600/600",
+        "https://picsum.photos/seed/prod_93_1/600/600",
+        "https://picsum.photos/seed/prod_93_2/600/600",
+        "https://picsum.photos/seed/prod_93_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_94",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_9",
+      "title": "Mock Product 94",
+      "description": "This is a detailed description for mock product 94. It covers all the essential features.",
+      "tags": ["new", "premium", "sale", "eco-friendly"],
+      "price": 417.28,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 333.82,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 417.28,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 208.64,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 989,
+      "featured": false,
+      "show": true,
+      "number_sold": 574,
+      "in_stock": true,
+      "quantity": 96,
+      "archived_at": null,
+      "created_at": "2026-05-03T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-94",
+      "picture": "https://picsum.photos/seed/prod_94/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_94_0/600/600"]
+    },
+    {
+      "id": "prod_95",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_5",
+      "title": "Mock Product 95",
+      "description": "This is a detailed description for mock product 95. It covers all the essential features.",
+      "tags": ["eco-friendly", "wireless"],
+      "price": 45.56,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 36.45,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 45.56,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 22.78,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 3056,
+      "featured": false,
+      "show": true,
+      "number_sold": 487,
+      "in_stock": true,
+      "quantity": 120,
+      "archived_at": null,
+      "created_at": "2026-03-18T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-95",
+      "picture": "https://picsum.photos/seed/prod_95/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_95_0/600/600",
+        "https://picsum.photos/seed/prod_95_1/600/600",
+        "https://picsum.photos/seed/prod_95_2/600/600",
+        "https://picsum.photos/seed/prod_95_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_96",
+      "category_id": "cat_home",
+      "subcategory_id": "sub_15",
+      "title": "Mock Product 96",
+      "description": "This is a detailed description for mock product 96. It covers all the essential features.",
+      "tags": ["sale", "new"],
+      "price": 94.65,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 94.65,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 94.65,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 47.33,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 3185,
+      "featured": false,
+      "show": true,
+      "number_sold": 669,
+      "in_stock": true,
+      "quantity": 71,
+      "archived_at": null,
+      "created_at": "2026-07-20T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-96",
+      "picture": "https://picsum.photos/seed/prod_96/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_96_0/600/600"]
+    },
+    {
+      "id": "prod_97",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_20",
+      "title": "Mock Product 97",
+      "description": "This is a detailed description for mock product 97. It covers all the essential features.",
+      "tags": ["sale", "bestseller", "wireless", "essential"],
+      "price": 376.98,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 376.98,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 376.98,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 188.49,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 4059,
+      "featured": false,
+      "show": true,
+      "number_sold": 55,
+      "in_stock": false,
+      "quantity": 32,
+      "archived_at": null,
+      "created_at": "2025-10-21T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-97",
+      "picture": "https://picsum.photos/seed/prod_97/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_97_0/600/600",
+        "https://picsum.photos/seed/prod_97_1/600/600",
+        "https://picsum.photos/seed/prod_97_2/600/600"
+      ]
+    },
+    {
+      "id": "prod_98",
+      "category_id": "cat_clothing",
+      "subcategory_id": "sub_10",
+      "title": "Mock Product 98",
+      "description": "This is a detailed description for mock product 98. It covers all the essential features.",
+      "tags": ["eco-friendly", "smart", "bestseller"],
+      "price": 315.95,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 315.95,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 315.95,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 157.97,
+        "currency_code": "USD"
+      },
+      "product_source": "zoho",
+      "views": 3733,
+      "featured": false,
+      "show": true,
+      "number_sold": 830,
+      "in_stock": true,
+      "quantity": 144,
+      "archived_at": null,
+      "created_at": "2026-07-02T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-98",
+      "picture": "https://picsum.photos/seed/prod_98/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_98_0/600/600",
+        "https://picsum.photos/seed/prod_98_1/600/600",
+        "https://picsum.photos/seed/prod_98_2/600/600",
+        "https://picsum.photos/seed/prod_98_3/600/600"
+      ]
+    },
+    {
+      "id": "prod_99",
+      "category_id": "cat_electronics",
+      "subcategory_id": "sub_9",
+      "title": "Mock Product 99",
+      "description": "This is a detailed description for mock product 99. It covers all the essential features.",
+      "tags": ["eco-friendly", "premium", "wireless"],
+      "price": 508.68,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 508.68,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 508.68,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 254.34,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 2512,
+      "featured": true,
+      "show": true,
+      "number_sold": 607,
+      "in_stock": false,
+      "quantity": 35,
+      "archived_at": null,
+      "created_at": "2026-05-07T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-99",
+      "picture": "https://picsum.photos/seed/prod_99/600/600",
+      "pictures": [
+        "https://picsum.photos/seed/prod_99_0/600/600",
+        "https://picsum.photos/seed/prod_99_1/600/600"
+      ]
+    },
+    {
+      "id": "prod_100",
+      "category_id": "cat_health",
+      "subcategory_id": "sub_7",
+      "title": "Mock Product 100",
+      "description": "This is a detailed description for mock product 100. It covers all the essential features.",
+      "tags": ["eco-friendly", "smart", "wireless"],
+      "price": 320.63,
+      "currency_code": "USD",
+      "current_price": {
+        "amount": 320.63,
+        "currency_code": "USD"
+      },
+      "standard_price": {
+        "amount": 320.63,
+        "currency_code": "USD"
+      },
+      "retailer_price": {
+        "amount": 160.31,
+        "currency_code": "USD"
+      },
+      "product_source": "custom",
+      "views": 1918,
+      "featured": false,
+      "show": true,
+      "number_sold": 723,
+      "in_stock": true,
+      "quantity": 109,
+      "archived_at": null,
+      "created_at": "2026-02-10T20:49:39.187385Z",
+      "updated_at": "2026-09-09T20:49:39.187385Z",
+      "slug": "mock-product-100",
+      "picture": "https://picsum.photos/seed/prod_100/600/600",
+      "pictures": ["https://picsum.photos/seed/prod_100_0/600/600"]
+    }
+  ]
+}

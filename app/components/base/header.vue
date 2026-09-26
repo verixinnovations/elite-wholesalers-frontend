@@ -37,9 +37,17 @@
         <UChip :text="599" size="3xl" inset :ui="{ base: 'px-2 py-2 bottom-4 text-xs!' }">
           <UButton icon="i-lucide-shopping-bag" color="neutral" variant="ghost" size="xl" />
         </UChip>
-        <UChip inset class="cursor-pointer" v-if="isLoggedIn">
-          <UAvatar src="/images/avatar.png" loading="lazy" width="64" height="64" />
-        </UChip>
+        <template v-if="isLoggedIn">
+          <UChip inset class="cursor-pointer">
+            <UAvatar src="/images/avatar.png" loading="lazy" width="64" height="64" />
+          </UChip>
+          <UButton
+            label="Log out"
+            variant="solid"
+            class="rounded-4xl px-5 text-xs bg-error"
+            @click="authStore.logout()"
+          />
+        </template>
         <template v-else>
           <UButton
             label="Login"
@@ -62,7 +70,8 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 import { RouteName } from '~/constants/route-names'
 import { useAuthStore } from '~/store/auth-store'
 
-const { isLoggedIn } = storeToRefs(useAuthStore())
+const authStore = useAuthStore()
+const { isLoggedIn } = storeToRefs(authStore)
 
 const route = useRoute()
 

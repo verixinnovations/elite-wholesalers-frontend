@@ -79,7 +79,7 @@ definePageMeta({
 
 useSEO({
   title: 'Log In to EliteWholeSalers',
-  description: 'Sign in to your Nakanaki account to start buying exclusive devices.',
+  description: 'Sign in to your account to start buying exclusive devices.',
   keywords: 'login, sign in, account, marketplace'
 })
 

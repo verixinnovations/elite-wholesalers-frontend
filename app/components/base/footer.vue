@@ -1,68 +1,114 @@
 <template>
-  <footer class="border-t border-surface-container bg-surface-container-lowest py-12">
-    <div
-      class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-4 lg:px-6"
-    >
-      <div v-for="group in groups" :key="group?.title">
-        <h3 class="mb-3 text-xs font-bold uppercase tracking-wider text-on-surface">
-          {{ group?.title }}
-        </h3>
-        <ul class="space-y-2 text-xs text-on-surface-variant">
-          <li v-for="item in group.items" :key="item">
-            <NuxtLink to="/" class="hover:text-on-surface">{{ item }}</NuxtLink>
-          </li>
-        </ul>
+  <footer class="bg-primary-700 border-t border-gray-200 dark:border-gray-800">
+    <UContainer class="py-12 md:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-secondary mb-4 uppercase tracking-wider">
+            Quick Links
+          </h3>
+          <ul class="space-y-3 text-sm">
+            <li v-for="link in quickLinks" :key="link.title">
+              <ULink :to="link.url" class="footer-text">
+                {{ link.title }}
+              </ULink>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Contact Us</h3>
+          <ul class="space-y-3 text-sm">
+            <li v-for="info in contactInfo" :key="info.label">
+              <span class="font-medium text-neutral-400 mr-2">{{ info.label }}:</span>
+              <component
+                :is="info.link ? 'a' : 'span'"
+                :href="info.link"
+                class="text-white"
+                :class="{ 'hover:text-primary-500 transition-colors': info.link }"
+              >
+                {{ info.value }}
+              </component>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Locations -->
+        <div>
+          <h3 class="footer-title">Locations</h3>
+          <div class="space-y-6">
+            <div v-for="location in locations" :key="location.title">
+              <h4 class="text-xs font-semibold text-neutral-400 mb-1">
+                {{ location.title }}
+              </h4>
+              <p class="text-sm text-neutral-50 whitespace-pre-line">
+                {{ location.address }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stay Connected -->
+        <div>
+          <h3 class="footer-title">Stay Connected</h3>
+          <div class="flex gap-4">
+            <UButton icon="i-mdi-facebook" color="neutral" aria-label="Facebook" />
+            <UButton icon="i-mdi-instagram" color="neutral" aria-label="Instagram" />
+            <UButton icon="i-line-md-twitter-x" color="neutral" aria-label="Instagram" />
+            <UButton icon="i-mdi-youtube" color="neutral" aria-label="Instagram" />
+          </div>
+        </div>
       </div>
-    </div>
-    <div
-      class="mx-auto mt-10 flex max-w-7xl flex-col justify-between gap-3 border-t border-surface-container px-4 pt-6 text-[10px] text-outline md:flex-row lg:px-6"
-    >
-      <span>© 2025 Elite Wholesalers Distribution Corp. Strictly Trade Wholesale.</span
-      ><span>Commercial Settlement: Net 30/60 · Direct EFT · Commercial Visa/MC</span>
-    </div>
+    </UContainer>
   </footer>
 </template>
 
-<script setup lang="ts">
-const groups = [
+<script setup>
+import { ref } from 'vue'
+
+const quickLinks = ref([
+  { title: 'About Us', url: '/about-us' },
+  { title: 'Download Center', url: '/download-center' },
+  { title: 'Contact Us', url: '/contact-us' },
+  { title: 'About Us', url: '/about-us' },
+  { title: 'Terms & Conditions', url: '/terms' }
+])
+
+const contactInfo = ref([
+  { label: 'Phone', value: '+61 2 9533 7877', type: 'tel', link: 'tel:+61295337877' },
+  { label: 'Hours', value: '8:30am - 5pm', type: 'text' },
+  { label: 'Days', value: 'Monday - Friday', type: 'text' },
+  { label: 'ABN', value: '73 611 475 131', type: 'text' },
   {
-    title: 'Hardware Categories',
-    items: [
-      'CCTV & Surveillance Systems',
-      'Intruder Alarms & Detectors',
-      'Access Control & Keycards',
-      'Commercial Video Intercoms',
-      'Network Racks & Cat6 Cabling'
-    ]
-  },
-  {
-    title: 'Trade Account & Verification',
-    items: [
-      'Apply for Net 30 Commercial Terms',
-      'Volume Discount Matrix',
-      'Reseller Tax Exemption Upload',
-      'Direct SKU Quick Order Pad',
-      'Account Verification Status'
-    ]
-  },
-  {
-    title: 'Logistics & Terms',
-    items: [
-      'Same-Day Pallet Dispatch (Cutoff 4:30 PM)',
-      'Regional Warehouses: NJ, GA, TX, CA',
-      'B2B Commercial Sales Terms',
-      'Commercial Hardware Warranty',
-      'Freight & Will Call Pickups'
-    ]
-  },
-  {
-    title: 'Certifications & Compliance',
-    items: [
-      'ISO 9001:2015 Registered Facility',
-      'NDAA § 889 Compliant Inventory',
-      'UL / CSA Security Certified Gear',
-      'Security Industry Association (SIA)'
-    ]
+    label: 'Email',
+    value: 'info@elitewholesalers.com.au',
+    type: 'email',
+    link: 'mailto:info@elitewholesalers.com.au'
   }
-]
+])
+
+const locations = ref([
+  {
+    title: 'HEAD OFFICE & SHOWROOM',
+    address: '2210, 1/9 Street Peakhurst NSW'
+  },
+  {
+    title: 'ADMIN & SALES OFFICE',
+    address: '13 Horne St, Elsternwick VIC 3185'
+  }
+])
 </script>
+
+<style scoped lang="scss">
+.footer-title {
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  color: white;
+}
+</style>

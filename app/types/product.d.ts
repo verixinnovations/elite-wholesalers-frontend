@@ -75,6 +75,7 @@ export interface ProductTaxCategory {
 }
 
 export interface ProductEntity {
+  id: string
   item_id: string
   name: string
   item_name: string

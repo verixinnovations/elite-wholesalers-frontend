@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { RouteName } from '~/constants/route-names'
+</script>
+
 <template>
   <div class="relative flex min-h-dvh w-full bg-white font-sans text-zinc-900">
     <aside
@@ -6,7 +10,7 @@
       <BaseBoxedBackground />
       <!-- Brand Identity -->
 
-      <BaseLogo class="z-10" />
+      <BaseLogo class="z-10" variant="white" />
 
       <!-- Core Message -->
       <div class="relative z-10 max-w-xl">
@@ -45,8 +49,15 @@
         <div class="mb-10">
           <p
             v-if="$route.meta.pageLabel"
-            class="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-primary-400"
+            class="mb-3 flex items-center gap-x-2 text-xs font-bold uppercase tracking-[0.14em] text-primary-400"
           >
+            <NuxtLink
+              v-if="$route.meta.hasBackButton"
+              :to="{ name: RouteName.Auth.Login }"
+              class="inline-flex items-center text-sm font-bold"
+            >
+              <UButton icon="i-lucide-arrow-left" color="primary" size="xs" />
+            </NuxtLink>
             {{ $route.meta.pageLabel }}
           </p>
           <h1

@@ -68,7 +68,8 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/**': {
       headers: {
-        'Content-Security-Policy': "img-src 'self' data: http://localhost:3000;"
+        'Content-Security-Policy':
+          "img-src 'self' data: http://localhost:3000 https://picsum.photos https://fastly.picsum.photos;"
       }
     }
   },

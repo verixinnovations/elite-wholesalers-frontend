@@ -4,11 +4,11 @@
     :toggle="{
       color: 'primary',
       variant: 'subtle',
-      class: 'rounded-full'
+      class: 'rounded-full flex items-center'
     }"
   >
     <template #title>
-      <BaseLogo class="h-6 w-auto" />
+      <BaseLogo class="w-auto" />
     </template>
 
     <div class="flex gap-x-4 mr-10">
@@ -20,7 +20,7 @@
           :to="item.to"
           :icon="item.icon"
           :target="item.target"
-          class="font-semibold text-primary text-lg"
+          class="text-sm! font-semibold text-primary"
         />
       </div>
     </div>
@@ -34,8 +34,20 @@
           placeholder="Search..."
           class="min-w-sm"
         />
-        <UChip :text="599" size="3xl" inset :ui="{ base: 'px-2 py-2 bottom-4 text-xs!' }">
-          <UButton icon="i-lucide-shopping-bag" color="neutral" variant="ghost" size="xl" />
+        <UChip
+          :text="cart.totalItems || undefined"
+          size="3xl"
+          inset
+          :ui="{ base: 'px-2 py-2 bottom-4 text-xs!' }"
+        >
+          <UButton
+            icon="i-lucide-shopping-bag"
+            color="neutral"
+            variant="ghost"
+            size="xl"
+            to="/cart"
+            aria-label="Shopping cart"
+          />
         </UChip>
         <template v-if="isLoggedIn">
           <UChip inset class="cursor-pointer">
@@ -46,6 +58,13 @@
             variant="solid"
             class="rounded-4xl px-5 text-xs bg-error"
             @click="authStore.logout()"
+          />
+          <UButton
+            icon="i-lucide-user-round"
+            color="neutral"
+            variant="ghost"
+            to="/dashboard/orders"
+            aria-label="My account"
           />
         </template>
         <template v-else>
@@ -69,37 +88,30 @@
 import type { NavigationMenuItem } from '@nuxt/ui'
 import { RouteName } from '~/constants/route-names'
 import { useAuthStore } from '~/store/auth-store'
+import { useCartStore } from '~/stores/useCartStore'
 
 const authStore = useAuthStore()
 const { isLoggedIn } = storeToRefs(authStore)
+const cart = useCartStore()
 
 const route = useRoute()
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: 'Home',
-    to: '/',
-    active: route.path.startsWith('/docs/getting-started')
+    to: '/'
   },
   {
     label: 'Products',
-    to: '/',
-    active: route.path.startsWith('/docs/components')
+    to: '/products'
   },
   {
-    label: 'Solutions',
-    to: '/',
-    target: '_blank'
-  },
-  {
-    label: 'Terms',
-    to: '/',
-    target: '_blank'
+    label: 'Download center',
+    to: '/download-center'
   },
   {
     label: 'About Us',
-    to: '/',
-    target: '_blank'
+    to: '/about-us'
   }
 ])
 </script>

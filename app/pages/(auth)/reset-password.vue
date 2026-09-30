@@ -66,6 +66,7 @@ import { RouteName } from '~/constants/route-names'
 import { AuthService } from '~/services/auth.service'
 
 definePageMeta({ name: RouteName.Auth.ResetPassword, layout: 'auth' })
+
 const route = useRoute()
 const schema = z
   .object({

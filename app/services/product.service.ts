@@ -2,17 +2,6 @@ import type { ProductParams } from '~/types/product'
 import ApiService from './api.service'
 
 export const ProductService = {
-  async createProduct(data: FormData) {
-    return await ApiService.run({
-      method: ApiService.POST,
-      url: '/posts',
-      data,
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
-  },
-
   async getProducts(
     params: ProductParams = {
       page: 1,
@@ -26,8 +15,7 @@ export const ProductService = {
       params: {
         ...params,
         op: 'latest',
-        sort: 'created_at',
-        embed: 'category,parent,city,savedByLoggedUser,pictures'
+        sort: 'created_at'
       }
     })
   },
@@ -44,10 +32,7 @@ export const ProductService = {
       url: '/posts',
       params: {
         ...params,
-        postId: productId,
-        op: 'similar',
-        sort: 'created_at',
-        embed: 'category,parent,city,savedByLoggedUser,pictures'
+        op: 'similar'
       }
     })
   },
@@ -60,48 +45,10 @@ export const ProductService = {
     })
   },
 
-  async getUserProducts(params: ProductParams = { page: 1, detailed: 1, perPage: 100 }) {
+  async fetchUserCart() {
     return await ApiService.run({
       method: ApiService.GET,
-      url: '/posts',
-      params: {
-        belongLoggedUser: 1,
-        ...params,
-        embed: 'category,parent,city,savedByLoggedUser,pictures'
-      }
-    })
-  },
-
-  async updateProduct(productId: number, data: FormData) {
-    return await ApiService.run({
-      method: ApiService.POST,
-      url: `/posts/${productId}`,
-      data: data,
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
-  },
-
-  async deleteProduct(productId: number) {
-    return await ApiService.run({
-      method: ApiService.DELETE,
-      url: `/posts/${productId}`
-    })
-  },
-
-  async deleteAllProducts(productIds: string) {
-    return await ApiService.run({
-      method: ApiService.DELETE,
-      url: `/posts/${productIds}`
-    })
-  },
-
-  async getSavedProducts() {
-    return await ApiService.run({
-      method: ApiService.GET,
-      url: '/savedPosts',
-      params: { sortby: 'created_at', embed: 'savedByLoggedUser,post' }
+      url: '/cart'
     })
   },
 
@@ -120,13 +67,6 @@ export const ProductService = {
     })
   },
 
-  async removeAllSavedProduct(productIds: string) {
-    return await ApiService.run({
-      method: ApiService.DELETE,
-      url: `/savedPosts/${productIds}`
-    })
-  },
-
   async getProductsCategories() {
     return await ApiService.run({
       method: ApiService.GET,
@@ -139,15 +79,6 @@ export const ProductService = {
       method: ApiService.GET,
       url: 'categories',
       params: { parentId: categoryId, perPage: 100, sort: 'lft' }
-    })
-  },
-
-  async getProductCategoryFields(categoryId: number, postId?: number) {
-    return await ApiService.run({
-      method: ApiService.GET,
-      url: `categories/${categoryId}/fields`,
-      data: { post_id: postId },
-      params: { perPage: 100, sort: 'lft' }
     })
   },
 
@@ -168,24 +99,6 @@ export const ProductService = {
         sort: 'lft',
         op: 'search',
         keyword: searchTerm
-      }
-    })
-  },
-
-  async getProductsByLocation(
-    cityName: string,
-    params: ProductParams = { page: 1, perPage: 100, detailed: 1, sort: 'lft' }
-  ) {
-    return await ApiService.run({
-      method: ApiService.GET,
-      url: `/posts`,
-      params: {
-        ...params,
-        perPage: 100,
-        sort: 'lft',
-        op: 'search',
-        location: cityName,
-        distance: 100
       }
     })
   },

@@ -23,7 +23,6 @@ export interface VerifyOTP {
 
 export interface ForgotPassword {
   email: string
-  auth_field: 'email'
 }
 export interface ChangePassword {
   email: string

@@ -8,7 +8,7 @@
       "description": "This is a detailed description for mock product 1. It covers all the essential features.",
       "tags": ["wireless", "eco-friendly"],
       "price": 12.84,
-      "currency_code": "USD",
+      "currency_code": "AUD",
       "current_price": {
         "amount": 12.84,
         "currency_code": "USD"

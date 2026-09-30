@@ -57,7 +57,7 @@
 </template>
 
 <script setup lang="ts">
-import { getCategories, getProductById } from '~/services/product.service'
+import { getCategories, getProductById } from '~/composable/store'
 import type { ProductVariant } from '~/types/ecommerce'
 
 const route = useRoute()

@@ -70,7 +70,7 @@
 </template>
 
 <script setup lang="ts">
-import { getCategories, getProducts } from '~/services/product.service'
+import { getCategories, getProducts } from '~/composable/store'
 
 const selectedCategory = ref('all')
 const { data: products, pending, error } = await useAsyncData('storefront-products', getProducts)

@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <NuxtImg src="//images/about-us/emu-in-sky-project.png" />
+      <NuxtImg src="/images/about-us/emu-in-sky-project.png" />
     </div>
 
     <!-- What Do We Deliver Section -->

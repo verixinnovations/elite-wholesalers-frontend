@@ -23,24 +23,25 @@
             </div>
           </template>
         </UCard>
+        <!-- Quick Facts / Highlights Sidebar -->
+        <div class="space-y-6">
+          <UCard class="bg-gray-50 dark:bg-gray-900 border-l-4 border-primary-500">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Company Highlights</h3>
+            <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+              <li
+                v-for="(highlight, index) in companyHighlights"
+                :key="index"
+                class="flex items-center gap-2"
+              >
+                <UIcon :name="highlight.icon" class="w-5 h-5 text-primary-500 flex-shrink-0" />
+                <span>{{ highlight.text }}</span>
+              </li>
+            </ul>
+          </UCard>
+        </div>
       </div>
 
-      <!-- Quick Facts / Highlights Sidebar -->
-      <div class="space-y-6">
-        <UCard class="bg-gray-50 dark:bg-gray-900 border-l-4 border-primary-500">
-          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Company Highlights</h3>
-          <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-            <li
-              v-for="(highlight, index) in companyHighlights"
-              :key="index"
-              class="flex items-center gap-2"
-            >
-              <UIcon :name="highlight.icon" class="w-5 h-5 text-primary-500 flex-shrink-0" />
-              <span>{{ highlight.text }}</span>
-            </li>
-          </ul>
-        </UCard>
-      </div>
+      <NuxtImg src="//images/about-us/emu-in-sky-project.png" />
     </div>
 
     <!-- What Do We Deliver Section -->
@@ -84,7 +85,7 @@
 // Page Data Objects
 const pageData = {
   title: 'ABOUT US',
-  author: 'George Popuolis (General Manager)',
+  author: 'George Papoulidis (General Manager)',
   story: [
     'In 2013, my passion and skills led to opening our first store, <strong>Elite Wholesalers P/L</strong> in Peakhurst, NSW. Since then, we have established a dedicated sales office in Victoria.',
     'We are now in our 13th year of business. Due to continuous growth, success, and deep industry experience, we have managed to secure and be part of many prominent sites across Australia—most recently, supplying the lighting for the <em>Aboriginal EMU in the Sky Sculpture</em> located on the M12 for Transport NSW.',

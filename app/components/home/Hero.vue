@@ -39,6 +39,7 @@ const options = reactive({
   allowFullscreen: false,
   allowToSkipTransition: true,
   autohideTime: 0,
+  height: '50dvh',
   autoplay: true,
   bindKeys: false,
   delay: 3000,

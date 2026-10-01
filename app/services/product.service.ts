@@ -1,9 +1,8 @@
-import type { ProductParams } from '~/types/product'
 import ApiService from './api.service'
 
 export const ProductService = {
   async getProducts(
-    params: ProductParams = {
+    params = {
       page: 1,
       perPage: 20,
       detailed: 1
@@ -11,59 +10,41 @@ export const ProductService = {
   ) {
     return await ApiService.run({
       method: ApiService.GET,
-      url: '/posts',
+      url: '/products',
       params: {
-        ...params,
-        op: 'latest',
-        sort: 'created_at'
+        ...params
       }
     })
   },
-  async getSimilarProducts(
-    productId: number,
-    params: ProductParams = {
-      page: 1,
-      perPage: 20,
-      detailed: 1
-    }
-  ) {
+  // async getSimilarProducts(
+  //   productId: number,
+  //   params: ProductParams = {
+  //     page: 1,
+  //     perPage: 20,
+  //     detailed: 1
+  //   }
+  // ) {
+  //   return await ApiService.run({
+  //     method: ApiService.GET,
+  //     url: '/posts',
+  //     params: {
+  //       ...params,
+  //       op: 'similar'
+  //     }
+  //   })
+  // },
+
+  async getProduct(productId: string) {
     return await ApiService.run({
       method: ApiService.GET,
-      url: '/posts',
-      params: {
-        ...params,
-        op: 'similar'
-      }
+      url: `/products/${productId}`
     })
   },
 
-  async getProduct(productId: number) {
+  async getFeaturedProducts() {
     return await ApiService.run({
       method: ApiService.GET,
-      url: `/posts/${productId}`,
-      params: { detailed: 1 }
-    })
-  },
-
-  async fetchUserCart() {
-    return await ApiService.run({
-      method: ApiService.GET,
-      url: '/cart'
-    })
-  },
-
-  async saveProduct(productId: number) {
-    return await ApiService.run({
-      method: ApiService.POST,
-      url: '/savedPosts',
-      data: { post_id: productId }
-    })
-  },
-
-  async removeSavedProduct(productId: number) {
-    return await ApiService.run({
-      method: ApiService.DELETE,
-      url: `/savedPosts/${productId}`
+      url: '/products/featured'
     })
   },
 
@@ -74,53 +55,18 @@ export const ProductService = {
     })
   },
 
-  async getProductsSubcategories(categoryId: number = 1) {
+  async getProductsSubcategories(categoryId: string) {
     return await ApiService.run({
       method: ApiService.GET,
-      url: 'categories',
-      params: { parentId: categoryId, perPage: 100, sort: 'lft' }
+      url: `/products/categories/${categoryId}`
     })
   },
 
-  async searchProducts(
-    searchTerm: string,
-    params: ProductParams = {
-      page: 1,
-      perPage: 20,
-      detailed: 1
-    }
-  ) {
+  async getProductsByCategoryId(categoryId: string) {
     return await ApiService.run({
       method: ApiService.GET,
-      url: `/posts`,
-      params: {
-        ...params,
-        perPage: 100,
-        sort: 'lft',
-        op: 'search',
-        keyword: searchTerm
-      }
-    })
-  },
-
-  async getProductsByCategories(categorySlug: string) {
-    return await ApiService.run({
-      method: ApiService.GET,
-      url: `/posts`,
-      params: { perPage: 100, sort: 'lft', op: 'search', c: categorySlug }
-    })
-  },
-
-  async getProductsBySubCategories(categorySlug: string, subCategorySlug: string) {
-    return await ApiService.run({
-      method: ApiService.GET,
-      url: `/posts`,
-      params: {
-        perPage: 100,
-        op: 'search',
-        c: categorySlug,
-        sc: subCategorySlug
-      }
+      url: `products/categories/${categoryId}/products`,
+      params: { perPage: 100 }
     })
   }
 }

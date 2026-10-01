@@ -14,26 +14,25 @@ import { RouteName } from '~/constants/route-names'
 
       <!-- Core Message -->
       <div class="relative z-10 max-w-xl">
-        <div
-          class="mb-6 inline-flex rounded-full border border-zinc-700/50 bg-zinc-800/30 px-3 py-1 text-xs font-medium uppercase tracking-widest text-zinc-300 backdrop-blur-md"
+        <h1
+          class="font-oswald text-[clamp(2rem,4vw,3rem)] font-medium leading-[1.05] text-zinc-500"
         >
-          B2B Marketplace
-        </div>
-        <h1 class="font-oswald text-[clamp(2rem,4vw,3rem)] font-medium leading-[1.05] text-white">
-          Source better.<br />
-          <span class="text-zinc-500">Grow further.</span>
+          Australia’s trusted source for
+          <span class="text-zinc-50">security, networking & electronics</span> devices.<br />
         </h1>
         <p class="mt-6 text-lg leading-relaxed text-zinc-400">
-          The infrastructure for modern retail. Connect with verified distributors and scale your
-          inventory without the operational friction.
+          Best pricing, fast fulfilment and reliable support for businesses, installers and
+          resellers.
+        </p>
+        <p class="mt-6 text-lg leading-relaxed text-zinc-300">
+          Trusted by trade buyers across Australia.
         </p>
       </div>
 
       <!-- Pure CSS Stat Block (No avatars needed) -->
       <div class="relative z-10 flex flex-col gap-2 border-l-2 border-indigo-500 pl-6">
-        <div class="text-3xl font-light text-white">$2M+</div>
         <div class="text-sm font-medium text-zinc-500 uppercase tracking-widest">
-          In daily wholesale transactions
+          We are PCI certified.
         </div>
       </div>
     </aside>

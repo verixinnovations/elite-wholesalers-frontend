@@ -1,5 +1,5 @@
 <template>
-  <div class="grid gap-3">
+  <div class="flex flex-col gap-3">
     <div class="aspect-square overflow-hidden bg-surface-container-low">
       <NuxtImg
         :src="activeImage"
@@ -11,7 +11,7 @@
       />
     </div>
     <div v-if="images.length > 1" class="grid grid-cols-4 gap-3 sm:grid-cols-5">
-      <button
+      <div
         v-for="(image, index) in images"
         :key="image"
         type="button"
@@ -22,7 +22,7 @@
         @click="activeIndex = index"
       >
         <NuxtImg :src="image" :alt="`${alt}, image ${index + 1}`" class="size-full object-cover" />
-      </button>
+      </div>
     </div>
   </div>
 </template>

@@ -11,18 +11,16 @@
       <BaseLogo class="w-auto" />
     </template>
 
-    <div class="flex gap-x-4 mr-10">
-      <div v-for="item in items" :key="item.label" class="">
-        <UButton
-          color="neutral"
-          variant="link"
-          :label="item.label"
-          :to="item.to"
-          :icon="item.icon"
-          :target="item.target"
-          class="text-sm! font-semibold text-primary"
-        />
-      </div>
+    <div class="flex gap-x-4 mr-36">
+      <UNavigationMenu
+        :items="items"
+        variant="link"
+        content-orientation="vertical"
+        :highlight="false"
+        :unmount-on-hide="false"
+        orientation="horizontal"
+        class=""
+      />
     </div>
 
     <template #right>
@@ -34,12 +32,7 @@
           placeholder="Search..."
           class="min-w-sm"
         />
-        <UChip
-          :text="cart.totalItems || undefined"
-          size="3xl"
-          inset
-          :ui="{ base: 'px-2 py-2 bottom-4 text-xs!' }"
-        >
+        <UChip :show="false" size="3xl" inset :ui="{ base: 'px-2 py-2 bottom-4 text-xs!' }">
           <UButton
             icon="i-lucide-shopping-bag"
             color="neutral"
@@ -51,20 +44,15 @@
         </UChip>
         <template v-if="isLoggedIn">
           <UChip inset class="cursor-pointer">
-            <UAvatar src="/images/avatar.png" loading="lazy" width="64" height="64" />
+            <NuxtLink>
+              <UAvatar icon="i-lucide-user-round" loading="lazy" width="64" height="64" />
+            </NuxtLink>
           </UChip>
           <UButton
             label="Log out"
             variant="solid"
             class="rounded-4xl px-5 text-xs bg-error"
             @click="authStore.logout()"
-          />
-          <UButton
-            icon="i-lucide-user-round"
-            color="neutral"
-            variant="ghost"
-            to="/dashboard/orders"
-            aria-label="My account"
           />
         </template>
         <template v-else>
@@ -88,12 +76,14 @@
 import type { NavigationMenuItem } from '@nuxt/ui'
 import { RouteName } from '~/constants/route-names'
 import { useAuthStore } from '~/store/auth-store'
+import { useProductStore } from '~/store/product-store'
 import { useCartStore } from '~/stores/useCartStore'
 
 const authStore = useAuthStore()
+const productStore = useProductStore()
 const { isLoggedIn } = storeToRefs(authStore)
-const cart = useCartStore()
 
+const { categories } = storeToRefs(productStore)
 const route = useRoute()
 
 const items = computed<NavigationMenuItem[]>(() => [
@@ -103,7 +93,16 @@ const items = computed<NavigationMenuItem[]>(() => [
   },
   {
     label: 'Products',
-    to: '/products'
+    to: '/categories',
+    children: categories?.value
+      ? categories.value.map((category) => ({
+          label: category.name,
+          to: {
+            name: RouteName.Categories,
+            params: { categoryId: category.category_id }
+          }
+        }))
+      : []
   },
   {
     label: 'Download center',

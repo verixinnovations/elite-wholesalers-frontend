@@ -1,6 +1,6 @@
 <template>
   <UButton
-    icon="i-lucide-shopping-cart-plus"
+    :icon="productInCart ? 'i-icon-shopping-cart' : 'i-icon-shopping-cart-plus'"
     :class="{
       'bg-success-500': productInCart
     }"

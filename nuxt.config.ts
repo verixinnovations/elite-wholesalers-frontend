@@ -56,7 +56,8 @@ export default defineNuxtConfig({
         'img-src': [
           "'self'",
           'data:',
-          'http://localhost:3000',
+          'http://localhost:5050',
+          'https://cdn1.zohoecommerce.com',
           'https://picsum.photos/',
           'https://fastly.picsum.photos/'
         ]
@@ -69,7 +70,7 @@ export default defineNuxtConfig({
     '/**': {
       headers: {
         'Content-Security-Policy':
-          "img-src 'self' data: http://localhost:3000 https://picsum.photos https://fastly.picsum.photos;"
+          "img-src 'self' data: http://localhost:5050 cdn1.zohoecommerce.com https://picsum.photos https://fastly.picsum.photos;"
       }
     }
   },
@@ -101,7 +102,7 @@ export default defineNuxtConfig({
   },
 
   piniaPluginPersistedstate: {
-    storage: 'cookies',
+    storage: 'localStorage',
     cookieOptions: {
       sameSite: 'strict',
       maxAge: 3600 * 24 * 7 // 1 week

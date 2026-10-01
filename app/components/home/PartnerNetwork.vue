@@ -4,13 +4,14 @@
       <div>
         <div class="mb-1 flex items-center gap-2">
           <span class="size-2 rounded-full bg-primary" /><span
-            class="text-[10px] font-bold uppercase tracking-wider text-outline"
-            >Authorized Integrator Network</span
+            class="text-xxs font-bold uppercase tracking-wider text-outline"
+            >Our Partners</span
           >
         </div>
-        <h2 class="text-xl font-bold tracking-tight max-w-md text-on-surface">
-          Trusted by Top Commercial Security Integrators & Enterprise Companies
-        </h2>
+        <!-- <h2 class="text-xl font-bold tracking-tight max-w-md text-on-surface">
+          Suppliers of premium CCTV, Alarms, Intercoms, Lighting, Automotion and Automotive Products
+          for the Trade and Retail Sector.
+        </h2> -->
       </div>
     </div>
     <UMarquee

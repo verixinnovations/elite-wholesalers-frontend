@@ -1,11 +1,11 @@
 <template>
   <div class="">
     <HomeHero />
-    <div class="mx-auto max-w-7xl px-4 py-8 lg:px-6">
+    <UContainer class="mx-auto px-4 py-8 lg:px-6">
       <HomePartnerNetwork />
       <HomeCategoryGrid />
       <HomeTrendingProducts />
-    </div>
+    </UContainer>
   </div>
 </template>
 

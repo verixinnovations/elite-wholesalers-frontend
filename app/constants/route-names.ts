@@ -7,5 +7,15 @@ export const RouteName = {
     ResetPassword: 'Reset Password global',
     ForgotPassword: 'Forgot Password global',
     Verify: 'Verify global'
-  }
+  },
+  
+  Categories: 'Categories global',
+  ProductDetails: 'Product Details global',
+
+  Cart: 'Cart global',
+  Checkout: 'Checkout global',
+  Orders: 'Orders global',
+  OrderDetails: 'Order Details global',
+  Profile: 'Profile',
+  Settings: 'Settings'
 }

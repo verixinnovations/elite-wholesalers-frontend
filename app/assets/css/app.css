@@ -1,3 +1,7 @@
+:root {
+  --ui-container: 85rem;
+}
+
 html {
   background-color: #f8f9fa;
   color: black;

@@ -2,7 +2,7 @@
   <section class="mb-12">
     <div class="mb-6 flex items-end justify-between">
       <div>
-        <span class="text-[10px] font-bold uppercase tracking-wider text-outline">
+        <span class="text-xxs font-bold uppercase tracking-wider text-outline">
           Commercial Core
         </span>
         <h2 class="text-2xl font-bold tracking-tight text-on-surface">Shop by Category</h2>
@@ -12,13 +12,14 @@
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
       <UCard
         v-for="category in categories"
-        :key="category.id"
+        :key="category.category_id"
         :ui="{
           root: 'overflow-hidden flex flex-col rounded-t-nones! transition-all duration-200 hover:shadow-lg hover:-translate-y-1',
           body: 'flex-1 flex flex-col justify-between px-3! py-2!',
           header: 'p-0!',
           footer: 'px-3!'
         }"
+        @click="productStore.selectCategory(category)"
       >
         <!-- Card Media Header -->
         <template #header>
@@ -87,5 +88,6 @@
 <script setup lang="ts">
 import { useProductStore } from '~/store/product-store'
 
-const { categories } = storeToRefs(useProductStore())
+const productStore = useProductStore()
+const { categories } = storeToRefs(productStore)
 </script>

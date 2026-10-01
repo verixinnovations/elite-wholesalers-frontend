@@ -52,10 +52,6 @@
   --color-surface-container-low: #f0f3ff;
   --color-surface-container: #e7eeff;
   --color-surface-container-high: #dee8ff;
-}
 
-@base {
-  .icon {
-    color: #4f46e5;
-  }
+  --text-xxs: 10px;
 }

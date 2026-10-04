@@ -1,6 +1,6 @@
 <template>
   <div>
-    <UForm :schema="schema" :state="state" class="space-y-5" @submit="onSubmit">
+    <UForm v-slot="formState" :schema="schema" :state="state" class="space-y-5" @submit="onSubmit">
       <UFormField label="Email address" name="email" required>
         <UInput
           v-model="state.email"
@@ -10,7 +10,13 @@
           class="w-full"
         />
       </UFormField>
-      <UButton type="submit" block class="flex justify-center!" size="xl">
+      <UButton
+        :loading="formState?.loading"
+        type="submit"
+        block
+        class="flex justify-center!"
+        size="xl"
+      >
         <span class="">Send reset link</span>
         <UIcon name="i-lucide-send" />
       </UButton>
@@ -22,7 +28,9 @@
 import * as z from 'zod'
 import type { FormSubmitEvent } from '@nuxt/ui'
 import { RouteName } from '~/constants/route-names'
-import { AuthService } from '~/services/auth.service'
+import { useAuthStore } from '~/store/auth-store'
+
+const authStore = useAuthStore()
 
 definePageMeta({
   name: RouteName.Auth.ForgotPassword,
@@ -39,7 +47,7 @@ const state = reactive<Schema>({ email: '' })
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   try {
-    await AuthService.forgotPassword({ ...event.data })
+    await authStore.forgotPassword({ ...event.data })
   } catch {
   } finally {
   }

@@ -11,9 +11,12 @@
 @theme static {
   --font-sans: 'DM Sans', sans-serif;
   --font-oswald: 'Oswald', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+
   --font-archivo-black: 'Archivo Black', sans-serif;
   --color-primary: #024b8f;
-  --color-primary-50: #e3ebff;
+  --color-primary-50: #f2f2f2;
   --color-primary-100: #c7d7ff;
   --color-primary-200: #8db3ff;
   --color-primary-300: #2a8efe;

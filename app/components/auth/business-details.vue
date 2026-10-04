@@ -203,7 +203,7 @@ const businessTypes = [
 ]
 
 const industries = ref([
-  { label: 'Electric Contractor', value: 'electric-contractor' },
+  { label: 'Electrical Contractor', value: 'electric-contractor' },
   { label: 'Security Installer', value: 'security-installer' },
   { label: 'Auto Electrician', value: 'auto-electrician' },
   { label: 'Alarm Installer', value: 'alarm-installer' },

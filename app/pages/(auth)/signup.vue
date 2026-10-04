@@ -2,7 +2,16 @@
   <div>
     <div class="mb-8">
       <div class="mb-3 flex items-center justify-between gap-4">
-        <p class="text-xs font-bold uppercase tracking-[0.14em] text-primary-500">
+        <p
+          class="text-xs font-bold uppercase flex items-center gap-x-2 tracking-[0.14em] text-primary-500"
+        >
+          <UButton
+            v-if="currentStep?.hasBackButton"
+            icon="i-lucide-arrow-left"
+            color="primary"
+            size="xs"
+            @click="step = currentStep.stepIndex - 1"
+          />
           {{ currentStep?.title }}
         </p>
         <span v-if="step > 0" class="text-sm font-medium text-zinc-500"
@@ -52,7 +61,7 @@ import { RouteName } from '~/constants/route-names'
 import { useAuthStore } from '~/store/auth-store'
 import { AccountType } from '~/types/enums'
 
-definePageMeta({ name: RouteName.Auth.SignUp, layout: 'auth' })
+definePageMeta({ name: RouteName.Auth.SignUp, layout: 'auth', hasBackButton: true })
 const authStore = useAuthStore()
 const { signupDetails, signupBusinessDetails, signupLocationDetails } = storeToRefs(authStore)
 
@@ -66,22 +75,26 @@ const steps = computed(() => {
       {
         stepIndex: 1,
         title: 'Account Type',
-        description: 'Select your account type as a ratail trader or individual buyer'
+        description: 'Select your account type as a ratail trader or individual buyer',
+        hasBackButton: false
       },
       {
         stepIndex: 2,
         title: 'Business Details',
-        description: 'Enter your business details for verification'
+        description: 'Enter your business details for verification',
+        hasBackButton: false
       },
       {
         stepIndex: 3,
         title: 'Personal Details',
-        description: 'Enter your personal profile information'
+        description: 'Enter your personal profile information',
+        hasBackButton: true
       },
       {
         stepIndex: 4,
         title: 'Delivery details',
-        description: 'Enter your address for delivery.'
+        description: 'Enter your address for delivery.',
+        hasBackButton: true
       }
     ]
   } else
@@ -89,17 +102,20 @@ const steps = computed(() => {
       {
         stepIndex: 1,
         title: 'Account Type',
-        description: 'Select your account type as a ratail trader or individual buyer'
+        description: 'Select your account type as a ratail trader or individual buyer',
+        hasBackButton: false
       },
       {
         stepIndex: 2,
         title: 'Personal Details',
-        description: 'Enter your personal profile information'
+        description: 'Enter your personal profile information',
+        hasBackButton: false
       },
       {
         stepIndex: 3,
         title: 'Delivery details',
-        description: 'Enter your address for delivery.'
+        description: 'Enter your address for delivery.',
+        hasBackButton: true
       }
     ]
 })
@@ -109,17 +125,16 @@ const currentStep = computed(() => steps.value.find((stepx) => stepx.stepIndex =
 const createTraderAccount = async () => {
   const data = {
     ...signupDetails.value,
-    ...signupLocationDetails.value,
+    location: signupLocationDetails.value,
     business_details: signupBusinessDetails.value
   }
-
   await authStore.signupUser(data)
 }
 
 const createIndividualAccount = async () => {
   const data = {
     ...signupDetails.value,
-    ...signupLocationDetails.value
+    location: signupLocationDetails.value
   }
   await authStore.signupUser(data)
 }

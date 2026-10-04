@@ -31,10 +31,8 @@ export interface ChangePassword {
 
 export interface ResetPassword {
   email: string
-  token: string
-  auth_field: 'email'
+  verification_code: string
   password: string
-  password_confirmation: string
 }
 
 export interface SignupDetails {

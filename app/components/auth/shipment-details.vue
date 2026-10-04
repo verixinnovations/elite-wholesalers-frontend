@@ -9,7 +9,8 @@
     <UFormField label="Country" name="country" required class="w-full">
       <UInput
         v-model="signupLocationDetails.country"
-        placeholder="e.g. United States"
+        placeholder="e.g. Australia"
+        disabled
         class="w-full"
         icon="i-lucide-globe"
       />
@@ -18,7 +19,7 @@
     <UFormField label="State / Province" name="state" required class="w-full">
       <UInput
         v-model="signupLocationDetails.state"
-        placeholder="e.g. NY"
+        placeholder="e.g. New South Wales"
         icon="i-lucide-map"
         class="w-full"
       />
@@ -27,7 +28,7 @@
     <UFormField label="City" name="city" required>
       <UInput
         v-model="signupLocationDetails.city"
-        placeholder="e.g. New York"
+        placeholder="e.g. Canberra"
         icon="i-lucide-building-2"
         class="w-full"
       />
@@ -57,7 +58,7 @@
       block
       size="xl"
       class="w-full"
-      :loading="formState?.loading"
+      :loading="loadingState.signup"
       :disabled="formState?.errors.length !== 0 || formState?.loading"
     />
   </UForm>
@@ -74,7 +75,7 @@ const emit = defineEmits<{
   (e: 'submit', payload: LocationEntity): void
 }>()
 
-const { signupLocationDetails } = storeToRefs(useAuthStore())
+const { signupLocationDetails, loadingState } = storeToRefs(useAuthStore())
 
 const schema = z.object({
   country: z.string().min(1, 'Country is required'),
@@ -95,7 +96,7 @@ const schema = z.object({
 
 type Schema = z.output<typeof schema>
 
-function onSubmit(event: FormSubmitEvent<Schema>) {
+async function onSubmit(event: FormSubmitEvent<Schema>) {
   emit('submit', event.data)
 }
 </script>

@@ -2,13 +2,20 @@
   <div class="">
     <HomeHero />
 
-    <div class="py-8">
-      <UContainer class="mx-auto px-4 lg:px-6">
-        <HomePartnerNetwork />
-      </UContainer>
+    <div class="">
+      <div class="bg-white py-8">
+        <UContainer class="mx-auto px-4 lg:px-6">
+          <HomePartnerNetwork />
+        </UContainer>
+      </div>
       <HomeCategoryGrid />
-      <UContainer class="mx-auto px-4 lg:px-6">
-        <HomeTrendingProducts />
+      <div class="bg-white py-8">
+        <UContainer class="mx-auto px-4 lg:px-6">
+          <HomeTrendingProducts />
+        </UContainer>
+      </div>
+      s
+      <UContainer class="mx-auto py-20 lg:px-6">
         <div class="">
           <iframe
             class="w-full h-[50dvh]"

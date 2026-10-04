@@ -1,12 +1,12 @@
 <template>
-  <section class="mx-auto px-4 lg:px-6 mb-12 bg-primary py-12">
+  <section class="mx-auto px-4 lg:px-6 mb-12 bg-primary py-20">
     <UContainer>
       <div class="mb-6 flex items-end justify-between">
         <div>
           <!-- <span class="text-xxs font-bold uppercase tracking-wider text-outline">
           Commercial Core
         </span> -->
-          <h2 class="text-4xl font-oswald font-bold tracking-tight uppercase text-white">
+          <h2 class="text-4xl font-poppins font-bold tracking-tight uppercase text-white">
             Popular Categories
           </h2>
         </div>

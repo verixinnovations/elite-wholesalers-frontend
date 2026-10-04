@@ -51,7 +51,7 @@ export const AuthService = {
   async forgotPassword(data: ForgotPassword) {
     return await ApiService.run({
       method: ApiService.POST,
-      url: '/auth/password/forgot',
+      url: '/auth/forgot-password',
       data
     })
   },
@@ -59,7 +59,7 @@ export const AuthService = {
   async resetPassword(data: ResetPassword) {
     return await ApiService.run({
       method: ApiService.POST,
-      url: '/auth/password/reset',
+      url: '/auth/reset-password',
       data
     })
   },

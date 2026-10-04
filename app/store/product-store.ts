@@ -74,13 +74,20 @@ export const useProductStore = defineStore('ProductStore', {
       }
     },
 
-    selectCategory(category: ProductCategoryEntity) {
+    selectCategory(category: ProductCategoryEntity | string) {
       const router = useRouter()
-      router.push({
-        name: RouteName.Categories,
-        params: { categoryId: category.category_id }
-      })
-      this.selectedCategory = category
+      if (typeof category === 'string') {
+        router.push({
+          name: RouteName.Categories,
+          params: { categoryId: category }
+        })
+      } else {
+        router.push({
+          name: RouteName.Categories,
+          params: { categoryId: category.category_id }
+        })
+        this.selectedCategory = category
+      }
     },
 
     selectSubCategory(subCategory: ProductCategoryEntity) {

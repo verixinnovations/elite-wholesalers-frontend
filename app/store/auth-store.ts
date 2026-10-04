@@ -27,6 +27,8 @@ interface AuthStore {
   signupBusinessDetails: signupBusinessDetails
   signupLocationDetails: LocationEntity
 
+  loadingState: { signup: boolean }
+
   abnDetails: {
     loading: boolean
     isValid: boolean
@@ -37,6 +39,11 @@ interface AuthStore {
     loading: boolean
     isValid: boolean
     licenceNumber: string | null
+    errorReason: string | null
+  }
+  emailDetails: {
+    loading: boolean
+    isAvailable: boolean
     errorReason: string | null
   }
 }
@@ -57,6 +64,12 @@ export const useAuthStore = defineStore('AuthStore', {
       loading: false,
       isValid: false,
       licenceNumber: null,
+      errorReason: null
+    },
+
+    emailDetails: {
+      loading: false,
+      isAvailable: false,
       errorReason: null
     },
 
@@ -82,14 +95,18 @@ export const useAuthStore = defineStore('AuthStore', {
     },
 
     signupLocationDetails: {
-      country: '',
-      country_code: 'ng',
+      country: 'Australia',
+      country_code: 'au',
       state: '',
       city: '',
       street: '',
       postal_code: '',
-      latitude: 10,
-      longitude: 10
+      latitude: 25,
+      longitude: 133
+    },
+
+    loadingState: {
+      signup: false
     }
   }),
 
@@ -118,7 +135,9 @@ export const useAuthStore = defineStore('AuthStore', {
 
     async signupUser(data: SignupDetails) {
       const toast = useToast()
+      this.loadingState.signup = true
       const res = await AuthService.signup(data)
+      this.loadingState.signup = false
       if (res.success) {
         await this.login({ email: data.email ?? '', password: data?.password ?? '' }, false)
         toast.add({ title: res.message })
@@ -127,11 +146,9 @@ export const useAuthStore = defineStore('AuthStore', {
     },
 
     async forgotPassword(data: ForgotPassword) {
-      const toast = useToast()
       const router = useRouter()
       const res = await AuthService.forgotPassword(data)
-      toast.add({ title: res.message })
-      if (res.success) {
+      if (res.message) {
         router.push({
           name: RouteName.Auth.Verify,
           query: { email: data.email }
@@ -177,6 +194,7 @@ export const useAuthStore = defineStore('AuthStore', {
       if (abn.length >= 11) {
         try {
           this.abnDetails.loading = true
+          this.abnDetails.errorReason = null
           const res = await UtilService.fetchABNDetails(abn)
           if (res.success && res.data.AbnStatus === 'Active') {
             this.abnDetails.businessName = res.data.EntityName
@@ -189,7 +207,6 @@ export const useAuthStore = defineStore('AuthStore', {
             this.abnDetails.errorReason = res.message
           }
         } catch (error: any) {
-          console.log(error)
           this.abnDetails.errorReason = error.message
         } finally {
           this.abnDetails.loading = false
@@ -200,7 +217,7 @@ export const useAuthStore = defineStore('AuthStore', {
     async verifyLicense(licenceNumber: string, stateIssued: string) {
       try {
         this.licenceDetails.loading = true
-
+        this.licenceDetails.errorReason = null
         const res = await UtilService.fetchLicenseData(licenceNumber, stateIssued)
         if (res.success) {
           this.licenceDetails.licenceNumber = res.data.licenceNumber
@@ -214,6 +231,24 @@ export const useAuthStore = defineStore('AuthStore', {
         this.licenceDetails.errorReason = 'Error reaching Licence service. Try again.'
       } finally {
         this.licenceDetails.loading = false
+      }
+    },
+
+    async checkDuplicateEmail(email: string) {
+      try {
+        this.emailDetails.loading = true
+        this.emailDetails.errorReason = null
+        const res = await UtilService.checkDuplicatesDetails({ email })
+        if (res.success) {
+          this.emailDetails.isAvailable = true
+        } else {
+          this.emailDetails.isAvailable = false
+          this.emailDetails.errorReason = res.message
+        }
+      } catch (err: any) {
+        this.emailDetails.errorReason = err.message
+      } finally {
+        this.emailDetails.loading = false
       }
     },
 
@@ -275,7 +310,7 @@ export const useAuthStore = defineStore('AuthStore', {
   },
 
   persist: {
-    omit: ['abnDetails', 'licenceDetails']
+    pick: ['user']
   }
 })
 

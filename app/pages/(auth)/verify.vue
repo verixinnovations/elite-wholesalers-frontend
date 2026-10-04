@@ -5,7 +5,7 @@
       otp
       class=""
       placeholder="*"
-      length="6"
+      length="4"
       :ui="{
         base: 'size-8 text-xl rounded-lg'
       }"
@@ -57,7 +57,7 @@ const state = ref({
 const isComplete = ref(false)
 
 const validatePinComplete = () => {
-  if (state.value.otp?.length === 6) {
+  if (state.value.otp?.length === 4) {
     isComplete.value = true
   } else {
     isComplete.value = false

@@ -22,7 +22,7 @@
             <UButton
               variant="link"
               size="lg"
-              :icon="show ? 'i-lucide-eye-off' : 'i-lucide-eye'"
+              :icon="show ? 'i-lucide-eye' : 'i-lucide-eye-off'"
               aria-label="show ? 'Hide password' : 'Show password'"
               :aria-pressed="show"
               aria-controls="password"

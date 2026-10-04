@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { RouteName } from '~/constants/route-names'
-</script>
-
 <template>
   <div class="relative flex min-h-dvh w-full bg-white font-sans text-zinc-900">
     <aside
@@ -74,3 +70,7 @@ import { RouteName } from '~/constants/route-names'
     </main>
   </div>
 </template>
+
+<script setup lang="ts">
+import { RouteName } from '~/constants/route-names'
+</script>

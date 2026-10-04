@@ -24,7 +24,7 @@
       />
     </UFormField>
 
-    <UFormField class="w-full" label="Email address" name="email" required>
+    <!-- <UFormField class="w-full" label="Email address" name="email" required>
       <UInput
         v-model="signupDetails.email"
         type="email"
@@ -32,6 +32,47 @@
         placeholder="you@example.com"
         icon="i-lucide-mail"
       />
+    </UFormField> -->
+    <UFormField class="w-full" label="Email address" name="email" required>
+      <UInput
+        v-model="signupDetails.email"
+        type="email"
+        class="w-full"
+        placeholder="you@example.com"
+        leadingIcon="i-lucide-mail"
+        @change="authStore.checkDuplicateEmail(signupDetails.email)"
+        :ui="{
+          base:
+            !signupDetails.email || emailDetails.isAvailable || emailDetails.loading
+              ? ''
+              : '!ring-error',
+          leadingIcon:
+            !signupDetails.email || emailDetails.loading
+              ? ''
+              : emailDetails.isAvailable
+                ? '!text-success'
+                : '!text-error'
+        }"
+      >
+        <template #trailing>
+          <UIcon
+            v-if="emailDetails.loading"
+            name="i-lucide-loader-circle"
+            class="animate-spin text-primary"
+          />
+          <UIcon
+            v-else-if="emailDetails.isAvailable"
+            name="i-lucide-check-circle"
+            class="text-success"
+          />
+        </template>
+      </UInput>
+
+      <template #help>
+        <p v-if="emailDetails.errorReason" class="text-error">
+          {{ emailDetails.errorReason }}
+        </p>
+      </template>
     </UFormField>
 
     <UFormField label="Phone number" class="w-full" name="phone_number" required>
@@ -96,7 +137,7 @@
       block
       size="xl"
       :loading="formState?.loading"
-      :disabled="formState?.errors.length !== 0 || formState?.loading"
+      :disabled="formState?.errors.length !== 0 || formState?.loading || !emailDetails.isAvailable"
     >
       <span>Continue</span>
       <UIcon name="i-lucide-arrow-right" />
@@ -109,7 +150,8 @@ import * as z from 'zod'
 import type { FormSubmitEvent } from '#ui/types'
 import { useAuthStore } from '~/store/auth-store'
 
-const { signupDetails } = storeToRefs(useAuthStore())
+const authStore = useAuthStore()
+const { signupDetails, emailDetails } = storeToRefs(authStore)
 
 const emit = defineEmits(['continue'])
 const show = ref(false)
@@ -119,7 +161,7 @@ const schema = z
     firstname: z.string().min(2, 'Enter your first name'),
     lastname: z.string().min(2, 'Enter your last name'),
     email: z.email('Enter a valid email address'),
-    phone_number: z.e164('Enter a valid phone number'),
+    phone_number: z.string('Enter a valid phone number'),
     password: z.string().min(8, 'Password must be at least 8 characters'),
     password_confirmation: z.string()
   })

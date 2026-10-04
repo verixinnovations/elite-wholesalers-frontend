@@ -82,7 +82,6 @@
 </template>
 
 <script setup lang="ts">
-// Page Data Objects
 const pageData = {
   title: 'ABOUT US',
   author: 'George Papoulidis (General Manager)',

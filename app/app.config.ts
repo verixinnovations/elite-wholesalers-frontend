@@ -50,6 +50,21 @@ export default defineAppConfig({
       },
       defaultVariants: { size: 'lg' }
     },
+    inputMenu: {
+      slots: {
+        root: 'relative inline-flex items-center',
+        base: [
+          'w-full rounded-full border-0 appearance-none placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75',
+          'transition-colors'
+        ]
+      },
+      variants: {
+        size: {
+          lg: { base: 'px-4 py-2 text-base gap-2 w-full' }
+        }
+      },
+      defaultVariants: { size: 'lg' }
+    },
 
     inputNumber: {
       slots: {

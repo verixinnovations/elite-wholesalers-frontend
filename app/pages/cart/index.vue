@@ -5,10 +5,12 @@
         <p class="text-xs font-bold uppercase tracking-[0.16em] text-primary-500">Your selection</p>
         <h1 class="mt-2 font-oswald text-4xl font-medium text-neutral-950">Shopping cart</h1>
       </div>
-      <span class="pb-1 text-sm text-neutral-500">{{ cart.totalItems }} items</span>
+      <span class="pb-1 text-sm text-neutral-500">
+        {{ itemCount }} {{ itemCount === 1 ? 'item' : 'items' }}
+      </span>
     </div>
 
-    <div v-if="!cart.items.length" class="py-20 text-center">
+    <div v-if="cartItems.length === 0" class="py-20 text-center">
       <UIcon name="i-lucide-shopping-bag" class="mx-auto size-10 text-neutral-300" />
       <h2 class="mt-5 font-oswald text-2xl text-neutral-900">Your cart is empty</h2>
       <p class="mt-2 text-sm text-neutral-500">Find something worth stocking up on.</p>
@@ -18,65 +20,58 @@
     <div v-else class="mt-7 grid gap-10 lg:grid-cols-[1fr_320px]">
       <div class="divide-y divide-neutral-200">
         <article
-          v-for="item in cart.items"
-          :key="item.id"
+          v-for="item in cartItems"
+          :key="item.cart_id"
           class="flex gap-4 py-5 first:pt-0 sm:gap-6"
         >
           <NuxtLink
-            :to="`/products/${item.productId}`"
+            :to="`/products/${item.item_id}`"
             class="size-24 shrink-0 overflow-hidden bg-surface-container-low sm:size-32"
           >
-            <NuxtImg
-              :src="item.image"
-              :alt="item.title"
+            <img
+              :src="productImage(item.product)"
+              :alt="item.product.name"
               class="size-full object-cover"
-              width="200"
-              height="200"
             />
           </NuxtLink>
+
           <div class="flex min-w-0 flex-1 flex-col justify-between gap-3 sm:flex-row">
             <div class="min-w-0">
               <NuxtLink
-                :to="`/products/${item.productId}`"
+                :to="`/products/${item.item_id}`"
                 class="font-semibold text-neutral-900 hover:text-primary-600"
               >
-                {{ item.title }}
+                {{ item.product.name }}
               </NuxtLink>
-              <p v-if="Object.keys(item.variant).length" class="mt-1 text-sm text-neutral-500">
-                {{
-                  Object.entries(item.variant)
-                    .map(([name, value]) => `${name}: ${value}`)
-                    .join(' · ')
-                }}
-              </p>
               <p class="mt-2 text-sm font-medium text-neutral-700">
-                {{ NumberFunctions.formatCurrency(item.unitPrice, item.currencyCode) }}
+                {{ formatPrice(item.price.amount, item.price.currency) }} each
               </p>
             </div>
-            <div
-              class="flex items-center justify-between gap-5 sm:items-end sm:flex-col sm:justify-between"
-            >
+
+            <div class="flex items-center justify-between gap-5 sm:flex-col sm:items-end">
               <div class="inline-flex items-center border border-neutral-200">
                 <button
                   class="size-9 text-neutral-600 hover:bg-neutral-50"
-                  :aria-label="`Decrease ${item.title} quantity`"
-                  @click="cart.updateQuantity(item.id, item.quantity - 1)"
+                  :aria-label="`Decrease ${item.product.name} quantity`"
+                  @click="cartStore.updateQuantity(item.cart_id, item.quantity - 1)"
                 >
                   −
                 </button>
                 <span class="min-w-9 text-center text-sm tabular-nums">{{ item.quantity }}</span>
                 <button
                   class="size-9 text-neutral-600 hover:bg-neutral-50"
-                  :aria-label="`Increase ${item.title} quantity`"
-                  :disabled="item.quantity >= (item.maxQuantity ?? Number.MAX_SAFE_INTEGER)"
-                  @click="cart.updateQuantity(item.id, item.quantity + 1)"
+                  :aria-label="`Increase ${item.product.name} quantity`"
+                  @click="cartStore.updateQuantity(item.cart_id, item.quantity + 1)"
                 >
                   +
                 </button>
               </div>
+              <span class="text-sm font-semibold">
+                {{ formatPrice(item.price.amount * item.quantity, item.price.currency) }}
+              </span>
               <button
                 class="text-sm text-neutral-500 underline decoration-neutral-300 underline-offset-4 hover:text-red-700"
-                @click="cart.removeFromCart(item.id)"
+                @click="cartStore.removeFromCart(item.cart_id)"
               >
                 Remove
               </button>
@@ -90,21 +85,15 @@
       >
         <h2 class="font-oswald text-2xl text-neutral-950">Order summary</h2>
         <div class="mt-6 flex justify-between text-sm text-neutral-600">
-          <span>Subtotal</span
-          ><span>{{ NumberFunctions.formatCurrency(cart.subtotal, currencyCode) }}</span>
+          <span>Subtotal</span>
+          <span>{{ formatPrice(subtotal, currencyCode) }}</span>
         </div>
         <p class="mt-2 text-xs leading-5 text-neutral-500">
-          Shipping and taxes are calculated at checkout.
+          Shipping and taxes can be confirmed when your order is reviewed.
         </p>
-        <div
-          class="mt-5 flex justify-between border-t border-neutral-200 pt-4 font-semibold text-neutral-950"
-        >
-          <span>Estimated total</span
-          ><span>{{ NumberFunctions.formatCurrency(cart.subtotal, currencyCode) }}</span>
-        </div>
         <UButton
           label="Continue to checkout"
-          to="/checkout"
+          to="/cart/checkout"
           icon="i-lucide-arrow-right"
           trailing
           class="mt-6 w-full justify-center"
@@ -113,16 +102,36 @@
         <NuxtLink
           to="/products"
           class="mt-4 block text-center text-sm font-semibold text-primary-600 hover:underline"
-          >Continue shopping</NuxtLink
         >
+          Continue shopping
+        </NuxtLink>
       </aside>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
-const cart = useCartStore()
-const currencyCode = computed(() => cart.items[0]?.currencyCode ?? 'USD')
+import type { Currency } from '~/types/enums'
+import type { ProductDataEntity, ProductEntity } from '~/types/product'
+import { useCartStore } from '~/store/cart-store'
+
+const cartStore = useCartStore()
+const { cartItems, subtotal, itemCount } = storeToRefs(cartStore)
+const currencyCode = computed(() => cartItems.value[0]?.price.currency ?? 'AUD')
+
+function formatPrice(amount: number, currency: Currency | string) {
+  return new Intl.NumberFormat('en-AU', { style: 'currency', currency }).format(amount)
+}
+
+function productImage(product: ProductEntity | ProductDataEntity) {
+  const imageDocumentId =
+    'image_document_id' in product ? product.image_document_id : product.documents[0]?.document_id
+
+  return ZohoHelpers.getZohoProductImageUrl({
+    imageName: product.image_name,
+    imageDocumentId
+  })
+}
 
 useSeoMeta({ title: 'Shopping cart' })
 </script>

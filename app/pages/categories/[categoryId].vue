@@ -38,6 +38,23 @@
         >
           {{ category.name }}
         </UButton>
+        <UButton
+          type="button"
+          class="px-4 py-2"
+          :variant="
+            selectedSubCategory?.category_id === selectedCategory?.category_id ? 'solid' : 'outline'
+          "
+          :aria-pressed="selectedSubCategory?.category_id === selectedCategory?.category_id"
+          @click="
+            () => {
+              if (selectedCategory !== null) {
+                productStore.selectSubCategory(selectedCategory)
+              }
+            }
+          "
+        >
+          {{ selectedCategory?.name }}
+        </UButton>
       </nav>
     </div>
 

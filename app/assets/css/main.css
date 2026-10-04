@@ -4,12 +4,14 @@
 @import 'vue-flux/style.css';
 @import './slider.scss';
 @import './tel-input.scss';
+/* @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap'); */
 
 @import 'vue-tel-input/vue-tel-input.css';
 
 @theme static {
   --font-sans: 'DM Sans', sans-serif;
   --font-oswald: 'Oswald', sans-serif;
+  --font-archivo-black: 'Archivo Black', sans-serif;
   --color-primary: #024b8f;
   --color-primary-50: #e3ebff;
   --color-primary-100: #c7d7ff;

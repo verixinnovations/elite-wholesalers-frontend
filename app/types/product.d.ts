@@ -1,3 +1,5 @@
+import type { Currency } from './enums'
+
 export interface ProductTaxCategory {
   tax_category_code: string
   tax_category_name: string
@@ -107,6 +109,10 @@ export interface ProductDataEntity {
   is_modifier_item: boolean
   integration_references: unknown[]
   has_variant: boolean
+  price: {
+    amount: number
+    currency: Currency
+  }
 }
 
 export interface ProductDataResponse {
@@ -289,6 +295,10 @@ export interface ProductEntity {
   tax_category_name: string
   tags: string[]
   product_tax_category: ProductTaxCategory
+  price: {
+    amount: number
+    currency: Currency
+  }
 }
 
 export type ProductVariant = Omit<ProductEntity, 'variants'> & {
@@ -314,6 +324,17 @@ export interface ProductCategoryEntity {
   name: string
   ondc_category_type_formatted: string
   image: string | null
+}
+
+export interface CartEntity {
+  cart_id: string
+  item_id: string
+  product: ProductEntity | ProductDataEntity
+  quantity: number
+  price: {
+    amount: number
+    currency: `${Currency}`
+  }
 }
 
 export interface DocumentItem {

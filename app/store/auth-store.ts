@@ -103,12 +103,14 @@ export const useAuthStore = defineStore('AuthStore', {
       const toast = useToast()
       const route = useRoute()
       const res = await AuthService.login(data)
+      ApiService.setAccessToken(res.data.access_token)
       if (res.success) {
         this.user = res.data
         if (showToast) toast.add({ title: 'Login Successful!' })
         if (route.redirectedFrom) {
           return router.replace({ path: route.redirectedFrom.fullPath })
         }
+
         return router.replace({ name: RouteName.Home })
       } else toast.add({ description: res.message })
       return res

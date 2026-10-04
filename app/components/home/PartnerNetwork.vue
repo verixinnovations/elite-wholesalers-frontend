@@ -1,18 +1,15 @@
 <template>
-  <section class="mb-12 border-t border-surface-container pt-8">
-    <div class="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-      <div>
-        <div class="mb-1 flex items-center gap-2">
-          <span class="size-2 rounded-full bg-primary" /><span
-            class="text-xxs font-bold uppercase tracking-wider text-outline"
-            >Our Partners</span
-          >
-        </div>
-        <!-- <h2 class="text-xl font-bold tracking-tight max-w-md text-on-surface">
-          Suppliers of premium CCTV, Alarms, Intercoms, Lighting, Automotion and Automotive Products
-          for the Trade and Retail Sector.
-        </h2> -->
-      </div>
+  <section class="mb-12 pt-8">
+    <div class="flex justify-center mx-auto text-center my-10 flex-col size-full">
+      <h2
+        class="text-3xl font-semibold text-primary w-fit p-3 mb-4 rounded-sm mx-auto border-2 border-black"
+      >
+        Welcome to Elite Wholesalers
+      </h2>
+      <p class="text-primary text-lg">
+        Suppliers of premium CCTV, Alarms, Intercoms, Lighting, Automotion and Automotive Products
+        for the Trade and Retail Sector.
+      </p>
     </div>
     <UMarquee
       :ui="{

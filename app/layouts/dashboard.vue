@@ -48,7 +48,10 @@
 
 <script setup lang="ts">
 const navigation = [
+  { label: 'Overview', to: '/dashboard', icon: 'i-lucide-layout-dashboard' },
   { label: 'My orders', to: '/dashboard/orders', icon: 'i-lucide-package-check' },
-  { label: 'Profile settings', to: '/dashboard/profile', icon: 'i-lucide-user-round' }
+  { label: 'Profile', to: '/dashboard/profile', icon: 'i-lucide-user-round' },
+  { label: 'Addresses', to: '/dashboard/addresses', icon: 'i-lucide-map-pin' },
+  { label: 'Security', to: '/dashboard/security', icon: 'i-lucide-shield-check' }
 ]
 </script>

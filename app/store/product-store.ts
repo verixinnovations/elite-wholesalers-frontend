@@ -7,6 +7,7 @@ import type { ProductCategoryEntity, ProductDataEntity, ProductEntity } from '~/
 interface ProductStore {
   categories?: ProductCategoryEntity[]
   featuredProducts: ProductEntity[]
+  searchedProducts: ProductEntity[]
   categoryProducts: ProductEntity[]
   subCategories?: {
     parentCategory: ProductCategoryEntity
@@ -21,6 +22,7 @@ export const useProductStore = defineStore('ProductStore', {
   state: (): ProductStore => ({
     categories: [],
     featuredProducts: [],
+    searchedProducts: [],
     categoryProducts: [],
     subCategories: {
       parentCategory: {} as ProductCategoryEntity,
@@ -41,6 +43,13 @@ export const useProductStore = defineStore('ProductStore', {
       }
     },
 
+    async searchProducts(keyword: string) {
+      const res = await ProductService.getProducts({ name_contains: keyword })
+      if (res.success) {
+        this.searchedProducts = res.data
+      }
+    },
+
     async getProductCategories() {
       const res = await ProductService.getProductsCategories()
       if (res.success) {
@@ -52,7 +61,9 @@ export const useProductStore = defineStore('ProductStore', {
       const res = await ProductService.getProductsSubcategories(categoryId)
       if (res.success) {
         this.subCategories = res.data
-        this.selectSubCategory(res.data.subCategories[0])
+        if (res.data.subCategories.length === 0) {
+          this.selectSubCategory(res.data.parentCategory)
+        } else this.selectSubCategory(res.data.subCategories[0])
       }
     },
 

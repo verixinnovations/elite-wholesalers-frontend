@@ -1,6 +1,4 @@
-import type { Order, OrderStatus, SubmitOrderPayload } from '~/types/ecommerce'
-
-const sampleOrders: Order[] = [
+const sampleOrders = [
   {
     id: 'EW-10482',
     createdAt: '2026-09-18T10:24:00.000Z',
@@ -64,12 +62,12 @@ function delay<T>(value: T): Promise<T> {
   return new Promise((resolve) => setTimeout(() => resolve(value), 450))
 }
 
-export async function submitOrder(payload: SubmitOrderPayload): Promise<Order> {
-  const status: OrderStatus = 'Pending'
-  const order: Order = {
+export async function submitOrder(payload: any) {
+  const status = 'Pending'
+  const order = {
     id: `EW-${Math.floor(10000 + Math.random() * 90000)}`,
     createdAt: new Date().toISOString(),
-    items: payload.items.map((item) => ({ ...item, variant: { ...item.variant } })),
+    items: payload.items.map((item: any) => ({ ...item, variant: { ...item.variant } })),
     subtotal: payload.subtotal,
     shipping: payload.shipping,
     total: payload.total,
@@ -82,6 +80,6 @@ export async function submitOrder(payload: SubmitOrderPayload): Promise<Order> {
   return order
 }
 
-export async function getUserOrders(): Promise<Order[]> {
+export async function getUserOrders() {
   return delay(sampleOrders.map((order) => ({ ...order, items: [...order.items] })))
 }

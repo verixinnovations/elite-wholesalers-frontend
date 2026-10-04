@@ -3,9 +3,7 @@ import ApiService from './api.service'
 export const ProductService = {
   async getProducts(
     params = {
-      page: 1,
-      perPage: 20,
-      detailed: 1
+      name_contains: ''
     }
   ) {
     return await ApiService.run({

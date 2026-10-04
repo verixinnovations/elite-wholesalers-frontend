@@ -18,7 +18,7 @@
           {{ product.name }}
         </h1>
         <p class="mt-5 text-2xl font-bold text-neutral-950">
-          {{ NumberFunctions.formatCurrency(product.rate, 'AUD') }}
+          {{ NumberFunctions.formatCurrency(product.price.amount, product.price.currency) }}
           <span class="ml-2 text-sm font-normal text-neutral-500">per unit</span>
         </p>
         <div
@@ -50,18 +50,18 @@
           v-html="product.description"
           class="mt-7 whitespace-pre-line leading-7 text-neutral-600"
         ></p>
-
-        <!-- <p v-if="product.variants?.length && !variantsReady" class="mt-2 text-sm text-neutral-500">
-          Choose each option before adding this item.
-        </p> -->
       </section>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
+import { RouteName } from '~/constants/route-names'
 import { useProductStore } from '~/store/product-store'
 
+definePageMeta({
+  name: RouteName.ProductDetails
+})
 const route = useRoute()
 const productStore = useProductStore()
 const { selectedProduct: product } = storeToRefs(productStore)

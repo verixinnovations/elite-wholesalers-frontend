@@ -6,33 +6,66 @@
       <p class="mt-2 text-sm text-neutral-500">Manage the details associated with your account.</p>
     </div>
 
-    <form class="mt-7 space-y-5" @submit.prevent="saveProfile">
-      <UFormField label="Name" name="name" required>
-        <UInput v-model="name" autocomplete="name" class="w-full" />
-      </UFormField>
-      <UFormField label="Username" name="username" hint="Managed by your account">
-        <UInput :model-value="authStore.user?.username ?? 'Not set'" disabled class="w-full" />
-      </UFormField>
-      <UButton type="submit" label="Save changes" icon="i-lucide-save" :disabled="!name.trim()" />
-    </form>
+    <div class="mt-7 max-w-2xl">
+      <div class="mb-6 flex justify-end gap-2">
+        <UButton
+          v-if="!editing"
+          label="Edit"
+          icon="i-lucide-pencil"
+          variant="outline"
+          @click="editing = true"
+        />
+        <template v-else>
+          <UButton label="Cancel" color="neutral" variant="ghost" @click="cancelEditing" />
+          <UButton label="Save" icon="i-lucide-save" :disabled="!isValid" @click="saveProfile" />
+        </template>
+      </div>
+
+      <form class="space-y-5" @submit.prevent="saveProfile">
+        <UFormField label="Name" name="name" required>
+          <p v-if="!editing" class="py-2 text-sm text-neutral-900">{{ form.name || 'Not set' }}</p>
+          <UInput v-else v-model="form.name" autocomplete="name" class="w-full" />
+        </UFormField>
+        <UFormField label="Email" name="email" required>
+          <p v-if="!editing" class="py-2 text-sm text-neutral-900">{{ form.email || 'Not set' }}</p>
+          <UInput v-else v-model="form.email" type="email" autocomplete="email" class="w-full" />
+        </UFormField>
+        <UFormField label="Phone" name="phone">
+          <p v-if="!editing" class="py-2 text-sm text-neutral-900">{{ form.phone || 'Not set' }}</p>
+          <UInput v-else v-model="form.phone" type="tel" autocomplete="tel" class="w-full" />
+        </UFormField>
+      </form>
+    </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { useAuthStore } from '~/store/auth-store'
+import dashboardData from '~/data/data.json'
 
 definePageMeta({
   layout: 'dashboard',
-  middleware: 'dashboard-auth'
+  middleware: 'auth'
 })
 
-const authStore = useAuthStore()
-const name = ref(authStore.user?.name ?? '')
+const form = reactive(structuredClone(dashboardData.profile))
+const savedProfile = ref(structuredClone(dashboardData.profile))
+const editing = ref(false)
 const toast = useToast()
+const isValid = computed(
+  () => form.name.trim().length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)
+)
+
+function cancelEditing() {
+  Object.assign(form, savedProfile.value)
+  editing.value = false
+}
 
 function saveProfile() {
-  if (!authStore.user || !name.value.trim()) return
-  authStore.user = { ...authStore.user, name: name.value.trim() }
+  if (!isValid.value) return
+  form.name = form.name.trim()
+  form.email = form.email.trim()
+  savedProfile.value = structuredClone(form)
+  editing.value = false
   toast.add({ title: 'Profile updated', color: 'success' })
 }
 

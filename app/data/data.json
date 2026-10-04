@@ -1,0 +1,162 @@
+{
+  "profile": {
+    "id": "user_demo_001",
+    "name": "Jordan Taylor",
+    "email": "jordan.taylor@example.com",
+    "phone": "+61 400 123 456",
+    "company": "Taylor Retail Co."
+  },
+  "addresses": [
+    {
+      "id": "address_001",
+      "label": "Warehouse",
+      "firstName": "Jordan",
+      "lastName": "Taylor",
+      "company": "Taylor Retail Co.",
+      "address1": "18 Harbour Street",
+      "address2": "Unit 4",
+      "city": "Sydney",
+      "state": "NSW",
+      "postalCode": "2000",
+      "country": "Australia",
+      "phone": "+61 400 123 456",
+      "isDefault": true
+    },
+    {
+      "id": "address_002",
+      "label": "Storefront",
+      "firstName": "Jordan",
+      "lastName": "Taylor",
+      "company": "Taylor Retail Co.",
+      "address1": "72 King Street",
+      "address2": "",
+      "city": "Newcastle",
+      "state": "NSW",
+      "postalCode": "2300",
+      "country": "Australia",
+      "phone": "+61 400 123 456",
+      "isDefault": false
+    }
+  ],
+  "carts": [
+    {
+      "cart_id": "cart_demo_001",
+      "item_id": "item_demo_001",
+      "quantity": 12,
+      "price": {
+        "amount": 18.5,
+        "currency": "AUD"
+      },
+      "product": {
+        "item_id": "item_demo_001",
+        "name": "Recycled Cotton Tote",
+        "item_name": "Recycled Cotton Tote",
+        "category_name": "Bags & Accessories",
+        "sku": "BAG-CT-001",
+        "rate": 18.5,
+        "image_url": "https://picsum.photos/seed/tote-dashboard/480/480"
+      }
+    },
+    {
+      "cart_id": "cart_demo_002",
+      "item_id": "item_demo_002",
+      "quantity": 6,
+      "price": {
+        "amount": 34,
+        "currency": "AUD"
+      },
+      "product": {
+        "item_id": "item_demo_002",
+        "name": "Insulated Drink Bottle",
+        "item_name": "Insulated Drink Bottle",
+        "category_name": "Drinkware",
+        "sku": "DRK-BT-014",
+        "rate": 34,
+        "image_url": "https://picsum.photos/seed/bottle-dashboard/480/480"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "id": "EW-10482",
+      "status": "Shipped",
+      "createdAt": "2026-09-24T10:30:00.000Z",
+      "total": 438,
+      "items": [
+        {
+          "quantity": 12,
+          "product": {
+            "item_id": "item_demo_001",
+            "name": "Recycled Cotton Tote",
+            "item_name": "Recycled Cotton Tote",
+            "category_name": "Bags & Accessories",
+            "sku": "BAG-CT-001",
+            "rate": 18.5,
+            "image_url": "https://picsum.photos/seed/tote-dashboard/480/480"
+          }
+        },
+        {
+          "quantity": 6,
+          "product": {
+            "item_id": "item_demo_002",
+            "name": "Insulated Drink Bottle",
+            "item_name": "Insulated Drink Bottle",
+            "category_name": "Drinkware",
+            "sku": "DRK-BT-014",
+            "rate": 34,
+            "image_url": "https://picsum.photos/seed/bottle-dashboard/480/480"
+          }
+        }
+      ]
+    },
+    {
+      "id": "EW-10317",
+      "status": "Delivered",
+      "createdAt": "2026-08-11T04:15:00.000Z",
+      "total": 256.5,
+      "items": [
+        {
+          "quantity": 15,
+          "product": {
+            "item_id": "item_demo_003",
+            "name": "Natural Kraft Gift Box Set",
+            "item_name": "Natural Kraft Gift Box Set",
+            "category_name": "Packaging",
+            "sku": "PKG-KB-008",
+            "rate": 17.1,
+            "image_url": "https://picsum.photos/seed/giftbox-dashboard/480/480"
+          }
+        }
+      ]
+    },
+    {
+      "id": "EW-10206",
+      "status": "Processing",
+      "createdAt": "2026-07-02T01:20:00.000Z",
+      "total": 146,
+      "items": [
+        {
+          "quantity": 10,
+          "product": {
+            "item_id": "item_demo_004",
+            "name": "Organic Cotton Apron",
+            "item_name": "Organic Cotton Apron",
+            "category_name": "Textiles",
+            "sku": "TXT-AP-020",
+            "rate": 14.6,
+            "image_url": "https://picsum.photos/seed/apron-dashboard/480/480"
+          }
+        }
+      ]
+    }
+  ],
+  "security": {
+    "passwordMinimumLength": 8,
+    "passwordLastChanged": "Not recorded"
+  },
+  "securityForm": {
+    "currentPassword": "",
+    "newPassword": "",
+    "confirmNewPassword": ""
+  }
+}

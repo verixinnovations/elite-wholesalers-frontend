@@ -41,11 +41,13 @@
     <div class="mt-0 mb-0 p-2 flex items-center justify-between gap-3">
       <BaseAuthButton size="lg" :variant="isLoggedIn ? 'ghost' : 'solid'" :block="!isLoggedIn">
         <span class="" v-if="isLoggedIn">
-          {{ NumberFunctions.formatCurrency(product?.rate || 0, 'AUD') }}</span
+          {{
+            NumberFunctions.formatCurrency(product?.price.amount || 0, product.price.currency)
+          }}</span
         >
         <span v-else class="font-semibold">View Pricing</span>
       </BaseAuthButton>
-      <BaseAddToCart v-if="isLoggedIn" />
+      <BaseAddToCart v-if="isLoggedIn" :product="product" />
     </div>
   </article>
 </template>

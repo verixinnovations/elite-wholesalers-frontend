@@ -14,7 +14,7 @@ export const ZohoHelpers = {
     width = 600,
     height = 600,
     storefrontDomain = 'www.elitewholesalersonline.com.au',
-    placeholderUrl = 'https://via.placeholder.com/600x600?text=No+Image'
+    placeholderUrl = '/images/product-placeholder.png'
   }: ImageOptions): string {
     if (!imageName || !imageDocumentId) {
       return placeholderUrl

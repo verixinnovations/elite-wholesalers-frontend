@@ -16,23 +16,26 @@
       </div>
       <UContainer class="mx-auto py-20 lg:px-6">
         <div class="">
-          <iframe
-            class="w-full h-[50dvh]"
-            src="https://www.youtube.com/embed/xArTod5Rz6o?si=HUPP3PviSecdapC9"
-            title="YouTube video player"
-            frameborder="0"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-              web-share;
-            "
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+          <ClientOnly>
+            <div class="relative w-full aspect-video overflow-hidden rounded-xl shadow-md">
+              <iframe
+                class="absolute top-0 left-0 w-full h-full border-0"
+                src="https://www.youtube.com/embed/xArTod5Rz6o?si=HUPP3PviSecdapC9"
+                title="YouTube video player"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </ClientOnly>
         </div>
       </UContainer>
     </div>

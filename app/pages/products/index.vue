@@ -1,5 +1,5 @@
 <script setup lang="ts">
 definePageMeta({
-  redirect: '/'
+  redirect: '/#products'
 })
 </script>

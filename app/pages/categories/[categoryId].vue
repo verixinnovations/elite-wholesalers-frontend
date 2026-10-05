@@ -61,7 +61,7 @@
       class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
     >
       <BaseProductCard
-        v-for="product in categoryProducts"
+        v-for="product in sortedProducts"
         :key="product.item_id"
         :product="product"
       />
@@ -90,12 +90,27 @@ const { selectedCategory, parentCategory, subCategories, categoryProducts } =
 
 const categoryId = computed(() => route.params.categoryId as string)
 
+const sortedProducts = computed(() => {
+  const products = categoryProducts.value
+  if (!products || !Array.isArray(products)) return []
+
+  return [...products].sort((a, b) => {
+    const stockA = Number(a.available_stock ?? 0)
+    const stockB = Number(b.available_stock ?? 0)
+
+    const hasStockA = stockA > 0 ? 1 : 0
+    const hasStockB = stockB > 0 ? 1 : 0
+
+    if (hasStockA === hasStockB) return 0
+
+    return hasStockB - hasStockA
+  })
+})
+
 const categoryParentsBreadcrumb = computed(() => {
   const base = [
     {
-      to: {
-        name: RouteName.Home
-      },
+      to: '/#products',
       label: 'Products',
       onSelect: () => null
     }

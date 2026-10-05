@@ -95,6 +95,12 @@ import { useAuthStore } from '~/store/auth-store'
 import { CartService } from '~/services/cart.service'
 import { Currency } from '~/types/enums'
 
+import { RouteName } from '~/constants/route-names'
+definePageMeta({
+  middleware: 'auth',
+  name: RouteName.Cart
+})
+
 const cartStore = useCartStore()
 const { user } = storeToRefs(useAuthStore())
 const { cartItems, subtotal } = storeToRefs(cartStore)

@@ -34,7 +34,7 @@
             class="size-24 shrink-0 overflow-hidden bg-surface-container-low sm:size-32"
           >
             <img
-              :src="productImage(item.product)"
+              :src="productImage(item?.product)"
               :alt="item?.product?.name"
               class="size-full object-cover"
             />
@@ -51,7 +51,7 @@
                 </NuxtLink>
               </div>
               <p class="mt-2 text-sm font-medium text-primary">
-                {{ NumberFunctions.formatCurrency(item.price.amount, item.price.currency) }} each
+                {{ NumberFunctions.formatCurrency(item.price?.amount, item.price.currency) }} each
               </p>
             </div>
 
@@ -59,19 +59,21 @@
               <div class="inline-flex items-center border border-neutral-200">
                 <button
                   class="size-9 text-neutral-600 hover:bg-neutral-50"
-                  :aria-label="`Decrease ${item.product.name} quantity`"
+                  :aria-label="`Decrease ${item?.product?.name} quantity`"
                   @click="cartStore.updateQuantity(item.cartId, item.quantity - 1)"
                 >
                   −
                 </button>
                 <span class="min-w-9 text-center text-sm tabular-nums">{{ item.quantity }}</span>
-                <button
-                  class="size-9 text-neutral-600 hover:bg-neutral-50"
-                  :aria-label="`Increase ${item.product.name} quantity`"
+                <UButton
+                  variant="ghost"
+                  class="rounded-none! disabled:bg-primary-50 size-9 text-neutral-600 hover:bg-neutral-50"
+                  :aria-label="`Increase ${item?.product?.name} quantity`"
+                  :disabled="item.quantity >= item.product?.available_stock"
                   @click="cartStore.updateQuantity(item.cartId, item.quantity + 1)"
                 >
                   +
-                </button>
+                </UButton>
               </div>
               <span class="text-sm font-semibold">
                 {{
@@ -123,10 +125,14 @@
 </template>
 
 <script setup lang="ts">
-import type { Currency } from '~/types/enums'
 import type { ProductDataEntity, ProductEntity } from '~/types/product'
 import { useCartStore } from '~/store/cart-store'
 
+import { RouteName } from '~/constants/route-names'
+definePageMeta({
+  middleware: 'auth',
+  name: RouteName.Cart
+})
 const cartStore = useCartStore()
 const { cartItems, subtotal, itemCount } = storeToRefs(cartStore)
 

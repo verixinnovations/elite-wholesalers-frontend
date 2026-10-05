@@ -6,10 +6,12 @@
     }"
     v-bind="$attrs"
     class="flex items-center justify-center px-5!"
-    :disabled="productInCart"
+    :disabled="productInCart || !isProductAvailable"
     @click="addToCart"
   >
-    <span>{{ productInCart ? 'Added' : 'Add to Cart' }}</span>
+    <span>{{
+      productInCart ? 'Added' : isProductAvailable ? 'Add to Cart' : 'Not Available'
+    }}</span>
   </UButton>
 </template>
 
@@ -35,6 +37,11 @@ const product = computed<ProductEntity | ProductDataEntity | null>(
 const productInCart = computed(() =>
   product.value ? cartStore.cartItems.some((item) => item.itemId === product.value?.item_id) : false
 )
+
+const isProductAvailable = computed(() => {
+  if (product.value && product?.value?.available_stock <= 0) return false
+  return true
+})
 
 function addToCart() {
   if (!product.value) return

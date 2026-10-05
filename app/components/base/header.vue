@@ -1,21 +1,22 @@
 <template>
   <UHeader
-    class="mx-auto bg-primary ring-transparent border-none text-white"
+    class="mx-auto bg-primary ring-transparent border-none text-white px-4 sm:px-6"
     :toggle="{
       color: 'primary',
       variant: 'subtle',
-      class: 'rounded-full  flex items-center'
+      class: 'rounded-full flex items-center lg:hidden'
     }"
   >
+    <!-- Logo -->
     <template #title>
-      <BaseLogo class="w-auto" variant="white" />
+      <BaseLogo class="w-24 sm:w-auto" variant="white" />
     </template>
 
-    <div class="flex gap-x-4 2xl:mr-20">
+    <!-- Desktop Horizontal Navigation (Hidden on Mobile) -->
+    <div class="hidden lg:flex gap-x-4 2xl:mr-20">
       <UNavigationMenu
         :items="items"
         variant="link"
-        class=""
         color="secondary"
         content-orientation="vertical"
         :highlight="false"
@@ -27,56 +28,65 @@
       />
     </div>
 
+    <!-- Right Side Actions (Search, Cart, Profile/Login) -->
     <template #right>
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <!-- Search Input: responsive width -->
         <UInputMenu
           trailing-icon=""
           :items="filteredSearch"
-          class="min-w-xs"
+          class="w-32 sm:w-44 md:min-w-xs"
           icon="i-lucide-search"
-          size="md"
+          size="sm"
+          sm:size="md"
           variant="outline"
-          placeholder="Search product"
+          placeholder="Search..."
           @update:search-term="(value) => productStore.searchProducts(value)"
         >
           <template #item="{ item }">
             <div
-              class="flex gap-x-2"
+              class="flex gap-x-2 items-center"
               @click="router.push({ name: RouteName.ProductDetails, params: { id: item.item_id } })"
             >
-              <img :src="item.product_image" class="size-10" />
-              <h2 class="text-xxs line-clamp-1 overflow-hidden text-ellipsis">{{ item.label }}</h2>
+              <img :src="item.product_image" class="size-8 sm:size-10 object-cover rounded" />
+              <h2 class="text-xs line-clamp-1 overflow-hidden text-ellipsis">{{ item.label }}</h2>
             </div>
           </template>
         </UInputMenu>
+
+        <!-- Shopping Cart -->
         <UChip
           :show="itemCount > 0"
-          size="3xl"
+          size="2xl"
+          sm:size="3xl"
           inset
           :text="itemCount >= 99 ? '99+' : itemCount"
-          :ui="{ base: 'size-4 rounded-full! bottom-4 text-xxs! bg-error text-white' }"
+          :ui="{ base: 'size-4 rounded-full! bottom-3 sm:bottom-4 text-xxs! bg-error text-white' }"
         >
           <UButton
             icon="i-lucide-shopping-bag"
             variant="ghost"
-            size="xl"
+            size="lg"
+            sm:size="xl"
             to="/cart"
-            class="text-white"
+            class="text-white p-1 sm:p-2"
             aria-label="Shopping cart"
           />
         </UChip>
+
+        <!-- Profile or Login -->
         <template v-if="isLoggedIn">
           <UChip inset class="cursor-pointer">
             <NuxtLink :to="{ name: RouteName.Profile }">
-              <UAvatar icon="i-lucide-user-round" loading="lazy" width="64" height="64" />
+              <UAvatar icon="i-lucide-user-round" loading="lazy" size="sm" sm:size="md" />
             </NuxtLink>
           </UChip>
         </template>
         <template v-else>
           <UButton
             label="Login"
-            variant="solid"
-            class="rounded-4xl px-5 text-xs"
+            variant="outline"
+            class="rounded-4xl bg-white border hover:bg-primary hover:text-white px-3 sm:px-5 text-xs sm:text-sm whitespace-nowrap"
             :to="{ name: RouteName.Auth.Login }"
           />
         </template>
@@ -84,7 +94,17 @@
     </template>
 
     <template #body>
-      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
+      <div class="flex flex-col gap-4 py-4">
+        <UNavigationMenu
+          :items="items"
+          orientation="vertical"
+          class="-mx-2.5"
+          color="primary"
+          :ui="{
+            link: 'font-semibold py-2 px-3 rounded-md'
+          }"
+        />
+      </div>
     </template>
   </UHeader>
 </template>
@@ -118,6 +138,7 @@ const filteredSearch = computed(() =>
     ...item
   }))
 )
+
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: 'Home',

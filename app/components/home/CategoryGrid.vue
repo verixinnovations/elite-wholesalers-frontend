@@ -23,7 +23,7 @@
             header: 'p-0!',
             footer: 'p-0!'
           }"
-          @click="productStore.selectCategory(category)"
+          @click="productStore.selectCategory(category.category_id)"
         >
           <!-- Card Media Header -->
           <template #header>

@@ -1,15 +1,15 @@
 <template>
   <UButton
-    :icon="productInCart ? 'i-icon-shopping-cart' : 'i-icon-shopping-cart-plus'"
+    :icon="productInCart ? 'i-lucide-shopping-bag' : 'i-icon-shopping-cart-plus'"
     :class="{
       'bg-success-500': productInCart
     }"
     v-bind="$attrs"
     class="flex items-center justify-center px-5!"
-    :disabled="!product"
+    :disabled="productInCart"
     @click="addToCart"
   >
-    <span>{{ productInCart ? 'Add another' : 'Add to Cart' }}</span>
+    <span>{{ productInCart ? 'Added' : 'Add to Cart' }}</span>
   </UButton>
 </template>
 
@@ -33,9 +33,7 @@ const product = computed<ProductEntity | ProductDataEntity | null>(
   () => props.product ?? selectedProduct.value
 )
 const productInCart = computed(() =>
-  product.value
-    ? cartStore.cartItems.some((item) => item.item_id === product.value?.item_id)
-    : false
+  product.value ? cartStore.cartItems.some((item) => item.itemId === product.value?.item_id) : false
 )
 
 function addToCart() {

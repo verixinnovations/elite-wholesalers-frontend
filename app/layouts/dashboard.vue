@@ -1,19 +1,7 @@
 <template>
   <div class="min-h-screen bg-white text-neutral-900">
-    <header class="flex h-16 items-center justify-between border-b border-neutral-200 px-5 sm:px-8">
-      <NuxtLink to="/" aria-label="Elite Wholesalers home">
-        <BaseLogo class="h-6 w-auto" />
-      </NuxtLink>
-      <UButton
-        label="Back to store"
-        to="/products"
-        icon="i-lucide-arrow-left"
-        color="neutral"
-        variant="ghost"
-        size="sm"
-      />
-    </header>
-
+    <BaseGlobalInfo />
+    <BaseHeader />
     <div class="mx-auto grid min-h-[calc(100vh-4rem)] max-w-7xl md:grid-cols-[220px_minmax(0,1fr)]">
       <aside
         class="border-b border-neutral-200 px-5 py-4 md:border-b-0 md:border-r md:px-4 md:py-8"
@@ -38,6 +26,16 @@
             {{ item.label }}
           </NuxtLink>
         </nav>
+        <UButton
+          label="Log out"
+          variant="ghost"
+          block
+          class="rounded! mt-2.5 px-3 gap-3 justify-start text-xs text-error"
+          @click="authStore.logout()"
+        >
+          <UIcon name="i-lucide-log-out" class="size-4" />
+          <span class="">Logout </span></UButton
+        >
       </aside>
       <main class="min-w-0 px-5 py-8 sm:px-8 lg:px-10 lg:py-10">
         <slot />
@@ -47,11 +45,20 @@
 </template>
 
 <script setup lang="ts">
+import { useAuthStore } from '~/store/auth-store'
+import { useOrderStore } from '~/store/order-store'
+
+const authStore = useAuthStore()
+const orderStore = useOrderStore()
+
 const navigation = [
   { label: 'Overview', to: '/dashboard', icon: 'i-lucide-layout-dashboard' },
-  { label: 'My orders', to: '/dashboard/orders', icon: 'i-lucide-package-check' },
   { label: 'Profile', to: '/dashboard/profile', icon: 'i-lucide-user-round' },
-  { label: 'Addresses', to: '/dashboard/addresses', icon: 'i-lucide-map-pin' },
-  { label: 'Security', to: '/dashboard/security', icon: 'i-lucide-shield-check' }
+  { label: 'My orders', to: '/dashboard/orders', icon: 'i-lucide-package-check' },
+  { label: 'Addresses', to: '/dashboard/addresses', icon: 'i-lucide-map-pin' }
 ]
+
+onBeforeMount(() => {
+  orderStore.getOrders()
+})
 </script>

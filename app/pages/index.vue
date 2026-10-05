@@ -14,7 +14,6 @@
           <HomeTrendingProducts />
         </UContainer>
       </div>
-      s
       <UContainer class="mx-auto py-20 lg:px-6">
         <div class="">
           <iframe

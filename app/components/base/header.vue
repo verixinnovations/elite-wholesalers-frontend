@@ -71,12 +71,6 @@
               <UAvatar icon="i-lucide-user-round" loading="lazy" width="64" height="64" />
             </NuxtLink>
           </UChip>
-          <UButton
-            label="Log out"
-            variant="solid"
-            class="rounded-4xl px-5 text-xs bg-error"
-            @click="authStore.logout()"
-          />
         </template>
         <template v-else>
           <UButton
@@ -140,7 +134,7 @@ const items = computed<NavigationMenuItem[]>(() => [
             params: { categoryId: category.category_id }
           },
           onSelect() {
-            productStore.selectCategory(category)
+            productStore.selectCategory(category.category_id)
           }
         }))
       : []

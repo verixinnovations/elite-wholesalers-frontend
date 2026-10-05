@@ -1,14 +1,35 @@
 import type { LocationEntity } from './index'
 import type { AccountType } from './enums'
 
-export interface UserEntity {
-  id: number
-  name: string
-  username?: string
+export interface BusinessDetails {
+  abn: string
+  acn: string
+  industry: string
+  stateIssued: string
+  business_name: string
+  business_type: string
+  license_number: string
 }
 
-export interface UserAccountType {
-  isAdmin: boolean
+export interface UserEntity {
+  id: string
+  zohoContactId: string
+  firstname: string
+  lastname: string
+  fullname: string
+  username: string
+  accountType: AccountType
+  email: string
+  picture: string | null
+  password: string
+  gender: string
+  date_of_birth: string | null
+  phone_number: string
+  location: LocationEntity
+  business_details?: BusinessDetails
+  bio: string | null
+  is_profile_completed: boolean
+  deleted_at: string | null
 }
 
 export interface LoginPayload {

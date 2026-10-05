@@ -5,9 +5,16 @@
       <h1 class="mt-2 font-oswald text-4xl font-medium text-neutral-950">Delivery details</h1>
     </div>
 
-    <div v-if="cartItems.length === 0" class="py-16 text-center">
-      <h2 class="font-oswald text-2xl text-neutral-900">Your cart is empty</h2>
-      <UButton label="Browse products" to="/products" class="mt-5" />
+    <div v-if="cartItems.length === 0" class="py-20 text-center flex flex-col justify-center">
+      <NuxtImg src="/images/empty-cart.svg" class="mx-auto max-h-60" />
+      <h2 class="mt-5 font-oswald text-3xl text-neutral-900">Your cart is empty</h2>
+      <p class="mt-2 text-sm text-neutral-500">Find something worth stocking up on.</p>
+      <UButton
+        label="Browse products"
+        to="/products"
+        class="mt-6 px-10! py-2! inline w-fit mx-auto"
+        size="lg"
+      />
     </div>
 
     <div v-else class="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-16">
@@ -17,8 +24,8 @@
           flow is ready.
         </p>
 
-        <form class="space-y-4" @submit.prevent="submitted = true">
-          <UFormField label="Email address" required>
+        <form class="space-y-4" @submit.prevent="checkoutCart">
+          <UFormField label="Email address">
             <UInput
               v-model="email"
               type="email"
@@ -28,7 +35,7 @@
               class="w-full"
             />
           </UFormField>
-          <UFormField label="Delivery address" required>
+          <UFormField label="Delivery address">
             <UTextarea
               v-model="address"
               autocomplete="street-address"
@@ -37,15 +44,21 @@
               class="w-full"
             />
           </UFormField>
-          <UButton type="submit" label="Continue" icon="i-lucide-arrow-right" trailing />
-          <p v-if="submitted" role="status" class="text-sm text-neutral-600">
-            Checkout submission is not connected yet.
-          </p>
+          <UButton :loading="isLoading" type="submit" block size="lg">
+            <span class="">Checkout </span>
+            <UIcon name="i-lucide-arrow-right" />
+          </UButton>
         </form>
 
-        <NuxtLink to="/cart" class="text-sm font-semibold text-primary-600 hover:underline">
-          Return to cart
-        </NuxtLink>
+        <UButton variant="outline" block>
+          <NuxtLink
+            to="/cart"
+            class="text-sm items-center flex gap-x-2 font-semibold text-primary-600 hover:underline"
+          >
+            <UIcon name="i-lucide-arrow-left" />
+            <span class=""> Return to cart</span>
+          </NuxtLink>
+        </UButton>
       </section>
 
       <aside
@@ -53,12 +66,12 @@
       >
         <h2 class="font-oswald text-2xl text-neutral-950">Order summary</h2>
         <ul class="mt-5 divide-y divide-neutral-200">
-          <li v-for="item in cartItems" :key="item.cart_id" class="flex justify-between gap-4 py-3">
+          <li v-for="item in cartItems" :key="item.cartId" class="flex justify-between gap-4 py-3">
             <span class="text-sm text-neutral-700"
               >{{ item.product.name }} × {{ item.quantity }}</span
             >
             <span class="shrink-0 text-sm text-neutral-700">
-              {{ formatPrice(item.price.amount * item.quantity, item.price.currency) }}
+              {{ NumberFunctions.formatCurrency(item.total, item.price.currency) }}
             </span>
           </li>
         </ul>
@@ -66,7 +79,7 @@
           class="mt-4 flex justify-between border-t border-neutral-200 pt-4 font-bold text-neutral-950"
         >
           <span>Subtotal</span>
-          <span>{{ formatPrice(subtotal, currencyCode) }}</span>
+          <span>{{ NumberFunctions.formatCurrency(subtotal, Currency.AUD) }}</span>
         </div>
         <p class="mt-3 text-xs leading-5 text-neutral-500">
           Shipping and taxes can be confirmed when your order is reviewed.
@@ -77,19 +90,38 @@
 </template>
 
 <script setup lang="ts">
-import type { Currency } from '~/types/enums'
 import { useCartStore } from '~/store/cart-store'
+import { useAuthStore } from '~/store/auth-store'
+import { CartService } from '~/services/cart.service'
+import { Currency } from '~/types/enums'
 
 const cartStore = useCartStore()
+const { user } = storeToRefs(useAuthStore())
 const { cartItems, subtotal } = storeToRefs(cartStore)
-const email = ref('')
+const email = ref(user.value?.email)
 const address = ref('')
-const submitted = ref(false)
-const currencyCode = computed(() => cartItems.value[0]?.price.currency ?? 'AUD')
-
-function formatPrice(amount: number, currency: Currency | string) {
-  return new Intl.NumberFormat('en-AU', { style: 'currency', currency }).format(amount)
-}
+const toast = useToast()
+const isLoading = ref(false)
 
 useSeoMeta({ title: 'Checkout' })
+
+onBeforeMount(async () => {
+  await cartStore.fetchCart()
+})
+
+const checkoutCart = async () => {
+  isLoading.value = true
+
+  try {
+    const response = await CartService.initializeCheckout()
+    if (response?.data.payment_url) {
+      window.location.href = response.data.payment_url
+    }
+    cartStore.fetchCart()
+  } catch (error: any) {
+    toast.add({ title: error?.message || 'Failed to initialize checkout. Please try again.' })
+  } finally {
+    isLoading.value = false
+  }
+}
 </script>

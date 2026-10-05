@@ -326,10 +326,52 @@ export interface ProductCategoryEntity {
   image: string | null
 }
 
+export interface SubCategory {
+  category_id: string
+  name: string
+  url: string
+  parent_category_id: string
+  visibility: boolean
+  show_in_menu: boolean
+  created_time: string
+  last_modified_time: string | number
+  documents?: any[]
+}
+export interface CategoryEntity {
+  category_id: string
+  name: string
+  description: string
+  url: string
+  parent_category_id: string
+  parent_category_name: string
+  visibility: boolean
+  show_in_menu: boolean
+  seo_title: string
+  seo_keyword: string
+  seo_description: string
+  created_time: string
+  last_modified_time: string | number
+  ondc_category_type: string
+  custom_fields: any[]
+  ancestors: CategoryEntity[]
+  children: CategoryEntity[]
+  documents: any[]
+}
+
 export interface CartEntity {
-  cart_id: string
-  item_id: string
+  cartId: string
+  itemId: string
   product: ProductEntity | ProductDataEntity
+  quantity: number
+  total: number
+  price: {
+    amount: number
+    currency: Currency
+  }
+}
+
+export interface CartEntityPayload {
+  item_id: string
   quantity: number
   price: {
     amount: number

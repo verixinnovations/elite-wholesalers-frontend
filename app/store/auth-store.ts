@@ -15,6 +15,7 @@ import type {
 import { AccountType } from '~/types/enums'
 import { UtilService } from '~/services/utils.service'
 import type { LocationEntity } from '~/types'
+import { useCartStore } from './cart-store'
 
 interface ExtendedPinia extends Pinia {
   _s: Map<string, Store>
@@ -119,6 +120,7 @@ export const useAuthStore = defineStore('AuthStore', {
       const router = useRouter()
       const toast = useToast()
       const route = useRoute()
+      const cartStore = useCartStore()
       const res = await AuthService.login(data)
       ApiService.setAccessToken(res.data.access_token)
       if (res.success) {
@@ -127,6 +129,8 @@ export const useAuthStore = defineStore('AuthStore', {
         if (route.redirectedFrom) {
           return router.replace({ path: route.redirectedFrom.fullPath })
         }
+
+        cartStore.fetchCart()
 
         return router.replace({ name: RouteName.Home })
       } else toast.add({ description: res.message })
@@ -184,7 +188,7 @@ export const useAuthStore = defineStore('AuthStore', {
     },
 
     async getProfile() {
-      const res = await AuthService.getProfile(this.user?.id ?? 0)
+      const res = await AuthService.getProfile()
       if (res.success) {
         this.user = res.data
       }
@@ -299,7 +303,7 @@ export const useAuthStore = defineStore('AuthStore', {
     async deleteAccount() {
       const toast = useToast()
       if (this.user) {
-        const res = await AuthService.deleteAccount(this.user?.id)
+        const res = await AuthService.deleteAccount()
         if (res.success) {
           toast.add({ title: res.message })
           setTimeout(() => this.logout(), 2000)

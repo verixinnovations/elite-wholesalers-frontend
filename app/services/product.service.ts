@@ -53,10 +53,17 @@ export const ProductService = {
     })
   },
 
-  async getProductsSubcategories(categoryId: string) {
+  async getProductCategory(categoryId: string) {
     return await ApiService.run({
       method: ApiService.GET,
       url: `/products/categories/${categoryId}`
+    })
+  },
+
+  async getProductsSubcategories(categoryId: string) {
+    return await ApiService.run({
+      method: ApiService.GET,
+      url: `/products/categories/${categoryId}/subcategories`
     })
   },
 

@@ -72,40 +72,33 @@ export const AuthService = {
     })
   },
 
-  async getProfile(userId: number) {
+  async getProfile() {
     return await ApiService.run({
       method: ApiService.GET,
-      url: `/users/${userId}`
+      url: '/auth/user'
     })
   },
 
-  async getUserStats(userId: number) {
-    return await ApiService.run({
-      method: ApiService.GET,
-      url: `/users/${userId}/stats`
-    })
-  },
-
-  async deleteAccount(userId: number) {
+  async deleteAccount() {
     return await ApiService.run({
       method: ApiService.DELETE,
-      url: `/users/${userId}`
+      url: `/users/`
     })
   },
 
-  async updateProfile(data: FormData, userId: number) {
+  async updateProfile(data: FormData) {
     return await ApiService.run({
       method: ApiService.POST,
-      url: `/users/${userId}`,
+      url: `/users/`,
       data,
       headers: { 'Content-Type': 'multipart/form-data' }
     })
   },
 
-  async updateProfileImage(data: FormData, userId: number) {
+  async updateProfileImage(data: FormData) {
     return await ApiService.run({
       method: ApiService.POST,
-      url: `/users/${userId}/photo`,
+      url: `/users/photo`,
       data,
       headers: { 'Content-Type': 'multipart/form-data' }
     })

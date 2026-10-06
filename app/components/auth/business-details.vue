@@ -27,7 +27,7 @@
                   ? '!text-success'
                   : '!text-error'
           }"
-          @change="authStore.getABNDetails(signupBusinessDetails.abn)"
+          @change="authStore.checkDuplicateABN(signupBusinessDetails.abn)"
         >
           <template #trailing v-if="signupBusinessDetails.abn.length === 11">
             <UIcon
@@ -103,11 +103,12 @@
     </div>
 
     <div class="grid gap-5 sm:grid-cols-2">
-      <UFormField label="Licence number" name="license_number" required>
+      <UFormField label="Licence number" class="w-full" name="license_number" required>
         <UInput
           v-model="signupBusinessDetails.license_number"
           placeholder="Your licence number"
           leadingIcon="i-lucide-badge-check"
+          class="w-full"
           @change="handleLicenseInput"
           :ui="{
             base:
@@ -242,7 +243,7 @@ const handleLicenseInput = () => {
     if (!signupBusinessDetails.value.stateIssued) {
       licenceDetails.value.errorReason = 'Select state issued to continue'
     } else {
-      authStore.verifyLicense(
+      authStore.checkDuplicateLicenseNumber(
         signupBusinessDetails.value.license_number,
         signupBusinessDetails.value.stateIssued
       )

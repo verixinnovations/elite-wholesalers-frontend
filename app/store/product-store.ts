@@ -79,12 +79,7 @@ export const useProductStore = defineStore('ProductStore', {
       const router = useRouter()
 
       // 1. Update route navigation
-      router.push({
-        name: RouteName.Categories,
-        params: { categoryId }
-      })
 
-      // 2. Fetch products and category details
       this.getProductByCategoryId(categoryId)
       const res = await ProductService.getProductCategory(categoryId)
 
@@ -101,6 +96,10 @@ export const useProductStore = defineStore('ProductStore', {
             // If the clicked category has its own children, use them
             this.parentCategory = category
             this.subCategories = category.children
+            router.push({
+              name: RouteName.Categories,
+              params: { categoryId }
+            })
           } else {
             // EDGE CASE: Clicked subcategory has NO children.
             // Check if our existing subCategories in state already belong to the same parent
@@ -111,8 +110,11 @@ export const useProductStore = defineStore('ProductStore', {
               this.subCategories.length > 0 &&
               this.subCategories.every((sub) => sub.parent_category_id === parentId)
 
-            // If they don't belong to the same parent, clear or reset them to empty
-            // so we don't display mismatched categories from a previous branch.
+            // 1. Update route navigation
+            router.push({
+              name: RouteName.CategoryProducts,
+              params: { categoryId }
+            })
             this.subCategories = allCurrentChildrenBelongToSameParent ? this.subCategories : []
           }
         }
@@ -120,11 +122,19 @@ export const useProductStore = defineStore('ProductStore', {
         else if (category.parent_category_id === '-1') {
           this.parentCategory = category
           this.subCategories = category.children
+          router.push({
+            name: RouteName.Categories,
+            params: { categoryId }
+          })
         }
         // Case C: Fallback
         else {
           this.parentCategory = category
           this.subCategories = category.children
+          router.push({
+            name: RouteName.CategoryProducts,
+            params: { categoryId }
+          })
         }
       }
     }

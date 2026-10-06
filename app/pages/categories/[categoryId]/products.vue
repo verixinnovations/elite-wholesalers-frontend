@@ -1,13 +1,13 @@
 <template>
   <UContainer class="mx-auto px-5 py-10 sm:px-8 lg:py-14">
-    <div class="border-b border-neutral-200">
+    <div class="border-b border-neutral-200 mb-10">
       <div class="flex flex-col justify-between gap-6 pb-7 sm:flex-row sm:items-end">
         <div>
           <p class="text-xs font-bold tracking-[0.18em] text-muted uppercase">
             <UBreadcrumb :items="categoryParentsBreadcrumb" class="mb-2" />
           </p>
-          <h1 class="mt-2 font-oswald text-4xl font-medium text-neutral-950 sm:text-5xl">
-            {{ parentCategory?.name }}
+          <h1 class="mt-4 font-oswald text-4xl font-medium text-neutral-950 sm:text-5xl">
+            {{ selectedCategory?.name }}
           </h1>
         </div>
         <p
@@ -19,7 +19,7 @@
         </p>
       </div>
     </div>
-    <div
+    <!-- <div
       class="sticky top-0 z-10 overflow-scroll w-full -mx-5 mt-5 border-b border-neutral-200 bg-white/95 px-5 py-3 backdrop-blur sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:px-0 sm:py-5"
     >
       <nav
@@ -54,14 +54,14 @@
           others
         </UButton>
       </nav>
-    </div>
+    </div> -->
 
     <div
       v-if="categoryProducts.length > 0"
       class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
     >
       <BaseProductCard
-        v-for="product in sortedProducts"
+        v-for="product in categoryProducts"
         :key="product.item_id"
         :product="product"
       />
@@ -76,11 +76,10 @@
 <script setup lang="ts">
 import { RouteName } from '~/constants/route-names'
 import { useProductStore } from '~/store/product-store'
-import type { CategoryEntity } from '~/types/product'
 
 useSeoMeta({ title: 'Products', description: 'Browse the Elite Wholesalers product collection.' })
 definePageMeta({
-  name: RouteName.Categories
+  name: RouteName.CategoryProducts
 })
 
 const route = useRoute()
@@ -89,23 +88,6 @@ const { selectedCategory, parentCategory, subCategories, categoryProducts } =
   storeToRefs(productStore)
 
 const categoryId = computed(() => route.params.categoryId as string)
-
-const sortedProducts = computed(() => {
-  const products = categoryProducts.value
-  if (!products || !Array.isArray(products)) return []
-
-  return [...products].sort((a, b) => {
-    const stockA = Number(a.available_stock ?? 0)
-    const stockB = Number(b.available_stock ?? 0)
-
-    const hasStockA = stockA > 0 ? 1 : 0
-    const hasStockB = stockB > 0 ? 1 : 0
-
-    if (hasStockA === hasStockB) return 0
-
-    return hasStockB - hasStockA
-  })
-})
 
 const categoryParentsBreadcrumb = computed(() => {
   const base = [
@@ -146,7 +128,7 @@ const categoryParentsBreadcrumb = computed(() => {
 })
 onBeforeMount(async () => {
   if (categoryId) {
-    await productStore.selectCategory(categoryId.value)
+    await productStore.getProductByCategoryId(categoryId.value)
   }
 })
 </script>

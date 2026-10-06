@@ -242,7 +242,7 @@ export const useAuthStore = defineStore('AuthStore', {
       try {
         this.emailDetails.loading = true
         this.emailDetails.errorReason = null
-        const res = await UtilService.checkDuplicatesDetails({ email })
+        const res = await UtilService.checkDuplicatesDetails({ field: 'email', value: email })
         if (res.success) {
           this.emailDetails.isAvailable = true
         } else {
@@ -253,6 +253,48 @@ export const useAuthStore = defineStore('AuthStore', {
         this.emailDetails.errorReason = err.message
       } finally {
         this.emailDetails.loading = false
+      }
+    },
+
+    async checkDuplicateABN(abn: string) {
+      try {
+        this.abnDetails.loading = true
+        this.abnDetails.errorReason = null
+        const res = await UtilService.checkDuplicatesDetails({
+          field: 'business_details.abn',
+          value: abn
+        })
+        if (res.success) {
+          return this.getABNDetails(abn)
+        } else {
+          this.abnDetails.isValid = false
+          this.abnDetails.errorReason = res.message
+        }
+      } catch (err: any) {
+        this.abnDetails.errorReason = err.message
+      } finally {
+        this.abnDetails.loading = false
+      }
+    },
+
+    async checkDuplicateLicenseNumber(licenceNumber: string, stateIssued: string) {
+      try {
+        this.licenceDetails.loading = true
+        this.licenceDetails.errorReason = null
+        const res = await UtilService.checkDuplicatesDetails({
+          field: 'business_details.licence_number',
+          value: licenceNumber
+        })
+        if (res.success) {
+          return this.verifyLicense(licenceNumber, stateIssued)
+        } else {
+          this.licenceDetails.isValid = false
+          this.licenceDetails.errorReason = res.message
+        }
+      } catch (err: any) {
+        this.licenceDetails.errorReason = err.message
+      } finally {
+        this.licenceDetails.loading = false
       }
     },
 

@@ -8,3 +8,10 @@ export interface LocationEntity {
   latitude: number
   longitude: number
 }
+interface ContactUsFormData {
+  firstname: string
+  lastname: string
+  email: string
+  phone_number?: string
+  message: string
+}

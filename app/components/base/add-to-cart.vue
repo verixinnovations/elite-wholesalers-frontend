@@ -4,14 +4,13 @@
     :class="{
       'bg-success-500': productInCart
     }"
+    color="neutral"
     v-bind="$attrs"
     class="flex items-center justify-center px-5!"
-    :disabled="productInCart || !isProductAvailable"
+    :disabled="productInCart"
     @click="addToCart"
   >
-    <span>{{
-      productInCart ? 'Added' : isProductAvailable ? 'Add to Cart' : 'Not Available'
-    }}</span>
+    <span>{{ productInCart ? 'Added' : 'Add to Cart' }}</span>
   </UButton>
 </template>
 

@@ -26,22 +26,11 @@
           {{ NumberFunctions.formatCurrency(product.price.amount, product.price.currency) }}
           <span class="ml-2 text-sm font-normal text-neutral-500">per unit</span>
         </p>
-        <div
-          class="mt-6 flex items-center gap-2 text-sm"
-          :class="isProductAvailable ? 'text-green-700' : 'text-red-700'"
-        >
-          <span
-            class="size-2 rounded-full"
-            :class="isProductAvailable ? 'bg-green-600' : 'bg-red-600'"
-          />
-          {{
-            product.available_stock > 0
-              ? `${product.available_stock} units available`
-              : isProductAvailable
-                ? 'Available'
-                : 'Currently unavailable'
-          }}
-        </div>
+        <UBadge variant="soft" color="neutral" class="mt-6 w-fit flex items-center gap-2 text-sm">
+          <span class="size-2 rounded-full bg-neutral-500" /> SKU :
+          {{ product.sku }}
+        </UBadge>
+
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <BaseAddToCart v-if="isLoggedIn" />
           <BaseAuthButton class="w-fit px-10!" v-else size="lg">
@@ -88,11 +77,6 @@ const getProductImages = (product: any) => {
   })
   return images || []
 }
-
-const isProductAvailable = computed(() => {
-  if (product.value && product?.value?.available_stock <= 0) return false
-  return true
-})
 
 onBeforeMount(() => {
   productStore.selectProduct(route.params.id as string)

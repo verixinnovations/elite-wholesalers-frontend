@@ -69,7 +69,6 @@
                   variant="ghost"
                   class="rounded-none! disabled:bg-primary-50 size-9 text-neutral-600 hover:bg-neutral-50"
                   :aria-label="`Increase ${item?.product?.name} quantity`"
-                  :disabled="item.quantity >= item.product?.available_stock"
                   @click="cartStore.updateQuantity(item.cartId, item.quantity + 1)"
                 >
                   +
@@ -138,7 +137,9 @@ const { cartItems, subtotal, itemCount } = storeToRefs(cartStore)
 
 function productImage(product: ProductEntity | ProductDataEntity) {
   const imageDocumentId =
-    'image_document_id' in product ? product.image_document_id : product.documents[0]?.document_id
+    'image_document_id' in product
+      ? product?.image_document_id
+      : product.documents?.[0]?.document_id
 
   return ZohoHelpers.getZohoProductImageUrl({
     imageName: product?.image_name,

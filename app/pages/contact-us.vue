@@ -48,12 +48,12 @@
           @submit="submitContactForm"
         >
           <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <UFormField label="First Name" name="firstName">
-              <UInput v-model="state.firstName" class="w-full" placeholder="John" />
+            <UFormField label="First Name" name="firstname">
+              <UInput v-model="state.firstname" class="w-full" placeholder="John" />
             </UFormField>
 
-            <UFormField label="Last Name" name="lastName">
-              <UInput v-model="state.lastName" class="w-full" placeholder="Doe" />
+            <UFormField label="Last Name" name="lastname">
+              <UInput v-model="state.lastname" class="w-full" placeholder="Doe" />
             </UFormField>
           </div>
 
@@ -62,8 +62,12 @@
               <UInput v-model="state.email" class="w-full" placeholder="john.doe@example.com" />
             </UFormField>
 
-            <UFormField label="Phone Number" name="phone">
-              <UInput v-model="state.phone" class="w-full" placeholder="0400 000 000" />
+            <UFormField label="Phone Number" name="phone_number">
+              <BasePhoneInput
+                v-model="state.phone_number"
+                class="w-full"
+                placeholder="0400 000 000"
+              />
             </UFormField>
           </div>
 
@@ -89,6 +93,23 @@
         </UForm>
       </UCard>
     </div>
+
+    <UModal v-model:open="showSuccessfulModal" :dismissible="true" close title="">
+      <template #content>
+        <UCard>
+          <div class="flex flex-col items-center justify-center gap-y-3 py-4 text-center">
+            <UIcon name="i-lucide-mail-check" class="w-12 h-12 text-primary mb-1" />
+            <h2 class="font-semibold text-xl">Message Received!</h2>
+
+            <p class="text-gray-500 text-sm max-w-xs">
+              Thank you for reaching out to Elite Wholesalers. Our team has received your message
+              and will get back to you shortly.
+            </p>
+            <UButton class="px-8 mt-3" :to="{ name: RouteName.Home }">Back to Home</UButton>
+          </div>
+        </UCard>
+      </template>
+    </UModal>
   </UContainer>
 </template>
 
@@ -97,7 +118,7 @@ import * as zod from 'zod'
 import type { FormSubmitEvent } from '@nuxt/ui'
 import { RouteName } from '~/constants/route-names'
 import { useSEO } from '~/utils/seo.utils'
-// import { useToast } from '#imports' // Assuming you have Nuxt UI toast available for success feedback
+import { UtilService } from '~/services/utils.service'
 
 definePageMeta({
   name: 'contact',
@@ -112,27 +133,27 @@ useSEO({
   keywords: 'contact, wholesale, support, elite wholesalers'
 })
 
-// Zod Validation Schema
+const showSuccessfulModal = ref(false)
+const toast = useToast()
+
 const validationSchema = zod.object({
-  firstName: zod.string().min(2, 'First name is required'),
-  lastName: zod.string().min(2, 'Last name is required'),
+  firstname: zod.string().min(2, 'First name is required'),
+  lastname: zod.string().min(2, 'Last name is required'),
   email: zod.string().email('Please enter a valid email address'),
-  phone: zod.string().optional(),
+  phone_number: zod.string().optional(),
   message: zod.string().min(10, 'Message must be at least 10 characters long')
 })
 
 type Schema = zod.output<typeof validationSchema>
 
-// Reactive Form State
 const state = ref<Partial<Schema>>({
-  firstName: undefined,
-  lastName: undefined,
-  email: undefined,
-  phone: undefined,
-  message: undefined
+  firstname: '',
+  lastname: '',
+  email: '',
+  phone_number: undefined,
+  message: ''
 })
 
-// Contact Info Data Object
 const contactDetails = [
   {
     icon: 'i-heroicons-phone',
@@ -161,26 +182,25 @@ const contactDetails = [
   }
 ]
 
-// Submit Handler
 const submitContactForm = async (values: FormSubmitEvent<Schema>) => {
   try {
-    // Await your API call here
-    // await $fetch('/api/contact', { method: 'POST', body: values.data })
-    console.log('Form submitted:', values.data)
-
-    // toast.add({ title: 'Message Sent', description: 'We will get back to you shortly.', color: 'green' })
-
-    // Reset form after submission
-    state.value = {
-      firstName: undefined,
-      lastName: undefined,
-      email: undefined,
-      phone: undefined,
-      message: undefined
+    const res = await UtilService.sendContactUsMessage(values.data)
+    if (res.success) {
+      showSuccessfulModal.value = true
+      state.value = {
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone_number: undefined,
+        message: ''
+      }
     }
   } catch (error) {
-    console.error('Submission failed', error)
-    // toast.add({ title: 'Error', description: 'Failed to send message.', color: 'red' })
+    toast.add({
+      title: 'Unable to Send Message',
+      description: 'Failed to send message.',
+      color: 'error'
+    })
   }
 }
 </script>

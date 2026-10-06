@@ -73,4 +73,9 @@
 
 <script setup lang="ts">
 import { RouteName } from '~/constants/route-names'
+import { useUtilStore } from '~/store/util-store'
+const utilStore = useUtilStore()
+onMounted(() => {
+  utilStore.getCountries()
+})
 </script>

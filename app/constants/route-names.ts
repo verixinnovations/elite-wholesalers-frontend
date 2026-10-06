@@ -8,8 +8,10 @@ export const RouteName = {
     ForgotPassword: 'Forgot Password global',
     Verify: 'Verify global'
   },
-  
+
   Categories: 'Categories global',
+  CategoryProducts: 'Category Products global',
+
   ProductDetails: 'Product Details global',
 
   Cart: 'Cart global',

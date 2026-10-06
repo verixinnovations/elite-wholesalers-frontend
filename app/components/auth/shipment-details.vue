@@ -7,27 +7,40 @@
     @submit="onSubmit"
   >
     <UFormField label="Country" name="country" required class="w-full">
-      <UInput
+      <USelectMenu
         v-model="signupLocationDetails.country"
+        :items="countries"
         placeholder="e.g. Australia"
-        disabled
+        label-key="name"
+        required
         class="w-full"
+        @update:model-value="updateLocationCountry"
+        :loading="utilsLoadingStates.country"
         icon="i-lucide-globe"
       />
     </UFormField>
 
     <UFormField label="State / Province" name="state" required class="w-full">
-      <UInput
+      <USelectMenu
         v-model="signupLocationDetails.state"
         placeholder="e.g. New South Wales"
+        :items="states"
+        label-key="name"
+        :loading="utilsLoadingStates.states"
         icon="i-lucide-map"
         class="w-full"
+        @update:model-value="updateLocationState"
       />
     </UFormField>
 
     <UFormField label="City" name="city" required>
-      <UInput
+      <USelectMenu
+        value-key="name"
+        label-key="name"
+        :items="cities"
         v-model="signupLocationDetails.city"
+        :loading="utilsLoadingStates.cities"
+        required
         placeholder="e.g. Canberra"
         icon="i-lucide-building-2"
         class="w-full"
@@ -37,6 +50,7 @@
     <UFormField label="Street address" name="street" required>
       <UInput
         v-model="signupLocationDetails.street"
+        :disabled="!signupLocationDetails.city"
         placeholder="123 Main St, Suite 100"
         icon="i-lucide-map-pin"
         class="w-full"
@@ -65,17 +79,20 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
 import * as z from 'zod'
 import type { FormSubmitEvent } from '#ui/types'
 import type { LocationEntity } from '~/types'
 import { useAuthStore } from '~/store/auth-store'
+import { useUtilStore } from '~/store/util-store'
 
 const emit = defineEmits<{
   (e: 'submit', payload: LocationEntity): void
 }>()
 
+const utilStore = useUtilStore()
+
 const { signupLocationDetails, loadingState } = storeToRefs(useAuthStore())
+const { countries, states, cities, utilsLoadingStates } = storeToRefs(utilStore)
 
 const schema = z.object({
   country: z.string().min(1, 'Country is required'),
@@ -95,6 +112,27 @@ const schema = z.object({
 })
 
 type Schema = z.output<typeof schema>
+
+const updateLocationCountry = async (val) => {
+  if (signupLocationDetails.value.country !== val.name) {
+    signupLocationDetails.value.state = ''
+    signupLocationDetails.value.city = ''
+    cities.value = []
+    states.value = []
+    utilStore.getStatesByCountry(val.iso2)
+  }
+  signupLocationDetails.value.country_code = val.iso2
+  signupLocationDetails.value.country = val.name
+}
+
+const updateLocationState = async (val) => {
+  if (signupLocationDetails.value.state !== val.name) {
+    signupLocationDetails.value.city = ''
+    cities.value = []
+    utilStore.getCitiesByState(val.country_code, val.iso2)
+  }
+  signupLocationDetails.value.state = val.name
+}
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   emit('submit', event.data)

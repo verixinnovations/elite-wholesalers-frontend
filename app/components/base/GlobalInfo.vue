@@ -10,9 +10,10 @@
         </div>
         <span class="flex items-center gap-1">
           <Icon name="i-lucide-phone" class="size-3.5 text-primary" />
-          <span>0295337877 &nbsp;| </span>
+          <span>0295337877</span>
         </span>
         <span class="hidden sm:flex items-center gap-1">
+          <span>&nbsp;| </span>
           <Icon name="i-lucide-truck" class="size-3.5" />
           Easy Delivery
         </span>

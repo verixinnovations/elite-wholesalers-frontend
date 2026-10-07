@@ -323,7 +323,7 @@ export interface ProductCategoryEntity {
   has_active_items: boolean
   name: string
   ondc_category_type_formatted: string
-  image: string | null
+  image: string
 }
 
 export interface SubCategory {

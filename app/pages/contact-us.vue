@@ -1,16 +1,5 @@
 <template>
   <UContainer class="py-12 space-y-12">
-    <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto space-y-4">
-      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-        CONTACT US
-      </h1>
-      <div class="bg-primary-500 mx-auto h-1 w-20 rounded-full"></div>
-      <p class="mt-4 text-gray-500 dark:text-gray-400">
-        Have questions about our products, pricing, or your account? Our team is ready to help.
-      </p>
-    </div>
-
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 items-start">
       <!-- Contact Information Sidebar -->
       <div class="space-y-8">
@@ -122,8 +111,11 @@ import { UtilService } from '~/services/utils.service'
 
 definePageMeta({
   name: 'contact',
+  layout: 'template',
+  backgroundImage: '/images/office.png',
   pageTitle: 'Contact Us',
-  pageLabel: 'Get in touch with Elite Wholesalers'
+  pageDescription:
+    'Have questions about our products, pricing, or your account? Our team is ready to help.'
 })
 
 useSEO({

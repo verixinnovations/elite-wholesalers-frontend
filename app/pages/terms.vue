@@ -1,16 +1,10 @@
 <template>
   <main class="terms-page">
     <article class="terms-container">
-      <header class="terms-header">
-        <h1 class="">Terms of Use</h1>
-        <p class="">Terms and conditions of use</p>
-        <div class="terms-divider"></div>
-      </header>
-
-      <div class="terms-content">
-        <section v-for="(section, index) in termsData" :key="index">
-          <h2>{{ section.title }}</h2>
-          <div class="section-body">
+      <div class="terms-content space-y-6">
+        <section class="bg-primary-50" v-for="(section, index) in termsData" :key="index">
+          <h2 class="bg-primary text-secondary! p-2">{{ section.title }}</h2>
+          <div class="section-body p-4">
             <p
               v-for="(paragraph, pIndex) in section.paragraphs"
               :key="pIndex"
@@ -31,8 +25,9 @@ import { RouteName } from '~/constants/route-names'
 
 definePageMeta({
   name: 'terms',
-  pageTitle: 'Terms & Conditions',
-  pageLabel: 'Terms of Use'
+  pageTitle: 'Terms Of Use',
+  layout: 'template',
+  backgroundImage: '/images/office.png'
 })
 
 useSEO({
@@ -297,7 +292,7 @@ const termsData = [
 
 @media (max-width: 640px) {
   .terms-page {
-    padding: 2rem 1rem;
+    padding: 2rem 0rem;
   }
   .terms-header h1 {
     font-size: 1.875rem;

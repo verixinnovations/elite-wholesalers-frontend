@@ -1,12 +1,10 @@
 <template>
   <div class="flex flex-col gap-3">
-    <div class="aspect-square overflow-hidden bg-surface-container-low">
+    <div class="aspect-square overflow-hidden">
       <NuxtImg
         :src="activeImage"
         :alt="alt"
-        class="size-full object-cover"
-        width="900"
-        height="900"
+        class="size-full object-cover aspect-square scale-70 lg:scale-100"
         fetchpriority="high"
       />
     </div>

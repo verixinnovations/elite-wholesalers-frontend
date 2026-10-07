@@ -11,3 +11,18 @@ html {
 .debug {
   background-color: red !important;
 }
+
+.product-list {
+  @apply grid grid-cols-[repeat(auto-fit,minmax(280px,auto))] justify-start gap-5 lg:grid-cols-[repeat(auto-fit,minmax(280px,300px))];
+}
+
+.product-list-flex {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @apply flex justify-start gap-5 overflow-x-auto;
+}
+.product-list-flex > *,
+.pricing-list > * {
+  @apply w-full shrink-0 grow md:max-w-[320px] md:min-w-75;
+}

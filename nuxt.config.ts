@@ -41,15 +41,7 @@ export default defineNuxtConfig({
     colorMode: false
   },
 
-  runtimeConfig: {
-    licenseAuthBasic: '',
-    licenseTokenUrl:
-      'https://api.onegov.nsw.gov.au/oauth/client_credential/accesstoken?grant_type=client_credentials',
-    licenseVerifyUrl: 'https://api.onegov.nsw.gov.au/tradesregister/v1/verify',
-    public: {
-      abnGuid: 'be36ee64-1c2c-42f3-99c0-777cc9281531'
-    }
-  },
+  runtimeConfig: {},
 
   security: {
     headers: {

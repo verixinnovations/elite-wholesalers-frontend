@@ -14,7 +14,7 @@
           <HomeTrendingProducts />
         </UContainer>
       </div>
-      <UContainer class="mx-auto py-20 lg:px-6">
+      <UContainer class="mx-auto py-10 lg:py-20 lg:px-6">
         <div class="">
           <ClientOnly>
             <div class="relative w-full aspect-video overflow-hidden rounded-xl shadow-md">

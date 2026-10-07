@@ -9,12 +9,10 @@
         </div>
       </div>
     </div>
-    <div
-      class="sticky top-0 z-10 w-full -mx-5 mt-5 border-b border-neutral-200 bg-white/95 px-5 py-3 backdrop-blur"
-    >
+    <div class="sticky top-0 z-10 w-full mt-5 px-5 py-3 backdrop-blur">
       <nav
         v-if="subCategories.length > 0"
-        class="gap-10 overflow-x-auto pb-1 grid grid-cols-4"
+        class="overflow-x-auto pb-1 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
         aria-label="Filter products by category"
       >
         <UCard
@@ -22,7 +20,7 @@
           :key="category.category_id"
           class="cursor-pointer"
           :ui="{
-            root: 'max-w-[343px] h-[255px] ring-transparent flex flex-col rounded-none! transition-all',
+            root: ' min-w-0 md:max-w-[343px] md:h-[255px] ring-transparent flex flex-col rounded-none! transition-all',
             body: 'flex-1 flex flex-col justify-between px-3! py-0!!',
             header: 'p-0!',
             footer: 'p-0!'
@@ -31,7 +29,7 @@
         >
           <template #header>
             <div class="relative w-full overflow-hidden bg-gray-800">
-              <img
+              <NuxtImg
                 :src="
                   ZohoHelpers.getZohoProductImageUrl({
                     imageName: category.documents[0].file_name,
@@ -39,7 +37,7 @@
                   })
                 "
                 :alt="category.name"
-                class="w-full h-50 bg-left overflow-hidden object-top block transition-transform duration-300"
+                class="w-full bg-left h-60 md:h-50 lg:h-40 overflow-hidden object-top block transition-transform duration-300 aspect-square md:aspect-auto"
                 loading="lazy"
               />
             </div>

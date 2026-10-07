@@ -4,9 +4,15 @@
       <div class="flex flex-col justify-between gap-6 pb-7 sm:flex-row sm:items-end">
         <div>
           <p class="text-xs font-bold tracking-[0.18em] text-muted uppercase">
-            <UBreadcrumb :items="categoryParentsBreadcrumb" class="mb-2" />
+            <UBreadcrumb
+              :items="categoryParentsBreadcrumb"
+              class="mb-2 text-xs"
+              :ui="{ link: 'text-xxs! md:text-base' }"
+            />
           </p>
-          <h1 class="mt-4 font-oswald text-4xl font-medium text-neutral-950 sm:text-5xl">
+          <h1
+            class="mt-4 font-oswald text-[clamp(1.5rem,5vw,2.4rem)] font-medium text-neutral-950 sm:text-5xl"
+          >
             {{ selectedCategory?.name }}
           </h1>
         </div>
@@ -56,15 +62,14 @@
       </nav>
     </div> -->
 
-    <div
-      v-if="categoryProducts.length > 0"
-      class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
-    >
-      <BaseProductCard
-        v-for="product in categoryProducts"
-        :key="product.item_id"
-        :product="product"
-      />
+    <div class="w-full" v-if="categoryProducts.length > 0">
+      <div class="product-list gap-4">
+        <BaseProductCard
+          v-for="product in categoryProducts"
+          :key="product.item_id"
+          :product="product"
+        />
+      </div>
     </div>
     <div v-else class="py-20 text-center flex flex-col justify-center">
       <NuxtImg src="/images/empty-data.svg" class="mx-auto max-h-60" />

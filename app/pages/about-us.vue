@@ -1,87 +1,62 @@
 <template>
-  <UContainer class="py-12 space-y-16">
-    <!-- Hero / Title Section -->
-    <div class="text-center max-w-3xl mx-auto space-y-4">
-      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-        {{ pageData.title }}
-      </h1>
-      <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
-    </div>
-
+  <UContainer class="py-12 space-y-16 max-w-5xl">
     <!-- Main Story Section -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
       <!-- Story Content Cards -->
-      <div class="lg:col-span-2 space-y-6">
-        <UCard class="shadow-sm">
-          <div class="space-y-4 text-base font-sans">
+      <div class="lg:col-span-3 space-y-6">
+        <h1
+          class="text-[clamp(1.5rem,5vw,2.4rem)] font-oswald font-extrabold tracking-tight text-primary text-center"
+        >
+          {{ pageData.title }}
+        </h1>
+        <div class="">
+          <div class="space-y-4 text-base font-sans font-arial">
             <p v-for="(paragraph, index) in pageData.story" :key="index" v-html="paragraph"></p>
           </div>
 
-          <template #footer>
-            <div class="flex items-center justify-end text-primary text-sm font-medium">
-              <span>{{ pageData.author }}</span>
-            </div>
-          </template>
-        </UCard>
-        <!-- Quick Facts / Highlights Sidebar -->
-        <div class="space-y-6">
-          <UCard class="bg-gray-50 dark:bg-gray-900 border-l-4 border-primary-500">
-            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Company Highlights</h3>
-            <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-              <li
-                v-for="(highlight, index) in companyHighlights"
-                :key="index"
-                class="flex items-center gap-2"
-              >
-                <UIcon :name="highlight.icon" class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                <span>{{ highlight.text }}</span>
-              </li>
-            </ul>
-          </UCard>
+          <div class="flex items-center justify-end text-primary text-sm font-medium">
+            <span>{{ pageData.author }}</span>
+          </div>
         </div>
       </div>
 
-      <NuxtImg src="/images/about-us/emu-in-sky-project.png" />
+      <NuxtImg src="/images/about-us/emu-in-sky-project.png" class="w-full lg:col-span-2" />
     </div>
 
     <!-- What Do We Deliver Section -->
-    <section class="space-y-8">
-      <div class="text-center max-w-2xl mx-auto space-y-2">
-        <h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+    <section class="space-y-8 bg-primary-50 rounded-lg overflow-hidden">
+      <div class="text-center mx-auto space-y-2">
+        <h2
+          class="text-[clamp(1rem,5vw,1.5rem)] p-2 w-full font-bold tracking-tight text-secondary bg-primary"
+        >
           {{ deliveryInfo.title }}
         </h2>
-        <p
-          class="text-primary-600 dark:text-primary-400 font-medium"
-          v-html="deliveryInfo.subtitle"
-        ></p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Delivery Items mapped dynamically -->
-        <UCard
+      <div class="space-y-4 p-5">
+        <div
           v-for="(item, index) in deliveryInfo.items"
           :key="index"
-          class="hover:shadow-md transition-shadow"
-          :class="item.colSpanClass || ''"
+          class="flex gap-x-2 hover:shadow-md transition-shadow"
         >
+          <UIcon name="i-lucide-square-check" class="bg-primary" />
           <div class="space-y-3">
-            <div
-              class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center text-primary-600 dark:text-primary-400"
-            >
-              <UIcon :name="item.icon" class="w-6 h-6" />
-            </div>
-            <h4 class="font-semibold text-gray-900 dark:text-white">{{ item.title }}</h4>
             <p class="text-sm text-gray-600 dark:text-gray-400">
               {{ item.description }}
             </p>
           </div>
-        </UCard>
+        </div>
       </div>
     </section>
   </UContainer>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'template',
+  backgroundImage: '/images/slider/banner.png'
+})
+
 const pageData = {
   title: 'ABOUT US',
   author: 'George Papoulidis (General Manager)',
@@ -101,8 +76,13 @@ const companyHighlights = [
 
 const deliveryInfo = {
   title: 'WHAT DO WE DELIVER?',
-  subtitle: 'Old School &bull; Real service, real performance',
+  subtitle: '',
   items: [
+    {
+      icon: 'i-heroicons-wrench-screwdriver',
+      title: 'Expert Assistance',
+      description: 'Old School & bull; Real service, real performance.'
+    },
     {
       icon: 'i-heroicons-wrench-screwdriver',
       title: 'Expert Assistance',
@@ -130,8 +110,7 @@ const deliveryInfo = {
       icon: 'i-heroicons-check-badge',
       title: 'Turn Key Solutions',
       description:
-        'Comprehensive turnkey solution offerings designed to simplify project deployment from concept to completion.',
-      colSpanClass: 'lg:col-span-2' // Maps back to the custom span required by the 5th item
+        'Comprehensive turnkey solution offerings designed to simplify project deployment from concept to completion.'
     }
   ]
 }

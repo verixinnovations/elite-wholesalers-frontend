@@ -1,15 +1,5 @@
 <template>
   <UContainer class="py-12 space-y-12">
-    <!-- Header -->
-    <div class="text-center mb-10">
-      <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-        DOWNLOAD CENTER
-      </h1>
-      <p class="mt-2 text-gray-500 dark:text-gray-400">
-        Get the latest software and firmware updates for your devices.
-      </p>
-    </div>
-
     <!-- Software Updates Table -->
     <section>
       <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
@@ -74,6 +64,14 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  name: 'download-center',
+  layout: 'template',
+  backgroundImage: '/images/office.png',
+  pageTitle: 'Download Center',
+  pageDescription: ' Get the latest software and firmware updates for your devices.'
+})
+
 const columns = [
   { id: 'name', accessorKey: 'name', header: 'NAME' },
   { id: 'version', accessorKey: 'version', header: 'VERSION' },

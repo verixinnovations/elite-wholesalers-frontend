@@ -1,15 +1,19 @@
 <template>
   <UHeader
     class="mx-auto bg-primary ring-transparent border-none text-white px-4 sm:px-6"
+    color="primary"
     :toggle="{
-      color: 'primary',
-      variant: 'subtle',
-      class: 'rounded-full flex items-center lg:hidden'
+      variant: 'ghost',
+      class: 'rounded-full text-secondary flex items-center lg:hidden hover:bg-white/10'
+    }"
+    :ui="{
+      content: 'bg-primary text-white'
     }"
   >
     <!-- Logo -->
     <template #title>
-      <BaseLogo class="w-24 sm:w-auto" variant="white" />
+      <BaseLogo class="md:h-10 sm:w-auto md:block hidden" variant="white" />
+      <BaseLogo class="md:h-10 sm:w-auto md:hidden" variant="small" />
     </template>
 
     <!-- Desktop Horizontal Navigation (Hidden on Mobile) -->
@@ -17,13 +21,12 @@
       <UNavigationMenu
         :items="items"
         variant="link"
-        color="secondary"
         content-orientation="vertical"
         :highlight="false"
         :unmount-on-hide="false"
         orientation="horizontal"
         :ui="{
-          link: 'font-semibold text-white aria-[current=page]:text-secondary hover:text-secondary!'
+          link: 'font-semibold  aria-[current=page]:text-secondary hover:text-secondary!'
         }"
       />
     </div>
@@ -35,7 +38,7 @@
         <UInputMenu
           trailing-icon=""
           :items="filteredSearch"
-          class="w-32 sm:w-44 md:min-w-xs"
+          class="w-40 sm:w-44 md:min-w-xs"
           icon="i-lucide-search"
           size="sm"
           sm:size="md"
@@ -98,10 +101,12 @@
         <UNavigationMenu
           :items="items"
           orientation="vertical"
+          variant="link"
           class="-mx-2.5"
-          color="primary"
           :ui="{
-            link: 'font-semibold py-2 px-3 rounded-md'
+            link: 'font-semibold py-2 px-3 rounded-md text-white transition-all hover:bg-white/10 hover:text-white [&.router-link-active]:bg-white [&.router-link-active]:text-primary-600 [&[data-active]]:bg-white [&[data-active]]:text-primary-600',
+            childLink:
+              'font-medium py-1.5 px-3 rounded-md text-gray-300 transition-all hover:bg-white/10 hover:text-white [&.router-link-active]:bg-white [&.router-link-active]:text-primary-600 text-sm'
           }"
         />
       </div>

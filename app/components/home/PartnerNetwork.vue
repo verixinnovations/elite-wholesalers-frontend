@@ -1,8 +1,8 @@
 <template>
-  <section class="mb-12 pt-8">
+  <section class="mb-12 md:pt-8">
     <div class="flex justify-center mx-auto text-center my-10 flex-col size-full">
       <h2
-        class="text-3xl font-semibold text-primary w-fit p-3 mb-4 rounded-sm mx-auto border-2 border-black"
+        class="text-[clamp(1.5rem,5vw,2rem)] font-semibold text-primary w-fit p-3 mb-4 rounded-sm mx-auto border-2 border-black"
       >
         Welcome to Elite Wholesalers
       </h2>
@@ -17,7 +17,7 @@
       }"
     >
       <div class="" v-for="partner in partners" :key="partner.name" :repeat="10">
-        <LazyNuxtImg :src="'/images/partners/' + partner.logo" class="max-h-10" />
+        <LazyNuxtImg :src="'/images/partners/' + partner.logo" class="max-h-5 md:max-h-10" />
       </div>
     </UMarquee>
   </section>

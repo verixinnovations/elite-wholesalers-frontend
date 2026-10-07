@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="product"
-    class="group flex flex-col max-w-xs border border-gray-200 rounded-md overflow-hidden"
+    class="group w-full flex flex-col border border-gray-200 rounded-md overflow-hidden"
   >
     <NuxtLink :to="`/products/${product?.item_id}`" class="block flex-1">
       <div
@@ -21,7 +21,7 @@
       </div>
       <div class="pt-4 px-2">
         <p class="text-xxs font-semibold line-clamp-1 uppercase tracking-[0.12em] text-primary-500">
-          {{ product.sku }}
+          {{ product.category_name }}
         </p>
         <h2 class="my-1 line-clamp-2 font-roboto text-base font-semibold text-neutral-900">
           {{ product?.item_name }}
@@ -32,7 +32,13 @@
       </div>
     </NuxtLink>
     <div class="mt-0 mb-0 flex p-2 items-center justify-between gap-3">
-      <BaseAuthButton size="lg" :variant="isLoggedIn ? 'link' : 'solid'" :block="!isLoggedIn">
+      <BaseAuthButton
+        size="lg"
+        :color="isLoggedIn ? 'primary' : 'neutral'"
+        :variant="isLoggedIn ? 'link' : 'solid'"
+        class="rounded-sm!"
+        :block="!isLoggedIn"
+      >
         <span class="font-k2d text-lg text-primary-400" v-if="isLoggedIn">
           {{
             NumberFunctions.formatCurrency(product?.price.amount || 0, product.price.currency)

@@ -129,9 +129,7 @@ export const useAuthStore = defineStore('AuthStore', {
         if (route.redirectedFrom) {
           return router.replace({ path: route.redirectedFrom.fullPath })
         }
-
         cartStore.fetchCart()
-
         return router.replace({ name: RouteName.Home })
       } else toast.add({ description: res.message })
       return res

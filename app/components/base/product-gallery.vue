@@ -1,10 +1,10 @@
 <template>
-  <div class="flex flex-col gap-3">
-    <div class="aspect-square overflow-hidden">
+  <div class="flex flex-col my-10 gap-20">
+    <div class="overflow-hidden mx-auto">
       <NuxtImg
         :src="activeImage"
         :alt="alt"
-        class="size-full object-cover aspect-square scale-70 lg:scale-100"
+        class="aspect-auto h-60 max-h-100 object-cover"
         fetchpriority="high"
       />
     </div>
@@ -14,7 +14,7 @@
         :key="image"
         type="button"
         class="aspect-square overflow-hidden border-2 transition-colors"
-        :class="activeIndex === index ? 'border-primary-500' : 'border-transparent'"
+        :class="activeIndex === index ? 'border-neutral-500' : 'border-transparent'"
         :aria-label="`Show product image ${index + 1}`"
         :aria-pressed="activeIndex === index"
         @click="activeIndex = index"

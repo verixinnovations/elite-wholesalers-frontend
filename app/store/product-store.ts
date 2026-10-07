@@ -122,10 +122,19 @@ export const useProductStore = defineStore('ProductStore', {
         else if (category.parent_category_id === '-1') {
           this.parentCategory = category
           this.subCategories = category.children
-          router.push({
-            name: RouteName.Categories,
-            params: { categoryId }
-          })
+          if (category.children.length === 0) {
+            router.push({
+              name: RouteName.CategoryProducts,
+              params: { categoryId }
+            })
+          } else {
+            this.parentCategory = category
+            this.subCategories = category.children
+            router.push({
+              name: RouteName.Categories,
+              params: { categoryId }
+            })
+          }
         }
         // Case C: Fallback
         else {

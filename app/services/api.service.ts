@@ -104,16 +104,7 @@ export default class ApiService {
             err?.message === 'Network Error' ? 'Oops! Check internet connection' : err.message,
           status: -1
         })
-
-        // Valid server error or others
       } else if (err instanceof AxiosError) {
-        if (err.status === 401) {
-          const toast = useToast()
-          ApiService.deleteAccessToken()
-          localStorage.clear()
-          toast.add({ title: 'Session Expired! Please login' })
-        }
-        console.log(err.response)
         response = new ApiResponse({
           code: err.response.data?.meta?.statusCode,
           message: err.response.data?.error?.message

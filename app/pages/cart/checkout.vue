@@ -98,7 +98,7 @@ import { Currency } from '~/types/enums'
 import { RouteName } from '~/constants/route-names'
 definePageMeta({
   middleware: 'auth',
-  name: RouteName.Cart
+  name: RouteName.Checkout
 })
 
 const cartStore = useCartStore()

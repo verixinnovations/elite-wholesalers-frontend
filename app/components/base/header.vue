@@ -12,8 +12,8 @@
   >
     <!-- Logo -->
     <template #title>
-      <BaseLogo class="md:h-10 sm:w-auto md:block hidden" variant="white" />
-      <BaseLogo class="md:h-10 sm:w-auto md:hidden" variant="small" />
+      <BaseLogo class="h-10 sm:w-auto md:block hidden" variant="white" />
+      <BaseLogo class="h-8! md:hidden" variant="small" />
     </template>
 
     <!-- Desktop Horizontal Navigation (Hidden on Mobile) -->
@@ -26,7 +26,7 @@
         :unmount-on-hide="false"
         orientation="horizontal"
         :ui="{
-          link: 'font-semibold  aria-[current=page]:text-secondary hover:text-secondary!'
+          link: 'font-semibold text-white  aria-[current=page]:text-secondary hover:text-secondary!'
         }"
       />
     </div>
@@ -59,6 +59,7 @@
 
         <!-- Shopping Cart -->
         <UChip
+          v-if="isLoggedIn"
           :show="itemCount > 0"
           size="2xl"
           sm:size="3xl"

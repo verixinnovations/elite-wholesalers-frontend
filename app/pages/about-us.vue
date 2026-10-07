@@ -34,14 +34,10 @@
       </div>
 
       <div class="space-y-4 p-5">
-        <div
-          v-for="(item, index) in deliveryInfo.items"
-          :key="index"
-          class="flex gap-x-2 hover:shadow-md transition-shadow"
-        >
+        <div v-for="(item, index) in deliveryInfo.items" :key="index" class="flex gap-x-2">
           <UIcon name="i-lucide-square-check" class="bg-primary" />
           <div class="space-y-3">
-            <p class="text-sm text-gray-600 dark:text-gray-400">
+            <p class="text-sm text-primary">
               {{ item.description }}
             </p>
           </div>

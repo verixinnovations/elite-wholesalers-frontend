@@ -3,27 +3,24 @@
     <nav class="mb-7 text-xs line-clamp-1 lg:text-sm text-neutral-500 flex" aria-label="Breadcrumb">
       <NuxtLink to="/products" class="hover:text-primary-600">Products</NuxtLink>
 
-      <span class="mx-2 block">/</span>
+      <span class="mx-2 block text-xxs md:text-xs">/</span>
       <NuxtLink :to="`/categories/${product.category_id}`" class="hover:text-primary-600 block">{{
         product.category_name
       }}</NuxtLink>
-      <span class="mx-2 block">/</span>
-      <span class="text-neutral-900 hidden lg:block">{{
-        TextFunctions.sliceWords(product.name, 48)
-      }}</span>
-      <span class="text-neutral-900 block lg:hidden">{{
-        TextFunctions.sliceWords(product.name)
-      }}</span>
+
+      <span class="text-neutral-900 hidden lg:block">
+        <span class="mx-2">/</span> {{ TextFunctions.sliceWords(product.name, 20) }}</span
+      >
     </nav>
 
     <div class="grid gap-10 lg:grid-cols-2 lg:gap-16">
       <BaseProductGallery :images="getProductImages(product)" :alt="product.name" />
       <section class="lg:py-4">
         <p class="text-xs font-bold uppercase tracking-[0.16em] text-primary-500">
-          {{ product.category_name }}
+          {{ product?.brand ?? product.category_name }}
         </p>
         <h1
-          class="mt-3 font-oswald text-[clamp(1.5rem,5vw,2.5rem)] font-medium leading-tight text-neutral-950 sm:text-5xl"
+          class="mt-3 font-oswald text-[clamp(1.5rem,5vw,2.5rem)] font-medium leading-tight text-neutral-950"
         >
           {{ product.name }}
         </h1>
@@ -40,8 +37,8 @@
 
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <BaseAddToCart v-if="isLoggedIn" class="md:w-fit px-10!" />
-          <BaseAuthButton class="w-fit px-10!" v-else size="lg">
-            <span class="font-semibold">View Pricing</span>
+          <BaseAuthButton color="neutral" class="md:w-fit px-10!" v-else size="lg">
+            <span class="font-semibold mx-auto">View Pricing</span>
           </BaseAuthButton>
           <UButton
             label="Download Specs"

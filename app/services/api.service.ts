@@ -55,9 +55,7 @@ export default class ApiService {
   static initializeInterceptors() {
     ApiService.http.interceptors.request.use((config) => {
       const accessToken = ApiService.getAccessToken()
-      console.log(accessToken)
       if (accessToken) {
-        // config.headers['X-AppApiToken'] = accessToken;
         config.headers['Authorization'] = 'Bearer ' + accessToken
       }
       return config

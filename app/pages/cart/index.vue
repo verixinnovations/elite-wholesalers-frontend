@@ -82,19 +82,16 @@
                   )
                 }}
               </span>
-              <button
-                class="text-sm text-neutral-500 underline decoration-neutral-300 underline-offset-4 hover:text-red-700"
-                @click="cartStore.removeFromCart(item.cartId)"
-              >
-                Remove
+              <button class="" @click="cartStore.removeFromCart(item.cartId)">
+                <UIcon name="i-lucide-trash" class="text-error" />
               </button>
             </div>
           </div>
         </article>
       </div>
 
-      <aside
-        class="h-fit border-t border-neutral-200 pt-5 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0"
+      <div
+        class="h-fit border-t border-neutral-200 pt-20 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0"
       >
         <h2 class="font-oswald text-2xl text-neutral-950">Order summary</h2>
         <div class="mt-6 flex justify-between text-sm text-neutral-600">
@@ -104,21 +101,20 @@
         <p class="mt-2 text-xs leading-5 text-neutral-500">
           Shipping and taxes can be confirmed when your order is reviewed.
         </p>
-        <UButton
-          label="Continue to checkout"
-          to="/cart/checkout"
-          icon="i-lucide-arrow-right"
-          trailing
-          class="mt-6 px-10 justify-center"
-          size="lg"
-        />
-        <NuxtLink
-          to="/products"
-          class="mt-4 block text-center text-sm font-semibold text-primary-600 hover:underline"
-        >
-          Continue shopping
-        </NuxtLink>
-      </aside>
+        <div class="mx-auto flex justify-center flex-col">
+          <UButton
+            label="Continue to checkout"
+            to="/cart/checkout"
+            icon="i-lucide-arrow-right"
+            trailing
+            class="mt-6 px-10 justify-center"
+            size="lg"
+          />
+          <UButton to="/products" class="mt-6 px-10 justify-center" variant="link">
+            Continue shopping
+          </UButton>
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -135,14 +131,18 @@ definePageMeta({
 const cartStore = useCartStore()
 const { cartItems, subtotal, itemCount } = storeToRefs(cartStore)
 
-function productImage(product: ProductEntity | ProductDataEntity) {
+function productImage(prod: ProductEntity | ProductDataEntity | null): string {
+  if (!prod) return ''
+
   const imageDocumentId =
-    'image_document_id' in product
-      ? product?.image_document_id
-      : product.documents?.[0]?.document_id
+    'image_document_id' in prod
+      ? prod.image_document_id
+      : 'documents' in prod
+        ? prod.documents?.[0]?.document_id
+        : undefined
 
   return ZohoHelpers.getZohoProductImageUrl({
-    imageName: product?.image_name,
+    imageName: prod?.image_name,
     imageDocumentId
   })
 }

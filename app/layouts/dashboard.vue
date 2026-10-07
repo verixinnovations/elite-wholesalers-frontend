@@ -4,7 +4,7 @@
     <BaseHeader />
     <div class="mx-auto grid min-h-[calc(100vh-4rem)] max-w-7xl md:grid-cols-[220px_minmax(0,1fr)]">
       <aside
-        class="border-b border-neutral-200 px-5 py-4 md:border-b-0 md:border-r md:px-4 md:py-8"
+        class="hidden md:block border-b border-neutral-200 px-5 py-4 md:border-b-0 md:border-r md:px-4 md:py-8"
       >
         <p
           class="hidden px-3 text-xs font-bold uppercase tracking-[0.16em] text-neutral-400 md:block"
@@ -52,10 +52,14 @@ const authStore = useAuthStore()
 const orderStore = useOrderStore()
 
 const navigation = [
-  { label: 'Overview', to: '/dashboard', icon: 'i-lucide-layout-dashboard' },
+  { label: 'Dashboard', to: '/dashboard', icon: 'i-lucide-layout-dashboard' },
   { label: 'Profile', to: '/dashboard/profile', icon: 'i-lucide-user-round' },
   { label: 'My orders', to: '/dashboard/orders', icon: 'i-lucide-package-check' },
-  { label: 'Addresses', to: '/dashboard/addresses', icon: 'i-lucide-map-pin' }
+  {
+    label: 'Addresses',
+    to: '/dashboard/addresses',
+    iconClass: 'text-error'
+  }
 ]
 
 onBeforeMount(() => {

@@ -122,16 +122,19 @@ export const useAuthStore = defineStore('AuthStore', {
       const route = useRoute()
       const cartStore = useCartStore()
       const res = await AuthService.login(data)
-      ApiService.setAccessToken(res.data.access_token)
       if (res.success) {
-        this.user = res.data
+        ApiService.setAccessToken(res.data.access_token)
+        this.user = res.data.user
         if (showToast) toast.add({ title: 'Login Successful!' })
         if (route.redirectedFrom) {
           return router.replace({ path: route.redirectedFrom.fullPath })
         }
         cartStore.fetchCart()
         return router.replace({ name: RouteName.Home })
-      } else toast.add({ description: res.message })
+      } else {
+        console.log(res.message)
+        toast.add({ description: res.message })
+      }
       return res
     },
 
@@ -296,16 +299,16 @@ export const useAuthStore = defineStore('AuthStore', {
       }
     },
 
-    // async updateProfile(data: CreateUser) {
-    //   const toast = useToast()
-    //   const formData = UtilFunctions.objectToFormData({ ...data })
-    //   const res = await AuthService.updateProfile(formData, this.user?.id ?? 1)
-    //   if (res.success) {
-    //     toast.add({ title: res.message })
-    //     this.getProfile()
-    //   }
-    //   return res
-    // },
+    async updateProfile(data: Partial<UserEntity>) {
+      const toast = useToast()
+      const res = await AuthService.updateProfile(data)
+      if (res.success) {
+        this.user = res.data
+        toast.add({ title: res.message })
+        this.getProfile()
+      }
+      return res
+    },
 
     // async updateProfileImage(data: CreateUser, photo_path: File) {
     //   const formData = UtilFunctions.objectToFormData({

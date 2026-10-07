@@ -8,7 +8,7 @@ export interface BusinessDetails {
   stateIssued: string
   business_name: string
   business_type: string
-  license_number: string
+  licence_number: string
 }
 
 export interface UserEntity {

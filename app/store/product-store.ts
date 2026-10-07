@@ -57,8 +57,11 @@ export const useProductStore = defineStore('ProductStore', {
       }
     },
 
-    async getProductByCategoryId(categoryId: string) {
-      const res = await ProductService.getProductsByCategoryId(categoryId)
+    async getProductByCategoryId(
+      categoryId: string,
+      query?: { sort_order: string; sort_column: string }
+    ) {
+      const res = await ProductService.getProductsByCategoryId(categoryId, query)
       if (res.success) {
         this.categoryProducts = res.data
       }

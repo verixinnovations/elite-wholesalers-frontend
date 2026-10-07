@@ -1,7 +1,16 @@
 <template>
   <section>
     <header class="border-b border-neutral-200 pb-6">
-      <p class="text-xs font-bold uppercase tracking-[0.16em] text-primary-500">Account</p>
+      <p
+        class="text-xs font-bold uppercase tracking-[0.16em] text-primary-500"
+        :class="{
+          'text-primary': user?.accountType === AccountType.INDIVIDUAL,
+          'text-success-500': user?.accountType === AccountType.TRADER,
+          'text-rose-600': user?.accountType === AccountType.ADMIN
+        }"
+      >
+        {{ user?.accountType }} Account
+      </p>
       <h1 class="mt-2 font-oswald text-4xl font-medium text-neutral-950">
         <span class="text-2xl block">{{ DateFunctions.getLocalGreeting() }},</span>
         <span class="">{{ user?.fullname }}</span>
@@ -14,14 +23,11 @@
         <p class="text-sm text-neutral-500">Orders</p>
         <p class="mt-2 font-oswald text-3xl text-neutral-950">{{ orders.length }}</p>
       </NuxtLink>
-      <!-- <NuxtLink to="/dashboard/addresses" class="border border-neutral-200 p-5 hover:bg-neutral-50">
-        <p class="text-sm text-neutral-500">Saved addresses</p>
-        <p class="mt-2 font-oswald text-3xl text-neutral-950">{{ addresses.length }}</p>
-      </NuxtLink> -->
-      <div class="border border-neutral-200 p-5">
+
+      <NuxtLink to="/cart" class="border border-neutral-200 p-5 hover:bg-neutral-50">
         <p class="text-sm text-neutral-500">Cart items</p>
         <p class="mt-2 font-oswald text-3xl text-neutral-950">{{ itemCount }}</p>
-      </div>
+      </NuxtLink>
     </div>
 
     <div class="mt-10">
@@ -30,6 +36,7 @@
           <h2 class="font-oswald text-2xl text-neutral-950">Recent orders</h2>
           <NuxtLink
             to="/dashboard/orders"
+            v-if="orders.length > 1"
             class="text-sm font-semibold text-primary-600 hover:underline"
             >View all</NuxtLink
           >
@@ -45,6 +52,7 @@ import { RouteName } from '~/constants/route-names'
 import { useAuthStore } from '~/store/auth-store'
 import { useCartStore } from '~/store/cart-store'
 import { useOrderStore } from '~/store/order-store'
+import { AccountType } from '~/types/enums'
 
 definePageMeta({ layout: 'dashboard', name: RouteName.Profile, middleware: 'auth' })
 useSeoMeta({ title: 'Account overview' })

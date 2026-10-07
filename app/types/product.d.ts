@@ -115,16 +115,6 @@ export interface ProductDataEntity {
   }
 }
 
-export interface ProductDataResponse {
-  meta: {
-    success: boolean
-    statusCode: number
-    statusMessage: string
-  }
-  data: ProductDataEntity
-  timestamp: string
-}
-
 export interface ProductDataDocument extends DocumentItem {
   source_formatted: string
   uploaded_by: string

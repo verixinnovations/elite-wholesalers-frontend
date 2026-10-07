@@ -4,7 +4,8 @@ import type {
   ForgotPassword,
   ResetPassword,
   VerifyOTP,
-  SignupDetails
+  SignupDetails,
+  UserEntity
 } from '~/types/auth'
 import ApiService from './api.service'
 
@@ -82,16 +83,15 @@ export const AuthService = {
   async deleteAccount() {
     return await ApiService.run({
       method: ApiService.DELETE,
-      url: `/users/`
+      url: `/user/`
     })
   },
 
-  async updateProfile(data: FormData) {
+  async updateProfile(data: Partial<UserEntity>) {
     return await ApiService.run({
-      method: ApiService.POST,
-      url: `/users/`,
-      data,
-      headers: { 'Content-Type': 'multipart/form-data' }
+      method: ApiService.PUT,
+      url: `/user/`,
+      data
     })
   },
 

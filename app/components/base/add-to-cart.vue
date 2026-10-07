@@ -33,14 +33,10 @@ const { selectedProduct } = storeToRefs(productStore)
 const product = computed<ProductEntity | ProductDataEntity | null>(
   () => props.product ?? selectedProduct.value
 )
+
 const productInCart = computed(() =>
   product.value ? cartStore.cartItems.some((item) => item.itemId === product.value?.item_id) : false
 )
-
-const isProductAvailable = computed(() => {
-  if (product.value && product?.value?.available_stock <= 0) return false
-  return true
-})
 
 function addToCart() {
   if (!product.value) return

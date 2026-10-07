@@ -67,11 +67,14 @@ export const ProductService = {
     })
   },
 
-  async getProductsByCategoryId(categoryId: string) {
+  async getProductsByCategoryId(
+    categoryId: string,
+    query?: { sort_column: string; sort_order: string }
+  ) {
     return await ApiService.run({
       method: ApiService.GET,
       url: `products/categories/${categoryId}/products`,
-      params: { perPage: 100 }
+      params: { perPage: 100, ...query }
     })
   }
 }

@@ -3,7 +3,7 @@
     <div v-if="!orders.length" class="py-16 text-center">
       <UIcon name="i-lucide-package-open" class="mx-auto size-10 text-neutral-300" />
       <h2 class="mt-4 font-oswald text-2xl text-neutral-900">No orders yet</h2>
-      <UButton label="Browse products" to="/products" class="mt-5" />
+      <UButton label="Browse products" to="/products" class="mt-5 px-5" />
     </div>
 
     <div v-else class="mt-6 divide-y divide-neutral-200 border-y border-neutral-200">

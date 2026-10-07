@@ -19,9 +19,9 @@
           loading="lazy"
         />
       </div>
-      <div class="pt-4 px-2">
+      <div class="pt-4 text-left! px-2">
         <p class="text-xxs font-semibold line-clamp-1 uppercase tracking-[0.12em] text-primary-500">
-          {{ product.category_name }}
+          {{ Boolean(product?.brand) ? product?.brand : product.category_name }}
         </p>
         <h2 class="my-1 line-clamp-2 font-roboto text-base font-semibold text-neutral-900">
           {{ product?.item_name }}

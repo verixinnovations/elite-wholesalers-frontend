@@ -32,8 +32,8 @@
               <NuxtImg
                 :src="
                   ZohoHelpers.getZohoProductImageUrl({
-                    imageName: category.documents[0].file_name,
-                    imageDocumentId: category.documents[0].document_id
+                    imageName: category?.documents[0]?.file_name,
+                    imageDocumentId: category?.documents[0]?.document_id
                   })
                 "
                 :alt="category.name"

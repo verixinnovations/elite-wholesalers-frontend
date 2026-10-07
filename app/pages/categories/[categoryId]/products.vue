@@ -16,13 +16,33 @@
             {{ selectedCategory?.name }}
           </h1>
         </div>
-        <p
-          v-if="categoryProducts.length > 0"
-          class="text-sm text-neutral-500 flex items-center font-semibold"
-          aria-live="polite"
+        <div
+          class="space-x-4 lg:space-y-4 flex-row-reverse flex md:block justify-between items-center"
         >
-          ({{ categoryProducts.length }}) Products available
-        </p>
+          <USelectMenu
+            icon="i-lucide-sliders-horizontal"
+            :search-input="false"
+            size="sm"
+            arrow
+            :items="filterQuery"
+            v-model="selectedQuery"
+            @update:model-value="
+              (val) => productStore.getProductByCategoryId(categoryId, val.value)
+            "
+            class="w-36"
+            :ui="{
+              base: 'text-xs!',
+              itemLabel: 'text-xs!'
+            }"
+          />
+          <p
+            v-if="categoryProducts.length > 0"
+            class="text-xs md:text-sm text-neutral-500 flex items-center font-semibold"
+            aria-live="polite"
+          >
+            ({{ categoryProducts.length }}) Products available
+          </p>
+        </div>
       </div>
     </div>
     <!-- <div
@@ -89,10 +109,38 @@ definePageMeta({
 
 const route = useRoute()
 const productStore = useProductStore()
-const { selectedCategory, parentCategory, subCategories, categoryProducts } =
-  storeToRefs(productStore)
+const { selectedCategory, categoryProducts } = storeToRefs(productStore)
 
 const categoryId = computed(() => route.params.categoryId as string)
+
+const filterQuery = ref([
+  {
+    label: 'Popularity',
+    value: { sort_column: 'purchase_rate', sort_order: 'D' }
+  },
+  {
+    label: 'Most recent',
+    value: { sort_column: 'created_time', sort_order: 'D' }
+  },
+  {
+    label: 'Price: High to Low',
+    value: { sort_column: 'rate', sort_order: 'D' }
+  },
+  {
+    label: 'Price: Low to High',
+    value: { sort_column: 'rate', sort_order: 'A' }
+  },
+  {
+    label: 'Name: A-Z',
+    value: { sort_column: 'name', sort_order: 'A' }
+  },
+  {
+    label: 'Name: Z-A',
+    value: { sort_column: 'name', sort_order: 'D' }
+  }
+])
+
+const selectedQuery = ref(filterQuery.value[0])
 
 const categoryParentsBreadcrumb = computed(() => {
   const base = [
@@ -131,6 +179,7 @@ const categoryParentsBreadcrumb = computed(() => {
 
   return [...base, ...categoryBreadcrumbs]
 })
+
 onBeforeMount(async () => {
   if (categoryId) {
     await productStore.getProductByCategoryId(categoryId.value)

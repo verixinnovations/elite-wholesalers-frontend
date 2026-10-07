@@ -81,9 +81,18 @@
         <!-- Profile or Login -->
         <template v-if="isLoggedIn">
           <UChip inset class="cursor-pointer">
-            <NuxtLink :to="{ name: RouteName.Profile }">
+            <UDropdownMenu
+              arrow
+              :ui="{ itemLeadingIcon: 'shrink-0 size-4' }"
+              :items="dashboardNavigation"
+              :content="{
+                align: 'end',
+                side: 'bottom',
+                sideOffset: 8
+              }"
+            >
               <UAvatar icon="i-lucide-user-round" loading="lazy" size="sm" sm:size="md" />
-            </NuxtLink>
+            </UDropdownMenu>
           </UChip>
         </template>
         <template v-else>
@@ -177,6 +186,20 @@ const items = computed<NavigationMenuItem[]>(() => [
   {
     label: 'About Us',
     to: '/about-us'
+  }
+])
+
+const dashboardNavigation = ref([
+  { label: 'Dashboard', to: '/dashboard', icon: 'i-lucide-layout-dashboard' },
+  { label: 'Profile', to: '/dashboard/profile', icon: 'i-lucide-user-round' },
+  { label: 'My orders', to: '/dashboard/orders', icon: 'i-lucide-package-check' },
+  { label: 'Addresses', to: '/dashboard/addresses', icon: 'i-lucide-map-pin' },
+  {
+    label: 'Logout',
+    icon: 'i-lucide-log-out',
+    class: 'text-error',
+    color: 'error',
+    onSelect: () => authStore.logout()
   }
 ])
 </script>

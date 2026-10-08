@@ -1,5 +1,12 @@
 import type { Currency } from './enums'
 
+interface ProductSearchQuery {
+  name_contains?: string
+  category_id?: string
+  page?: number
+  per_page?: number
+}
+
 export interface ProductTaxCategory {
   tax_category_code: string
   tax_category_name: string
@@ -108,6 +115,14 @@ export interface ProductDataEntity {
   package_details: ProductPackageDetails
   is_modifier_item: boolean
   integration_references: unknown[]
+  custom_field_hash?: {
+    cf_product_specs?: string
+    cf_product_specs_formatted?: string
+    cf_product_specs_unformatted?: string
+  }
+  cf_product_specs?: string
+  cf_product_specs_formatted?: string
+  cf_product_specs_unformatted?: string
   has_variant: boolean
   price: {
     amount: number
@@ -285,6 +300,14 @@ export interface ProductEntity {
   tax_category_name: string
   tags: string[]
   product_tax_category: ProductTaxCategory
+  custom_field_hash?: {
+    cf_product_specs?: string
+    cf_product_specs_formatted?: string
+    cf_product_specs_unformatted?: string
+  }
+  cf_product_specs?: string
+  cf_product_specs_formatted?: string
+  cf_product_specs_unformatted?: string
   price: {
     amount: number
     currency: Currency

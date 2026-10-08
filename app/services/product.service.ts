@@ -1,19 +1,15 @@
+import type { ProductSearchQuery } from '~/types/product'
 import ApiService from './api.service'
 
 export const ProductService = {
-  async getProducts(
-    params = {
-      name_contains: ''
-    }
-  ) {
+  async getProducts(params?: ProductSearchQuery) {
     return await ApiService.run({
       method: ApiService.GET,
       url: '/products',
-      params: {
-        ...params
-      }
+      params
     })
   },
+
   // async getSimilarProducts(
   //   productId: number,
   //   params: ProductParams = {

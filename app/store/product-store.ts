@@ -5,7 +5,8 @@ import type {
   CategoryEntity,
   ProductCategoryEntity,
   ProductDataEntity,
-  ProductEntity
+  ProductEntity,
+  ProductSearchQuery
 } from '~/types/product'
 
 interface ProductStore {
@@ -18,6 +19,13 @@ interface ProductStore {
   selectedCategory: CategoryEntity | null
   parentCategory: CategoryEntity | null
   subCategories: CategoryEntity[]
+
+  loadingStates: {
+    product: boolean
+    categories: boolean
+    subcategories: boolean
+    products: boolean
+  }
 }
 
 export const useProductStore = defineStore('ProductStore', {
@@ -30,7 +38,14 @@ export const useProductStore = defineStore('ProductStore', {
 
     selectedCategory: null,
     parentCategory: null,
-    subCategories: []
+    subCategories: [],
+
+    loadingStates: {
+      product: false,
+      categories: false,
+      subcategories: false,
+      products: false
+    }
   }),
 
   getters: {},
@@ -71,10 +86,12 @@ export const useProductStore = defineStore('ProductStore', {
       if (this.selectedProduct?.item_id === productId) {
         return this.selectedProduct
       } else {
+        this.loadingStates.product = true
         const res = await ProductService.getProduct(productId)
         if (res.success) {
           this.selectedProduct = res.data
         }
+        this.loadingStates.product = false
       }
     },
 

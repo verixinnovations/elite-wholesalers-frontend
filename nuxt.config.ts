@@ -20,7 +20,8 @@ export default defineNuxtConfig({
     'nuxt-zod',
     'v-gsap-nuxt',
 
-    'nuxt-swiper'
+    'nuxt-swiper',
+    '@vueuse/nuxt/module'
   ],
 
   devtools: {

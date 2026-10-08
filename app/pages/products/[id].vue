@@ -40,13 +40,24 @@
           <BaseAuthButton color="neutral" class="md:w-fit px-10!" v-else size="lg">
             <span class="font-semibold mx-auto">View Pricing</span>
           </BaseAuthButton>
+
           <UButton
             label="Download Specs"
             icon="i-lucide-file-down"
             color="neutral"
             variant="outline"
+            tooltip="jellp"
             size="lg"
             class="justify-center"
+            :loading="loadingStates.product"
+            :disabled="!hasProductSpecs"
+            @click="downloadProductSpecs()"
+          />
+
+          <BaseUploadProductSpecs
+            v-if="user?.accountType === AccountType.ADMIN"
+            :hasProductSpecs
+            :product="product"
           />
         </div>
 
@@ -62,17 +73,19 @@
 <script setup lang="ts">
 import { RouteName } from '~/constants/route-names'
 import { useAuthStore } from '~/store/auth-store'
+import { AccountType } from '~/types/enums'
 import { useProductStore } from '~/store/product-store'
 
 definePageMeta({
   name: RouteName.ProductDetails
 })
+
 const route = useRoute()
 const productStore = useProductStore()
 
-const { isLoggedIn } = storeToRefs(useAuthStore())
+const { isLoggedIn, user } = storeToRefs(useAuthStore())
 
-const { selectedProduct: product } = storeToRefs(productStore)
+const { selectedProduct: product, loadingStates } = storeToRefs(productStore)
 const getProductImages = (product: any) => {
   const images = product.documents?.map((doc: any) => {
     return ZohoHelpers.getZohoProductImageUrl({
@@ -81,6 +94,37 @@ const getProductImages = (product: any) => {
     })
   })
   return images || []
+}
+
+const hasProductSpecs = computed(() => {
+  const customFields = product?.value?.custom_fields || []
+  const specsFieldIndex = customFields.findIndex(
+    (field) => field.api_name === 'cf_product_specs' || field.label === 'product_specs'
+  )
+  return specsFieldIndex >= 0
+})
+
+function downloadProductSpecs() {
+  const customFields = product?.value?.custom_fields || []
+  const specsField = customFields.find(
+    (field) => field.api_name === 'cf_product_specs' || field.label === 'product_specs'
+  )
+
+  const fileUrl = specsField?.value
+
+  // 2. Check if the URL exists
+  if (!fileUrl) {
+    console.error('Product specs URL not found in custom fields.')
+    alert('No product specs available for this item.')
+    return
+  }
+
+  // 3. Trigger navigation or open the file
+  // Option A: Opens the PDF/file in a new browser tab (Best user experience)
+  window.open(fileUrl, '_blank')
+
+  // Option B: If you want to navigate away in the current tab/window:
+  // window.location.href = fileUrl;
 }
 
 onBeforeMount(() => {

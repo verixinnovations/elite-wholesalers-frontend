@@ -8,12 +8,15 @@
         fetchpriority="high"
       />
     </div>
-    <div v-if="images.length > 1" class="grid grid-cols-4 gap-3 sm:grid-cols-5">
+    <div
+      v-if="images.length > 1"
+      class="flex mx-auto max-w-full overflow-x-auto justify-center sm:justify-center gap-3 py-2 scroll-smooth"
+    >
       <div
         v-for="(image, index) in images"
         :key="image"
         type="button"
-        class="aspect-square overflow-hidden border-2 transition-colors"
+        class="aspect-square w-16 sm:w-20 shrink-0 overflow-hidden border-2 transition-colors cursor-pointer"
         :class="activeIndex === index ? 'border-neutral-500' : 'border-transparent'"
         :aria-label="`Show product image ${index + 1}`"
         :aria-pressed="activeIndex === index"

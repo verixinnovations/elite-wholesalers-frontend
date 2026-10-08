@@ -35,7 +35,7 @@
 
       <div class="space-y-4 p-5">
         <div v-for="(item, index) in deliveryInfo.items" :key="index" class="flex gap-x-2">
-          <UIcon name="i-lucide-square-check" class="bg-primary" />
+          <UIcon name="i-lucide-square-check" class="bg-primary shrink-0 size-5" />
           <div class="space-y-3">
             <p class="text-sm text-primary">
               {{ item.description }}
@@ -72,12 +72,11 @@ const companyHighlights = [
 
 const deliveryInfo = {
   title: 'WHAT DO WE DELIVER?',
-  subtitle: '',
   items: [
     {
       icon: 'i-heroicons-wrench-screwdriver',
       title: 'Expert Assistance',
-      description: 'Old School & bull; Real service, real performance.'
+      description: 'Old SchoolReal service, real performance'
     },
     {
       icon: 'i-heroicons-wrench-screwdriver',

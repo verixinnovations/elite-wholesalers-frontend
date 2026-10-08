@@ -82,8 +82,8 @@ export const useProductStore = defineStore('ProductStore', {
       }
     },
 
-    async selectProduct(productId: string) {
-      if (this.selectedProduct?.item_id === productId) {
+    async selectProduct(productId: string, option?: { force: boolean }) {
+      if (this.selectedProduct?.item_id === productId && !option?.force) {
         return this.selectedProduct
       } else {
         this.loadingStates.product = true
@@ -138,6 +138,7 @@ export const useProductStore = defineStore('ProductStore', {
             this.subCategories = allCurrentChildrenBelongToSameParent ? this.subCategories : []
           }
         }
+
         // Case B: It is a top-level parent category (parent_category_id === '-1')
         else if (category.parent_category_id === '-1') {
           this.parentCategory = category
@@ -155,9 +156,7 @@ export const useProductStore = defineStore('ProductStore', {
               params: { categoryId }
             })
           }
-        }
-        // Case C: Fallback
-        else {
+        } else {
           this.parentCategory = category
           this.subCategories = category.children
           router.push({

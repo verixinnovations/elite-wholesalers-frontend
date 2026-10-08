@@ -13,12 +13,11 @@
     />
 
     <div class="flex items-center justify-between">
-      <UBadge class="cursor-pointer bg-transparent" @click="retryOtp">
+      <UBadge class="cursor-pointer bg-transparent" @click="retryOtp" :disabled="showTimer">
         <UIcon name="i-icon-retry" />
         <span class="text-primary">Resend OTP </span>
-        <span class="dark:text-neutral text-black">in 00:{{ getTimer }}s</span>
+        <span class="dark:text-neutral text-black" v-if="showTimer">in 00:{{ getTimer }}s</span>
       </UBadge>
-      <UBadge class="text-primary cursor-pointer bg-transparent"> Use phone number </UBadge>
     </div>
 
     <UButton
@@ -48,7 +47,7 @@ definePageMeta({
 
 const authStore = useAuthStore()
 const route = useRoute()
-
+const showTimer = ref(false)
 const loading = ref(false)
 const state = ref({
   otp: []
@@ -65,11 +64,14 @@ const validatePinComplete = () => {
 }
 
 const timer = ref(59)
-const retryOtp = () => {
+const retryOtp = async () => {
+  showTimer.value = true
+  await authStore.forgotPassword({ email: route.query?.email as string })
   const interval = setInterval(() => {
     timer.value--
     if (timer.value <= 0) {
       clearInterval(interval)
+      showTimer.value = false
       timer.value = 59
     }
   }, 1000)
@@ -90,7 +92,7 @@ const verifyEmail = async () => {
 }
 
 watchEffect(() => {
-  route.meta.pageHint = `Enter the 6-digit code sent to your email address`
+  route.meta.pageHint = `Enter the 4-digit code sent to your email address`
 })
 </script>
 

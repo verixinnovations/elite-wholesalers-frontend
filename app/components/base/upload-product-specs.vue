@@ -23,12 +23,12 @@ const props = defineProps<{
   product: ProductDataEntity | ProductEntity
   hasProductSpecs: boolean
 }>()
-const toast = useToast()
 
+const emit = defineEmits(['updated'])
 const adminStore = useAdminStore()
 const { user } = storeToRefs(useAuthStore())
 
-const { files, open, reset, onChange } = useFileDialog({
+const { open, reset, onChange } = useFileDialog({
   accept: '.pdf,.doc,.docx,.txt',
   multiple: false
 })
@@ -40,7 +40,7 @@ onChange(async (selectedFiles) => {
   if (file) {
     await adminStore.uploadProductSpecs(props.product.item_id, file)
   }
-
+  emit('updated')
   reset()
 })
 </script>

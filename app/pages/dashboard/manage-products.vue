@@ -91,14 +91,18 @@
 
         <!-- Specs Upload Button Cell -->
         <template #documents-cell="{ row }">
-          <BaseUploadProductSpecs
-            size="sm"
-            class="text-xs"
-            :variant="Boolean(row.original?.cf_product_specs) ? 'solid' : 'outline'"
-            color="neutral"
-            :hasProductSpecs="Boolean(row.original?.cf_product_specs)"
-            :product="row.original"
-          />
+          <div class="" @click="selectedProductId = row.original.item_id">
+            <BaseUploadProductSpecs
+              size="sm"
+              class="text-xs"
+              :variant="Boolean(row.original?.cf_product_specs) ? 'solid' : 'outline'"
+              color="neutral"
+              :loading="loadingStates.uploadingSpecs && selectedProductId === row.original.item_id"
+              :hasProductSpecs="Boolean(row.original?.cf_product_specs)"
+              @updated="adminStore.getAdminProducts(query)"
+              :product="row.original"
+            />
+          </div>
         </template>
       </UTable>
 
@@ -144,7 +148,7 @@ import { useAuthStore } from '~/store/auth-store'
 import { Currency } from '~/types/enums'
 
 const adminStore = useAdminStore()
-const { products, categories } = storeToRefs(adminStore)
+const { products, categories, loadingStates } = storeToRefs(adminStore)
 const { user } = storeToRefs(useAuthStore())
 
 definePageMeta({
@@ -156,6 +160,8 @@ const query = ref({
 })
 
 const searchQuery = ref('')
+
+const selectedProductId = ref('')
 
 const pagination = ref({
   pageIndex: 0,

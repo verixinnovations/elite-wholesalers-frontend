@@ -180,9 +180,8 @@ const categoryParentsBreadcrumb = computed(() => {
   return [...base, ...categoryBreadcrumbs]
 })
 
-onBeforeMount(async () => {
-  if (categoryId) {
-    await productStore.getProductByCategoryId(categoryId.value)
-  }
+onMounted(() => {
+  console.log({ categoryId: route.params.categoryId })
+  productStore.getProductByCategoryId(route.params.categoryId as string)
 })
 </script>

@@ -57,6 +57,8 @@
           <BaseUploadProductSpecs
             v-if="user?.accountType === AccountType.ADMIN"
             :hasProductSpecs
+            :loading="adminLoadingStates.uploadingSpecs"
+            @updated="productStore.selectProduct(route.params.id as string, { force: true })"
             :product="product"
           />
         </div>
@@ -75,6 +77,7 @@ import { RouteName } from '~/constants/route-names'
 import { useAuthStore } from '~/store/auth-store'
 import { AccountType } from '~/types/enums'
 import { useProductStore } from '~/store/product-store'
+import { useAdminStore } from '~/store/admin-store'
 
 definePageMeta({
   name: RouteName.ProductDetails
@@ -84,6 +87,7 @@ const route = useRoute()
 const productStore = useProductStore()
 
 const { isLoggedIn, user } = storeToRefs(useAuthStore())
+const { loadingStates: adminLoadingStates } = storeToRefs(useAdminStore())
 
 const { selectedProduct: product, loadingStates } = storeToRefs(productStore)
 const getProductImages = (product: any) => {

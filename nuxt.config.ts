@@ -23,7 +23,6 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: '/',
     head: {
       titleTemplate: 'Elite Wholesalers | %s ',
       link: [{ rel: 'icon', type: 'image/png', href: '/logo-sm.png' }],

@@ -1,6 +1,5 @@
 allowBuilds:
   '@parcel/watcher': false
-  '@tailwindcss/oxide': false
   core-js: false
   esbuild: false
   fsevents: false

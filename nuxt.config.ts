@@ -54,6 +54,7 @@ export default defineNuxtConfig({
           'https://cdn1.zohoecommerce.com',
           'https://elite-wholesalers-frontend.vercel.app',
           'http://elite-wholesalers-backend.onrender.com',
+          'https://elite-wholesalers-backend-production-89cc.up.railway.app',
           'https://picsum.photos/',
           'https://fastly.picsum.photos/'
         ]
@@ -66,7 +67,7 @@ export default defineNuxtConfig({
     '/**': {
       headers: {
         'Content-Security-Policy':
-          "img-src 'self' data: http://localhost:5050 http://elite-wholesalers-backend.onrender.com https://elite-wholesalers-frontend.vercel.app cdn1.zohoecommerce.com https://picsum.photos https://fastly.picsum.photos;"
+          "img-src 'self' data: http://localhost:5050 http://elite-wholesalers-backend.onrender.com https://elite-wholesalers-frontend.vercel.app https://elite-wholesalers-backend-production-89cc.up.railway.app cdn1.zohoecommerce.com https://picsum.photos https://fastly.picsum.photos;"
       }
     }
   },

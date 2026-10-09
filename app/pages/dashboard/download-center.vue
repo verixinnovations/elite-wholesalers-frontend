@@ -101,23 +101,7 @@
                 </UFormField>
 
                 <UFormField label="Release Date" name="date" class="col-span-1">
-                  <UPopover>
-                    <UButton
-                      color="neutral"
-                      variant="subtle"
-                      icon="i-lucide-calendar"
-                      class="w-full justify-between"
-                    >
-                      {{
-                        resourceState.date
-                          ? format(new Date(resourceState.date), 'yyyy-MM-dd')
-                          : 'Select date'
-                      }}
-                    </UButton>
-                    <template #content>
-                      <UCalendar v-model="resourceCalendarDate" class="p-2" />
-                    </template>
-                  </UPopover>
+                  <UInput type="date" v-model="resourceState.date" class="p-2 rounded-4xl!" />
                 </UFormField>
 
                 <UFormField label="Category" name="categoryId" class="col-span-1">
@@ -283,7 +267,6 @@
 
 <script setup lang="ts">
 import * as zod from 'zod'
-import { format } from 'date-fns'
 import { storeToRefs } from 'pinia'
 import type { FormSubmitEvent } from '@nuxt/ui'
 import { useAdminStore } from '~/store/admin-store'

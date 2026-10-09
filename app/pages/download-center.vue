@@ -22,7 +22,7 @@
 
           <!-- Format Date cell -->
           <template #date-cell="{ row }">
-            <span>{{ DateFunctions.formatIntlDate(new Date(row.original.date ?? '')) }}</span>
+            <span>{{ row.original?.date ?? '' }}</span>
           </template>
 
           <!-- Custom Download Cell -->
@@ -44,9 +44,9 @@
 </template>
 
 <script setup lang="ts">
-import { format } from 'date-fns'
 import { storeToRefs } from 'pinia'
 import { useUtilStore } from '~/store/util-store'
+import { DateFunctions } from '~/utils/dates.utils'
 
 definePageMeta({
   name: 'download-center',

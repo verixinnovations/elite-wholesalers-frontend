@@ -37,7 +37,7 @@ export const UtilService = {
   async getFirmwares() {
     return await ApiService.run({
       method: ApiService.GET,
-      url: '/firmware/categories'
+      url: '/utils/firmware-updates'
     })
   },
 

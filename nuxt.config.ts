@@ -1,13 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
     '@nuxt/image',
     '@compodium/nuxt',
-    '@nuxtjs/algolia',
     '@nuxtjs/google-fonts',
-    '@nuxtjs/i18n',
     '@nuxtjs/seo',
     '@pinia/nuxt',
     'pinia-plugin-persistedstate/nuxt',
@@ -16,13 +16,11 @@ export default defineNuxtConfig({
     // 'nuxt-google-auth',
     'nuxt-gtag',
     'nuxt-security',
-    // 'nuxt-vue3-google-signin',
-    'nuxt-zod',
-    'v-gsap-nuxt',
 
     'nuxt-swiper',
-    '@vueuse/nuxt/module',
-    '@nuxt/scripts'
+    '@vueuse/nuxt',
+    '@nuxt/scripts',
+    '@vueuse/nuxt/module'
   ],
 
   devtools: {

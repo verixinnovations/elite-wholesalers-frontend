@@ -13,10 +13,8 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate/nuxt',
     '@vee-validate/nuxt',
     '@vite-pwa/nuxt',
-
     'nuxt-gtag',
     'nuxt-security',
-
     'nuxt-swiper',
     '@vueuse/nuxt',
     '@nuxt/scripts'
@@ -28,9 +26,15 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      charset: 'utf-8',
       titleTemplate: 'Elite Wholesalers | %s ',
-      link: [{ rel: 'icon', type: 'image/png', href: '/logo-sm.png' }],
-      meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }]
+      viewport: 'width=device-width, initial-scale=1',
+      link: [
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon/favicon-32x32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon/favicon-16x16.png' },
+        { rel: 'shortcut icon', href: '/favicon/favicon.ico' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon/apple-touch-icon.png' }
+      ]
     }
   },
 
@@ -52,17 +56,12 @@ export default defineNuxtConfig({
           'http://localhost:5050',
           'https://cdn1.zohoecommerce.com',
           'https://elite-wholesalers-frontend.vercel.app',
-          'https://elite-wholesalers-backend-production.up.railway.app',
-          'https://picsum.photos',
-          'https://fastly.picsum.photos',
+          'https://www.elitewholesalers.com.au',
+          'https://native.elitewholesalers.com.au',
+          'http://api.elitewholesalers.com.au',
           'https://useperch.xyz'
         ],
-        'connect-src': [
-          "'self'",
-          'http://localhost:5050',
-          'https://elite-wholesalers-backend-production.up.railway.app',
-          process.env.VITE_API_URL as string
-        ],
+        'connect-src': ["'self'", 'http://localhost:5050', 'http://api.elitewholesalers.com.au '],
         'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
         'style-src': ["'self'", "'unsafe-inline'"]
       }
@@ -76,13 +75,34 @@ export default defineNuxtConfig({
       headers: {
         'Content-Security-Policy': [
           "default-src 'self'",
-          "img-src 'self' data: http://localhost:5050 https://elite-wholesalers-backend-production.up.railway.app https://elite-wholesalers-frontend.vercel.app cdn1.zohoecommerce.com https://picsum.photos https://fastly.picsum.photos https://useperch.xyz",
-          `connect-src 'self' http://localhost:5050 https://elite-wholesalers-backend-production.up.railway.app ${process.env.VITE_API_URL || ''}`,
+          "img-src 'self' data: http://localhost:5050 http://localhost:5050 http://api.elitewholesalers.com.au  https://elite-wholesalers-frontend.vercel.app cdn1.zohoecommerce.com https://useperch.xyz",
+          `connect-src 'self' http://localhost:5050 http://api.elitewholesalers.com.au ${process.env.VITE_API_URL || ''}`,
           "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
           "style-src 'self' 'unsafe-inline'"
         ].join('; ')
       }
     }
+  },
+  site: {
+    url: 'https://www.elitewholesalers.com.au',
+    name: 'Elite Wholesalers',
+    description: 'Australia’s trusted source for security, networking & electronics devices.',
+    defaultLocale: 'en-AU'
+  },
+
+  robots: {
+    groups: [
+      {
+        userAgent: ['*'],
+        allow: ['/'],
+        disallow: ['/dashboard', '/cart', '/checkout']
+      }
+    ]
+  },
+  seo: {},
+
+  gtag: {
+    id: process.env.NUXT_PUBLIC_GTAG_ID || 'G-XXXXXXXXXX'
   },
 
   compatibilityDate: '2026-06-30',

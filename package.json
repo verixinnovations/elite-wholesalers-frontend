@@ -35,7 +35,6 @@
     "nuxt-gtag": "5.0.0",
     "nuxt-security": "2.6.0",
     "nuxt-swiper": "2.0.2",
-    "nuxt-vue3-google-signin": "0.0.13",
     "pinia": "^4.0.3",
     "pinia-plugin-persistedstate": "^4.7.1",
     "playwright-core": "^1.63.0",

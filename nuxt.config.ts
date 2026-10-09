@@ -13,14 +13,13 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate/nuxt',
     '@vee-validate/nuxt',
     '@vite-pwa/nuxt',
-    // 'nuxt-google-auth',
+
     'nuxt-gtag',
     'nuxt-security',
 
     'nuxt-swiper',
     '@vueuse/nuxt',
-    '@nuxt/scripts',
-    '@vueuse/nuxt/module'
+    '@nuxt/scripts'
   ],
 
   devtools: {

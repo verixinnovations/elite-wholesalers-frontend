@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     'nuxt-gtag',
     'nuxt-security',
     'nuxt-swiper',
-    '@vueuse/nuxt/module',
+    '@vueuse/nuxt',
     '@nuxt/scripts'
   ],
 
@@ -110,7 +110,7 @@ export default defineNuxtConfig({
   },
 
   piniaPluginPersistedstate: {
-    storage: 'localStorage',
+    // storage: 'localStorage',
     cookieOptions: {
       sameSite: 'strict',
       maxAge: 3600 * 24 * 7 // 1 week

@@ -34,6 +34,13 @@ export const UtilService = {
     })
   },
 
+  async getFirmwares() {
+    return await ApiService.run({
+      method: ApiService.GET,
+      url: '/firmware/categories'
+    })
+  },
+
   async getCountries() {
     return ApiService.run({
       method: ApiService.GET,

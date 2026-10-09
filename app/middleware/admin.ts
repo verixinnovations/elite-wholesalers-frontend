@@ -1,11 +1,12 @@
 import { useAuthStore } from '~/store/auth-store'
-import { AccountType } from '~/types/enums'
 
 export default defineNuxtRouteMiddleware(async () => {
   const authStore = useAuthStore()
   const { isAdmin } = storeToRefs(authStore)
 
-  if (isAdmin) {
+  if (import.meta.server) return
+
+  if (isAdmin.value) {
     return
   }
 

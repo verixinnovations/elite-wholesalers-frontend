@@ -2,13 +2,9 @@
   <section>
     <header class="border-b border-neutral-200 pb-6">
       <p class="text-xs font-bold uppercase tracking-[0.16em] text-rose-500">ADMIN Account</p>
-      <h1 class="mt-2 font-oswald flex text-xl font-medium text-neutral-950">
-        <span class="text-xl block">{{ DateFunctions.getLocalGreeting() }}, &nbsp;</span>
-        <span class="">{{ user?.fullname }}</span>
-      </h1>
 
       <div>
-        <h1 class="text-4xl font-oswald font-bold tracking-tight">Product Management</h1>
+        <h1 class="text-4xl font-oswald font-medium">Product Management</h1>
         <p class="text-sm text-muted mt-2">
           View storefront items, search inventory, and manage product spec.
         </p>

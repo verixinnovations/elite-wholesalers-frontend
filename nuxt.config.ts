@@ -49,6 +49,8 @@ export default defineNuxtConfig({
       contentSecurityPolicy: {
         'img-src': [
           "'self'",
+          "'unsafe-inline'",
+          "'strict-dynamic'",
           'data:',
           'http://localhost:5050',
           'https://cdn1.zohoecommerce.com',
@@ -56,7 +58,8 @@ export default defineNuxtConfig({
           'http://elite-wholesalers-backend.onrender.com',
           'https://elite-wholesalers-backend-production-89cc.up.railway.app',
           'https://picsum.photos/',
-          'https://fastly.picsum.photos/'
+          'https://fastly.picsum.photos/',
+          'https://useperch.xyz'
         ]
       }
     }

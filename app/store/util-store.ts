@@ -5,6 +5,7 @@ interface UtilStore {
   countries: any[]
   states: any[]
   cities: any[]
+  firmwares: any[]
   utilsLoadingStates: {
     country: boolean
     states: boolean
@@ -17,6 +18,7 @@ export const useUtilStore = defineStore('UtilStore', {
     countries: [],
     states: [],
     cities: [],
+    firmwares: [],
     utilsLoadingStates: {
       country: false,
       states: false,
@@ -27,6 +29,12 @@ export const useUtilStore = defineStore('UtilStore', {
   getters: {},
 
   actions: {
+    async getFirmwares() {
+      const res = await UtilService.getFirmwares()
+      if (res.success) {
+        this.firmwares = res.data
+      }
+    },
     async getCountries() {
       this.utilsLoadingStates.country = true
       const res = await UtilService.getCountries()

@@ -16,6 +16,7 @@
     "@compodium/nuxt": "0.1.0-beta.14",
     "@iconify-json/lucide": "^1.2.127",
     "@iconify-json/simple-icons": "^1.2.94",
+    "@internationalized/date": "^3.12.4",
     "@nuxt/image": "2.1.0",
     "@nuxt/kit": "^4.6.0",
     "@nuxt/scripts": "1.3.12",

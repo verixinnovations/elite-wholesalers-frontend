@@ -2,14 +2,12 @@
   <section>
     <header class="border-b border-neutral-200 pb-6">
       <p class="text-xs font-bold uppercase tracking-[0.16em] text-rose-500">ADMIN Account</p>
-      <h1 class="mt-2 font-oswald flex text-xl font-medium text-neutral-950">
-        <span class="text-xl block">{{ DateFunctions.getLocalGreeting() }}, &nbsp;</span>
-        <span class="">{{ user?.fullname }}</span>
-      </h1>
 
       <div>
-        <h1 class="text-4xl font-oswald font-semibold tracking-tight">User Management</h1>
-        <p class="text-sm text-gray-500">View users, update roles directly, and manage accounts.</p>
+        <h1 class="text-4xl font-oswald font-medium">User Management</h1>
+        <p class="text-sm mt-2 text-gray-500">
+          View users, update roles directly, and manage accounts.
+        </p>
       </div>
     </header>
 
@@ -173,6 +171,7 @@ import { storeToRefs } from 'pinia'
 import { useAdminStore } from '~/store/admin-store'
 import { AccountType } from '~/types/enums'
 import { useAuthStore } from '~/store/auth-store'
+import { DateFunctions } from '~/utils/dates.utils'
 
 definePageMeta({
   layout: 'dashboard',

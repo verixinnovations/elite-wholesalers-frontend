@@ -2,7 +2,9 @@
   <div class="min-h-screen bg-white text-neutral-900">
     <BaseGlobalInfo />
     <BaseHeader />
-    <UContainer class="mx-auto grid min-h-[calc(100vh-4rem)] md:grid-cols-[220px_minmax(0,1fr)]">
+    <UContainer
+      class="mx-auto max-w-[1800px] grid min-h-[calc(100vh-4rem)] md:grid-cols-[220px_minmax(0,1fr)]"
+    >
       <aside
         class="hidden md:block border-b border-neutral-200 px-5 py-4 md:border-b-0 md:border-r md:px-4 md:py-8"
       >
@@ -61,8 +63,13 @@ const navigation = ref([
 ])
 
 const adminRoutes = ref([
-  { label: 'Manage Products', to: '/dashboard/manage-products', icon: 'i-lucide-file' },
-  { label: 'Manage Users', to: '/dashboard/manage-users', icon: 'i-lucide-user' }
+  { label: 'Manage Products', to: '/dashboard/manage-products', icon: 'i-lucide-package' },
+  { label: 'Manage Users', to: '/dashboard/manage-users', icon: 'i-lucide-user' },
+  {
+    label: 'Download Center',
+    to: '/dashboard/download-center',
+    icon: 'i-lucide-download'
+  }
 ])
 
 const navigationRoutes = computed(() => {

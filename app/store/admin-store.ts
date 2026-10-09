@@ -1,33 +1,51 @@
+// src/stores/admin.store.ts
 import { AdminService } from '~/services/admin.service'
 import type { UserEntity } from '~/types/auth'
 import type { AccountType } from '~/types/enums'
 import type { CategoryEntity, ProductEntity, ProductSearchQuery } from '~/types/product'
 
-interface OrderStore {
+interface AdminStoreState {
   products: ProductEntity[]
-  categories: CategoryEntity[]
+  categories: CategoryEntity[] // Product categories
+  firmwareCategories: any[]
+  items: any[]
   users: UserEntity[]
+  loading: boolean
   loadingStates: {
     products: boolean
     deleteUser: boolean
     updatingRole: boolean
     uploadingSpecs: boolean
+    firmware: boolean
   }
 }
+
 export const useAdminStore = defineStore('AdminStore', {
-  state: (): OrderStore => ({
+  state: (): AdminStoreState => ({
     products: [],
     categories: [],
+    firmwareCategories: [],
+    items: [],
     users: [],
+    loading: false,
     loadingStates: {
       products: false,
       deleteUser: false,
       updatingRole: false,
-      uploadingSpecs: false
+      uploadingSpecs: false,
+      firmware: false
     }
   }),
-  getters: {},
+  getters: {
+    categoryOptions: (state) => {
+      return state.firmwareCategories.map((cat) => ({
+        label: cat.title || cat.name,
+        value: cat.id
+      }))
+    }
+  },
   actions: {
+    // --- User Actions ---
     async getAdminUsers() {
       const res = await AdminService.getAllUsers()
       if (res.success) {
@@ -56,6 +74,7 @@ export const useAdminStore = defineStore('AdminStore', {
       this.loadingStates.deleteUser = false
     },
 
+    // --- Product Actions ---
     async getAdminProducts(query?: ProductSearchQuery) {
       this.loadingStates.products = true
       const res = await AdminService.getAllProducts(query)
@@ -81,6 +100,88 @@ export const useAdminStore = defineStore('AdminStore', {
         toast.add({ title: 'Product specs updated successfully' })
       }
       this.loadingStates.uploadingSpecs = false
+    },
+
+    // --- Firmware Categories Actions ---
+    async fetchCategories() {
+      const res = await AdminService.getFirmwareCategories()
+      if (res.success) {
+        this.firmwareCategories = res.data
+      }
+    },
+
+    async createCategory(data: { name: string; title: string }) {
+      const toast = useToast()
+      this.loading = true
+      const res = await AdminService.createFirmwareCategory(data)
+      if (res.success) {
+        toast.add({ title: 'Firmware category created successfully' })
+        await this.fetchCategories()
+      }
+      this.loading = false
+    },
+
+    async updateCategory(id: string, data: { name?: string; title?: string }) {
+      const toast = useToast()
+      const res = await AdminService.updateFirmwareCategory(id, data)
+      if (res.success) {
+        toast.add({ title: 'Firmware category updated successfully' })
+        await this.fetchCategories()
+      }
+    },
+
+    async deleteCategory(id: string) {
+      const toast = useToast()
+      const res = await AdminService.deleteFirmwareCategory(id)
+      if (res.success) {
+        toast.add({ title: 'Firmware category deleted successfully' })
+        await this.fetchCategories()
+      }
+    },
+
+    async reorderCategories(ids: string[]) {
+      await AdminService.reorderFirmwareCategories(ids)
+    },
+
+    // --- Firmware Items Actions ---
+    async fetchItems() {
+      const res = await AdminService.getFirmwareItems()
+      if (res.success) {
+        this.items = res.data
+      }
+    },
+
+    async createItem(data: any) {
+      const toast = useToast()
+      this.loading = true
+      const res = await AdminService.createFirmwareItem(data)
+      if (res.success) {
+        toast.add({ title: 'Firmware item created successfully' })
+        await this.fetchItems()
+      }
+      this.loading = false
+    },
+
+    async updateItem(id: string, data: any) {
+      const toast = useToast()
+      const res = await AdminService.updateFirmwareItem(id, data)
+      if (res.success) {
+        toast.add({ title: 'Firmware item updated successfully' })
+        await this.fetchItems()
+      }
+    },
+
+    async deleteItem(id: string) {
+      const toast = useToast()
+      const res = await AdminService.deleteFirmwareItem(id)
+      if (res.success) {
+        toast.add({ title: 'Firmware item deleted successfully' })
+        await this.fetchItems()
+      }
+    },
+
+    async reorderItems(ids: string[]) {
+      await AdminService.reorderFirmwareItems(ids)
     }
   },
   persist: true

@@ -62,12 +62,12 @@ const featuredCategories = ref([
   {
     label: 'Access Control',
     categoryId: '1969240000022731037',
-    image: '/images/slider/unv.jpeg'
+    image: '/images/slider/nidac.jpeg'
   },
   {
     label: 'UNV',
     categoryId: '1969240000025646043',
-    image: '/images/slider/nidac.jpeg'
+    image: '/images/slider/unv.jpeg'
   },
   {
     label: 'Bosch',

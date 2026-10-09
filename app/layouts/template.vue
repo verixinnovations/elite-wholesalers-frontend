@@ -21,7 +21,7 @@
         </div>
       </UContainer>
     </div>
-    <UContainer class="flex-1">
+    <UContainer class="flex-1 px-2">
       <slot />
     </UContainer>
     <BaseFooter />

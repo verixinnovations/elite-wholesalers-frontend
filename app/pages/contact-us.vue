@@ -13,7 +13,7 @@
                 :key="index"
                 class="flex items-start gap-4"
               >
-                <UIcon :name="info.icon" class="text-primary-500 mt-1 h-6 w-6 flex-shrink-0" />
+                <UIcon :name="info.icon" class="text-primary-500 mt-1 h-6 w-6 shrink-0" />
                 <div>
                   <h4 class="font-semibold text-gray-900 dark:text-white">{{ info.title }}</h4>
                   <p class="whitespace-pre-line text-sm text-gray-600 dark:text-gray-400">
@@ -150,7 +150,7 @@ const contactDetails = [
   {
     icon: 'i-heroicons-phone',
     title: 'Phone',
-    details: '0295337877\n+61 2 9533 7877'
+    details: '02 9533 7877\n+61 2 9533 7877'
   },
   {
     icon: 'i-heroicons-envelope',
@@ -165,7 +165,7 @@ const contactDetails = [
   {
     icon: 'i-heroicons-building-office-2',
     title: 'Head Office & Showroom',
-    details: '2210, 1/9 Street\nPeakhurst NSW'
+    details: '1/9 Street\nPeakhurst NSW 2210'
   },
   {
     icon: 'i-heroicons-building-office',

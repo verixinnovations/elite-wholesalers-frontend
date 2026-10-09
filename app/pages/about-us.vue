@@ -1,5 +1,5 @@
 <template>
-  <UContainer class="py-12 space-y-16 max-w-5xl">
+  <div class="py-12 space-y-16 max-w-5xl mx-auto w-full">
     <!-- Main Story Section -->
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
       <!-- Story Content Cards -->
@@ -27,7 +27,7 @@
     <section class="space-y-8 bg-primary-50 rounded-lg overflow-hidden">
       <div class="text-center mx-auto space-y-2">
         <h2
-          class="text-[clamp(1rem,5vw,1.5rem)] p-2 w-full font-bold tracking-tight text-secondary bg-primary"
+          class="text-[clamp(1rem,5vw,1.5rem)] p-2 w-full font-oswald font-bold tracking-tight text-secondary bg-primary"
         >
           {{ deliveryInfo.title }}
         </h2>
@@ -44,7 +44,7 @@
         </div>
       </div>
     </section>
-  </UContainer>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -76,7 +76,7 @@ const deliveryInfo = {
     {
       icon: 'i-heroicons-wrench-screwdriver',
       title: 'Expert Assistance',
-      description: 'Old SchoolReal service, real performance'
+      description: 'Old School Real service, real performance'
     },
     {
       icon: 'i-heroicons-wrench-screwdriver',

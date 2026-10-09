@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
 
   modules: [
     '@nuxt/eslint',
@@ -45,20 +45,26 @@ export default defineNuxtConfig({
   security: {
     headers: {
       contentSecurityPolicy: {
+        'default-src': ["'self'"],
         'img-src': [
           "'self'",
-          "'unsafe-inline'",
-          "'strict-dynamic'",
           'data:',
           'http://localhost:5050',
           'https://cdn1.zohoecommerce.com',
           'https://elite-wholesalers-frontend.vercel.app',
-          'http://elite-wholesalers-backend.onrender.com',
-          'https://elite-wholesalers-backend-production-89cc.up.railway.app',
-          'https://picsum.photos/',
-          'https://fastly.picsum.photos/',
+          'https://elite-wholesalers-backend-production.up.railway.app',
+          'https://picsum.photos',
+          'https://fastly.picsum.photos',
           'https://useperch.xyz'
-        ]
+        ],
+        'connect-src': [
+          "'self'",
+          'http://localhost:5050',
+          'https://elite-wholesalers-backend-production.up.railway.app',
+          process.env.VITE_API_URL as string
+        ],
+        'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        'style-src': ["'self'", "'unsafe-inline'"]
       }
     }
   },
@@ -68,8 +74,13 @@ export default defineNuxtConfig({
     '/dashboard/**': { ssr: false },
     '/**': {
       headers: {
-        'Content-Security-Policy':
-          "img-src 'self' data: http://localhost:5050 http://elite-wholesalers-backend.onrender.com https://elite-wholesalers-frontend.vercel.app https://elite-wholesalers-backend-production-89cc.up.railway.app cdn1.zohoecommerce.com https://picsum.photos https://fastly.picsum.photos;"
+        'Content-Security-Policy': [
+          "default-src 'self'",
+          "img-src 'self' data: http://localhost:5050 https://elite-wholesalers-backend-production.up.railway.app https://elite-wholesalers-frontend.vercel.app cdn1.zohoecommerce.com https://picsum.photos https://fastly.picsum.photos https://useperch.xyz",
+          `connect-src 'self' http://localhost:5050 https://elite-wholesalers-backend-production.up.railway.app ${process.env.VITE_API_URL || ''}`,
+          "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+          "style-src 'self' 'unsafe-inline'"
+        ].join('; ')
       }
     }
   },

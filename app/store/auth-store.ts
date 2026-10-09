@@ -112,7 +112,9 @@ export const useAuthStore = defineStore('AuthStore', {
   }),
 
   getters: {
-    isLoggedIn: (state: AuthStore) => state.user !== null
+    isLoggedIn: (state: AuthStore) => state.user !== null,
+    isAdmin: (state: AuthStore) => state.user && state.user?.accountType === AccountType.ADMIN,
+    accountType: (state: AuthStore) => state.user?.accountType
   },
 
   actions: {
@@ -357,7 +359,7 @@ export const useAuthStore = defineStore('AuthStore', {
   },
 
   persist: {
-    pick: ['user']
+    pick: ['user', 'isLoggedIn']
   }
 })
 

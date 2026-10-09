@@ -21,7 +21,8 @@ export default defineNuxtConfig({
     'v-gsap-nuxt',
 
     'nuxt-swiper',
-    '@vueuse/nuxt/module'
+    '@vueuse/nuxt/module',
+    '@nuxt/scripts'
   ],
 
   devtools: {
@@ -31,8 +32,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       titleTemplate: 'Elite Wholesalers | %s ',
-      link: [{ rel: 'icon', type: 'image/png', href: '/logo-sm.png' }],
-      script: [{ src: 'https://useperch.xyz/widget.js" data-site-id="ws_02d93065d9', async: true }]
+      link: [{ rel: 'icon', type: 'image/png', href: '/logo-sm.png' }]
     }
   },
 

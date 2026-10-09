@@ -17,23 +17,23 @@
       <UContainer class="mx-auto py-10 lg:py-20 lg:px-6">
         <div class="">
           <ClientOnly>
-            <div class="relative w-full aspect-video overflow-hidden rounded-xl shadow-md">
-              <iframe
+            <div class="relative w-full aspect-video rounded-lg overflow-hidden">
+              <ScriptYouTubePlayer
+                video-id="xArTod5Rz6o"
+                :player-vars="{
+                  si: 'HUPP3PviSecdapC9'
+                }"
+                trigger="visible"
                 class="absolute top-0 left-0 w-full h-full border-0"
-                src="https://www.youtube.com/embed/xArTod5Rz6o?si=HUPP3PviSecdapC9"
-                title="YouTube video player"
-                allow="
-                  accelerometer;
-                  autoplay;
-                  clipboard-write;
-                  encrypted-media;
-                  gyroscope;
-                  picture-in-picture;
-                  web-share;
-                "
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+              >
+                <template #placeholder>
+                  <div
+                    class="absolute inset-0 bg-gray-900 flex items-center justify-center text-white"
+                  >
+                    <span>Loading Video...</span>
+                  </div>
+                </template>
+              </ScriptYouTubePlayer>
             </div>
           </ClientOnly>
         </div>
@@ -52,5 +52,15 @@ definePageMeta({
 
 useHead({
   title: 'Home Page'
+})
+
+useHead({
+  script: [
+    {
+      src: 'https://useperch.xyz/widget.js',
+      'data-site-id': 'ws_66547f904a',
+      async: true
+    }
+  ]
 })
 </script>

@@ -165,7 +165,7 @@ const contactDetails = [
   {
     icon: 'i-heroicons-building-office-2',
     title: 'Head Office & Showroom',
-    details: '1/9 Street\nPeakhurst NSW 2210'
+    details: '1/9 Stanley Street,\nPeakhurst NSW 2210'
   },
   {
     icon: 'i-heroicons-building-office',

@@ -68,7 +68,7 @@ const adminRoutes = ref([
 const navigationRoutes = computed(() => {
   if (user.value?.accountType === AccountType.ADMIN) {
     return [...navigation.value, ...adminRoutes.value]
-  } else return navigation
+  } else return navigation.value
 })
 
 onBeforeMount(() => {

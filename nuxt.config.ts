@@ -5,21 +5,14 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/image',
     '@compodium/nuxt',
-    '@nuxtjs/algolia',
     '@nuxtjs/google-fonts',
-    '@nuxtjs/i18n',
     '@nuxtjs/seo',
     '@pinia/nuxt',
     'pinia-plugin-persistedstate/nuxt',
     '@vee-validate/nuxt',
     '@vite-pwa/nuxt',
-    // 'nuxt-google-auth',
     'nuxt-gtag',
     'nuxt-security',
-    // 'nuxt-vue3-google-signin',
-    'nuxt-zod',
-    'v-gsap-nuxt',
-
     'nuxt-swiper',
     '@vueuse/nuxt/module',
     '@nuxt/scripts'
@@ -30,6 +23,7 @@ export default defineNuxtConfig({
   },
 
   app: {
+    baseURL: '/',
     head: {
       titleTemplate: 'Elite Wholesalers | %s ',
       link: [{ rel: 'icon', type: 'image/png', href: '/logo-sm.png' }],
@@ -83,6 +77,19 @@ export default defineNuxtConfig({
     optimizeDeps: {
       exclude: ['swiper/element/bundle']
     }
+  },
+
+  nitro: {
+    hooks: {
+      compiled() {}
+    },
+    externals: {
+      inline: ['zod']
+    }
+  },
+
+  build: {
+    transpile: ['@vuepic/vue-datepicker']
   },
 
   eslint: {

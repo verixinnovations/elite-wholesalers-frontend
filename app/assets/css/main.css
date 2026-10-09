@@ -1,7 +1,6 @@
 @import './app.css';
 @import 'tailwindcss';
 @import '@nuxt/ui';
-@import 'vue-flux/style.css';
 @import './slider.scss';
 @import './tel-input.scss';
 /* @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap'); */

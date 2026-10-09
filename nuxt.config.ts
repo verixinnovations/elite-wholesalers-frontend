@@ -5,16 +5,23 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/image',
     '@compodium/nuxt',
+    '@nuxtjs/algolia',
     '@nuxtjs/google-fonts',
+    '@nuxtjs/i18n',
     '@nuxtjs/seo',
     '@pinia/nuxt',
     'pinia-plugin-persistedstate/nuxt',
     '@vee-validate/nuxt',
     '@vite-pwa/nuxt',
+    // 'nuxt-google-auth',
     'nuxt-gtag',
     'nuxt-security',
+    // 'nuxt-vue3-google-signin',
+    'nuxt-zod',
+    'v-gsap-nuxt',
+
     'nuxt-swiper',
-    '@vueuse/nuxt',
+    '@vueuse/nuxt/module',
     '@nuxt/scripts'
   ],
 
@@ -79,16 +86,9 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    hooks: {
-      compiled() {}
-    },
     externals: {
       inline: ['zod']
     }
-  },
-
-  build: {
-    transpile: ['@vuepic/vue-datepicker']
   },
 
   eslint: {
@@ -110,7 +110,7 @@ export default defineNuxtConfig({
   },
 
   piniaPluginPersistedstate: {
-    // storage: 'localStorage',
+    storage: 'localStorage',
     cookieOptions: {
       sameSite: 'strict',
       maxAge: 3600 * 24 * 7 // 1 week

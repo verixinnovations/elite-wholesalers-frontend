@@ -59,10 +59,31 @@ export default defineNuxtConfig({
           'https://www.elitewholesalers.com.au',
           'https://native.elitewholesalers.com.au',
           'http://api.elitewholesalers.com.au',
-          'https://useperch.xyz'
+          'https://www.youtube.com'
         ],
-        'connect-src': ["'self'", 'http://localhost:5050', 'http://api.elitewholesalers.com.au '],
-        'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        'frame-src': ["'self'", 'https://www.youtube.com', 'https://www.youtube-nocookie.com'],
+        'connect-src': [
+          "'self'",
+          'http://localhost:5050',
+          'http://api.elitewholesalers.com.au',
+          // 'https:*.google-analytics.com',
+          // 'https*.analytics.google.com',
+          process.env.VITE_API_URL || ''
+        ].filter(Boolean),
+        'script-src': [
+          "'self'",
+          "'unsafe-inline'",
+          "'unsafe-eval'",
+          'https://www.youtube.com',
+          'https://s.ytimg.com'
+        ],
+        'script-src-elem': [
+          "'self'",
+          "'unsafe-inline'",
+          'https://www.youtube.com',
+          'https://s.ytimg.com'
+        ],
+        'script-src-attr': ["'unsafe-inline'"], // Fixes the inline event handler error
         'style-src': ["'self'", "'unsafe-inline'"]
       }
     }
@@ -70,18 +91,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
-    '/dashboard/**': { ssr: false },
-    '/**': {
-      headers: {
-        'Content-Security-Policy': [
-          "default-src 'self'",
-          "img-src 'self' data: http://localhost:5050 http://localhost:5050 http://api.elitewholesalers.com.au  https://elite-wholesalers-frontend.vercel.app cdn1.zohoecommerce.com https://useperch.xyz",
-          `connect-src 'self' http://localhost:5050 http://api.elitewholesalers.com.au ${process.env.VITE_API_URL || ''}`,
-          "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-          "style-src 'self' 'unsafe-inline'"
-        ].join('; ')
-      }
-    }
+    '/dashboard/**': { ssr: false }
   },
   site: {
     url: 'https://www.elitewholesalers.com.au',
@@ -101,9 +111,9 @@ export default defineNuxtConfig({
   },
   seo: {},
 
-  gtag: {
-    id: process.env.NUXT_PUBLIC_GTAG_ID || 'G-XXXXXXXXXX'
-  },
+  // gtag: {
+  //   id: process.env.NUXT_PUBLIC_GTAG_ID || 'G-XXXXXXXXXX'
+  // },
 
   compatibilityDate: '2026-06-30',
 

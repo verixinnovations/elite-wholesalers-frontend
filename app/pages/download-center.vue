@@ -1,15 +1,16 @@
 <template>
-  <UContainer class="py-12 space-y-12">
-    <!-- Loop through each dynamic category and its items -->
+  <UContainer class="grid gap-10 py-12 space-y-12 lg:grid-cols-2">
     <section v-for="category in firmwares" :key="category.id">
-      <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
-        {{ category.title }}
-      </h2>
-
-      <UCard :ui="{ body: 'p-0 sm:p-0' }">
+      <UCard :ui="{ root: 'rounded-none', body: 'p-0 sm:p-0', header: 'p-0 sm:px-0 px-0' }">
+        <template #header>
+          <h2 class="text-xl font-semibold font-oswald uppercase bg-primary text-white p-2">
+            {{ category.title }}
+          </h2>
+        </template>
         <UTable
           :columns="columns"
           :data="category.items"
+          class=""
           :empty-state="{
             icon: 'i-heroicons-document-magnifying-glass',
             label: `No items available in ${category.title}.`
@@ -17,12 +18,16 @@
         >
           <!-- Map item.title to 'name' column display if data expects 'name' -->
           <template #name-cell="{ row }">
-            <span class="font-medium text-gray-900 dark:text-white">{{ row.original.title }}</span>
+            <span class="font-medium text-gray-900">{{ row.original.title }}</span>
+          </template>
+
+          <template #size-cell="{ row }">
+            <span class="uppercase">{{ row.original.size }}</span>
           </template>
 
           <!-- Format Date cell -->
           <template #date-cell="{ row }">
-            <span>{{ row.original?.date ?? '' }}</span>
+            <span>{{ DateFunctions.formatIntlDate((row.original?.date as string) ?? '') }}</span>
           </template>
 
           <!-- Custom Download Cell -->
@@ -68,6 +73,15 @@ const columns = [
   { id: 'version', accessorKey: 'version', header: 'VERSION' },
   { id: 'date', accessorKey: 'date', header: 'DATE' },
   { id: 'size', accessorKey: 'size', header: 'SIZE' },
-  { id: 'download', header: 'DOWNLOAD' }
+  {
+    id: 'download',
+    header: 'DOWNLOAD',
+    meta: {
+      class: {
+        th: 'text-center',
+        td: 'text-center'
+      }
+    }
+  }
 ]
 </script>

@@ -40,6 +40,7 @@ export const useUtilStore = defineStore('UtilStore', {
       const res = await UtilService.getCountries()
       if (res.success) {
         this.countries = res.data
+        this.getStatesByCountry('AU')
       }
       this.utilsLoadingStates.country = false
     },
@@ -61,7 +62,8 @@ export const useUtilStore = defineStore('UtilStore', {
       }
       this.utilsLoadingStates.cities = false
     }
-  }
+  },
+  persist: { pick: ['firmwares'] }
 })
 
 if (import.meta.hot) {

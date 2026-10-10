@@ -14,23 +14,41 @@
           <HomeTrendingProducts />
         </UContainer>
       </div>
+
       <UContainer class="mx-auto py-10 lg:py-20 lg:px-6">
-        <div class="">
+        <div class="w-full max-w-4xl mx-auto my-6">
           <ClientOnly>
-            <div class="relative w-full aspect-video rounded-lg overflow-hidden">
+            <div
+              class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg bg-gray-900"
+            >
               <ScriptYouTubePlayer
                 video-id="xArTod5Rz6o"
                 :player-vars="{
-                  si: 'HUPP3PviSecdapC9'
+                  si: 'f3SuCIe4nTV8cPAl',
+                  autoplay: 0
                 }"
                 trigger="visible"
                 class="absolute top-0 left-0 w-full h-full border-0"
               >
                 <template #placeholder>
                   <div
-                    class="absolute inset-0 bg-gray-900 flex items-center justify-center text-white"
+                    class="absolute inset-0 bg-gray-900 flex flex-col items-center justify-center text-white cursor-pointer group"
                   >
-                    <span>Loading Video...</span>
+                    <!-- Optional Play Button Icon Overlay -->
+                    <div
+                      class="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform"
+                    >
+                      <svg
+                        class="w-8 h-8 text-white translate-x-0.5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                    <span class="mt-3 text-sm font-medium tracking-wide text-gray-300"
+                      >Load Elite Wholesalers Video</span
+                    >
                   </div>
                 </template>
               </ScriptYouTubePlayer>
@@ -52,15 +70,5 @@ definePageMeta({
 
 useHead({
   title: 'Home Page'
-})
-
-useHead({
-  script: [
-    {
-      src: 'https://useperch.xyz/widget.js',
-      'data-site-id': 'ws_66547f904a',
-      async: true
-    }
-  ]
 })
 </script>
